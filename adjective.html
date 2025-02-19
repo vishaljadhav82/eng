@@ -9,7 +9,7 @@
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <h2 class="text-center mb-4">MCQ Quiz - Order of Adjectives</h2>
+        <h2 class="text-center mb-4">MCQ Quiz - Adjectives</h2>
         <div class="mb-3">
             <label for="numQuestions" class="form-label">Select Number of Questions:</label>
             <select id="numQuestions" class="form-select" onchange="loadQuestions()">
@@ -75,7 +75,45 @@
                 }
             });
             $("#result").html(`<h5>You got ${correctCount} out of ${$("#quiz .mb-3").length} correct!</h5>`);
+            showModal("Your Score is",correctCount,$("#quiz .mb-3").length);
         }
+
+        function showModal(title, message, total ,duration = 3000) {
+            // Remove existing modal if any
+            $("#dynamicModal").remove();
+
+            // Create modal HTML
+            const modalHtml = `
+                <div class="modal fade show" id="dynamicModal" tabindex="-1" aria-hidden="true" style="display: block;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">${title}</h5>
+                                <button type="button" class="btn-close" aria-label="Close" onclick="closeModal()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>You got ${message} out of ${total} correct!</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Append modal to body
+            $("body").append(modalHtml);
+
+            // Auto-close after set time
+            setTimeout(() => {
+                closeModal();
+            }, duration);
+        }
+
+        function closeModal() {
+            $("#dynamicModal").fadeOut(300, function () {
+                $(this).remove();
+            });
+        }
+
     </script>
 </body>
 </html>
