@@ -406,6 +406,617 @@
         "The lunar eclipse was lunarest."
       ],
       "correct_answer": "The lunar eclipse was visible last night."
+    },
+        {
+      "question": "Which sentence correctly uses the adjective 'senior'?",
+      "options": [
+        "He is senior than me in the office.",
+        "He is more senior than me in the office.",
+        "He is senior to me in the office.",
+        "He is the seniorest in the office."
+      ],
+      "correct_answer": "He is senior to me in the office."
+    },
+    {
+      "question": "Which sentence follows the correct grammar rules?",
+      "options": [
+        "She is junior than her colleague.",
+        "She is junior to her colleague.",
+        "She is more junior than her colleague.",
+        "She is the juniorest in the team."
+      ],
+      "correct_answer": "She is junior to her colleague."
+    },
+    {
+      "question": "Choose the correct usage of 'superior'.",
+      "options": [
+        "This brand is superior than that one.",
+        "This brand is superior to that one.",
+        "This brand is more superior than that one.",
+        "This brand is the most superior of all."
+      ],
+      "correct_answer": "This brand is superior to that one."
+    },
+    {
+      "question": "Identify the correct sentence using 'inferior'.",
+      "options": [
+        "This product is inferior than the previous model.",
+        "This product is inferior to the previous model.",
+        "This product is more inferior than the previous model.",
+        "This product is the inferiorest of all."
+      ],
+      "correct_answer": "This product is inferior to the previous model."
+    },
+    {
+      "question": "Which sentence correctly uses 'prior'?",
+      "options": [
+        "I had a prior meeting before lunch.",
+        "I had a more prior meeting before lunch.",
+        "I had a priorer meeting before lunch.",
+        "I had the prioriest meeting before lunch."
+      ],
+      "correct_answer": "I had a prior meeting before lunch."
+    },
+    {
+      "question": "Choose the correct sentence using 'posterior'.",
+      "options": [
+        "The posterior part of the brain is responsible for vision.",
+        "The more posterior part of the brain is responsible for vision.",
+        "The most posterior part of the brain is responsible for vision.",
+        "The posteriorest part of the brain is responsible for vision."
+      ],
+      "correct_answer": "The posterior part of the brain is responsible for vision."
+    },
+        {
+      "question": "Choose the correct sentence using 'minor'.",
+      "options": [
+        "This is a minor issue that can be ignored.",
+        "This is a more minor issue that can be ignored.",
+        "This is the most minor issue that can be ignored.",
+        "This issue is minorer than the previous one."
+      ],
+      "correct_answer": "This is a minor issue that can be ignored."
+    },
+    {
+      "question": "Which sentence correctly uses 'ulterior'?",
+      "options": [
+        "He had an ulterior motive for helping them.",
+        "He had a more ulterior motive for helping them.",
+        "He had the most ulterior motive for helping them.",
+        "He had an ulteriorer motive for helping them."
+      ],
+      "correct_answer": "He had an ulterior motive for helping them."
+    },
+    {
+      "question": "Identify the correct usage of 'interior'.",
+      "options": [
+        "The interior design of the house is elegant.",
+        "The more interior design of the house is elegant.",
+        "The most interior design of the house is elegant.",
+        "The interiorer design of the house is elegant."
+      ],
+      "correct_answer": "The interior design of the house is elegant."
+    },
+    {
+      "question": "Choose the correct sentence using 'exterior'.",
+      "options": [
+        "The exterior walls were painted white.",
+        "The more exterior walls were painted white.",
+        "The most exterior walls were painted white.",
+        "The exteriorest walls were painted white."
+      ],
+      "correct_answer": "The exterior walls were painted white."
+    },
+            {
+      "question": "Choose the correct sentence using 'comparatively' with a positive adjective.",
+      "options": [
+        "The weather here is comparatively warm in winter.",
+        "The weather here is comparatively warmer in winter.",
+        "The weather here is most comparatively warm in winter.",
+        "The weather here is comparative warmest in winter."
+      ],
+      "correct_answer": "The weather here is comparatively warm in winter."
+    },
+    {
+      "question": "Which of the following correctly uses 'relatively' with a positive adjective?",
+      "options": [
+        "The task is relatively simple for beginners.",
+        "The task is relatively simpler for beginners.",
+        "The task is most relatively simplest for beginners.",
+        "The task is more relatively simplest for beginners."
+      ],
+      "correct_answer": "The task is relatively simple for beginners."
+    },
+    {
+      "question": "Identify the grammatically correct sentence using 'comparatively' with a positive adjective.",
+      "options": [
+        "This city is comparatively safe for tourists.",
+        "This city is comparatively safer for tourists.",
+        "This city is most comparatively safest for tourists.",
+        "This city is more comparatively safest for tourists."
+      ],
+      "correct_answer": "This city is comparatively safe for tourists."
+    },
+    {
+      "question": "Which sentence correctly uses 'relatively' with a positive adjective?",
+      "options": [
+        "The food here is relatively fresh compared to other places.",
+        "The food here is relatively fresher compared to other places.",
+        "The food here is most relatively freshest compared to other places.",
+        "The food here is more relatively freshest compared to other places."
+      ],
+      "correct_answer": "The food here is relatively fresh compared to other places."
+    },
+            {
+      "question": "Which sentence correctly places the adjective before 'enough'?",
+      "options": [
+        "She is enough tall to reach the shelf.",
+        "She is tall enough to reach the shelf.",
+        "She is taller enough to reach the shelf.",
+        "She is most enough tall to reach the shelf."
+      ],
+      "correct_answer": "She is tall enough to reach the shelf."
+    },
+    {
+      "question": "Choose the correct sentence using 'enough' with an adjective.",
+      "options": [
+        "This bag is enough big to carry all my books.",
+        "This bag is big enough to carry all my books.",
+        "This bag is biggest enough to carry all my books.",
+        "This bag is enough biggest to carry all my books."
+      ],
+      "correct_answer": "This bag is big enough to carry all my books."
+    },
+    {
+      "question": "Identify the grammatically correct sentence using 'enough'.",
+      "options": [
+        "He is enough strong to lift the heavy box.",
+        "He is stronger enough to lift the heavy box.",
+        "He is strong enough to lift the heavy box.",
+        "He is most enough strong to lift the heavy box."
+      ],
+      "correct_answer": "He is strong enough to lift the heavy box."
+    },
+    {
+      "question": "Which of the following correctly uses 'enough'?",
+      "options": [
+        "This dress is enough beautiful for the party.",
+        "This dress is beautiful enough for the party.",
+        "This dress is most enough beautiful for the party.",
+        "This dress is enough most beautiful for the party."
+      ],
+      "correct_answer": "This dress is beautiful enough for the party."
+    }
+,
+            {
+      "question": "Which sentence correctly uses 'prefer'?",
+      "options": [
+        "I prefer coffee than tea.",
+        "I prefer coffee to tea.",
+        "I prefer coffee over than tea.",
+        "I prefer coffee rather tea."
+      ],
+      "correct_answer": "I prefer coffee to tea."
+    },
+    {
+      "question": "Identify the correct sentence using 'would rather'.",
+      "options": [
+        "I would rather go by bus than by train.",
+        "I would rather to go by bus than train.",
+        "I would rather going by bus to train.",
+        "I would rather go by bus to train."
+      ],
+      "correct_answer": "I would rather go by bus than by train."
+    },
+    {
+      "question": "Which of the following is grammatically correct?",
+      "options": [
+        "I prefer reading rather than watching TV.",
+        "I prefer to read rather than watch TV.",
+        "I prefer reading than watching TV.",
+        "I prefer read rather watching TV."
+      ],
+      "correct_answer": "I prefer to read rather than watch TV."
+    },
+    {
+      "question": "Which sentence follows the correct structure of 'would rather'?",
+      "options": [
+        "I would rather to stay at home than go out.",
+        "I would rather stay at home than go out.",
+        "I would rather staying at home to going out.",
+        "I would rather stay at home to go out."
+      ],
+      "correct_answer": "I would rather stay at home than go out."
+    },
+            {
+      "question": "Which sentence correctly uses 'preferable'?",
+      "options": [
+        "Walking is preferable than running.",
+        "Walking is preferable to running.",
+        "Walking is preferable over running.",
+        "Walking is preferable rather than running."
+      ],
+      "correct_answer": "Walking is preferable to running."
+    },
+    {
+      "question": "Which sentence correctly joins adjectives using 'and'?",
+      "options": [
+        "She is an intelligent and hard-working student.",
+        "She is an intelligent, and hard-working student.",
+        "She is an intelligent but hard-working student.",
+        "She is an intelligent hard-working student."
+      ],
+      "correct_answer": "She is an intelligent and hard-working student."
+    },
+    {
+      "question": "Which of the following sentences is grammatically correct?",
+      "options": [
+        "A cold and rainy day made us stay inside.",
+        "A cold, and rainy day made us stay inside.",
+        "A cold but rainy day made us stay inside.",
+        "A cold and rainy day, made us stay inside."
+      ],
+      "correct_answer": "A cold and rainy day made us stay inside."
+    },
+    {
+      "question": "Which sentence is correct when using 'preferable'?",
+      "options": [
+        "This method is preferable over that one.",
+        "This method is preferable than that one.",
+        "This method is preferable to that one.",
+        "This method is more preferable than that one."
+      ],
+      "correct_answer": "This method is preferable to that one."
+    },
+        {
+      "question": "Which sentence correctly joins adjectives?",
+      "options": [
+        "She is a kind and intelligent girl.",
+        "She is a kind, and intelligent girl.",
+        "She is a kind intelligent girl.",
+        "She is a kind, intelligent and girl."
+      ],
+      "correct_answer": "She is a kind and intelligent girl."
+    },
+    {
+      "question": "Which sentence follows correct adjective order?",
+      "options": [
+        "He gave me a wooden and big box.",
+        "He gave me a big wooden box.",
+        "He gave me a big, and wooden box.",
+        "He gave me a big, wooden and box."
+      ],
+      "correct_answer": "He gave me a big wooden box."
+    },
+    {
+      "question": "Which of the following is the correct way to join adjectives?",
+      "options": [
+        "It was a beautiful, sunny day.",
+        "It was a beautiful and, sunny day.",
+        "It was a beautiful, and sunny day.",
+        "It was a beautiful sunny, day."
+      ],
+      "correct_answer": "It was a beautiful, sunny day."
+    },
+    {
+      "question": "Which of the following sentences is grammatically correct?",
+      "options": [
+        "She has a red, silk, elegant dress.",
+        "She has a red silk elegant dress.",
+        "She has an elegant red silk dress.",
+        "She has a red and silk and elegant dress."
+      ],
+      "correct_answer": "She has an elegant red silk dress."
+    },
+            {
+      "question": "Which sentence correctly uses 'such'?",
+      "options": [
+        "I have never seen such beautiful place.",
+        "I have never seen such a beautiful place.",
+        "I have never seen such beautiful places.",
+        "I have never seen such the beautiful place."
+      ],
+      "correct_answer": "I have never seen such a beautiful place."
+    },
+    {
+      "question": "Which sentence correctly uses 'the same'?",
+      "options": [
+        "We both had the same idea.",
+        "We both had same the idea.",
+        "We both had an same idea.",
+        "We both had a same idea."
+      ],
+      "correct_answer": "We both had the same idea."
+    },
+    {
+      "question": "Which of the following sentences is correct?",
+      "options": [
+        "I took one apple, and she took other apple.",
+        "I took one apple, and she took the other apple.",
+        "I took one apple, and she took another the apple.",
+        "I took one apple, and she took an other apple."
+      ],
+      "correct_answer": "I took one apple, and she took the other apple."
+    },
+    {
+      "question": "Which of the following correctly uses 'any'?",
+      "options": [
+        "Do you have any book?",
+        "Do you have any books?",
+        "Do you have any a book?",
+        "Do you have an any book?"
+      ],
+      "correct_answer": "Do you have any books?"
+    },
+            {
+      "question": "Which sentence correctly uses 'a'?",
+      "options": [
+        "I saw an dog in the park.",
+        "I saw a dog in the park.",
+        "I saw a elephant in the park.",
+        "I saw an cat in the park."
+      ],
+      "correct_answer": "I saw a dog in the park."
+    },
+    {
+      "question": "Which sentence correctly uses 'an'?",
+      "options": [
+        "She bought an orange.",
+        "She bought a orange.",
+        "She bought an university.",
+        "She bought a apple."
+      ],
+      "correct_answer": "She bought an orange."
+    },
+    {
+      "question": "Which of the following sentences correctly uses 'a certain'?",
+      "options": [
+        "I met certain a man at the store.",
+        "I met a certain man at the store.",
+        "I met the certain man at the store.",
+        "I met another certain man at the store."
+      ],
+      "correct_answer": "I met a certain man at the store."
+    },
+    {
+      "question": "Which sentence correctly uses 'another'?",
+      "options": [
+        "Can I have another apple?",
+        "Can I have an another apple?",
+        "Can I have the another apple?",
+        "Can I have certain another apple?"
+      ],
+      "correct_answer": "Can I have another apple?"
+    },
+    {
+      "question": "Which of the following sentences correctly uses 'this'?",
+      "options": [
+        "This books are mine.",
+        "This book is mine.",
+        "This are my books.",
+        "This an book is mine."
+      ],
+      "correct_answer": "This book is mine."
+    },
+    {
+      "question": "Which sentence correctly uses 'that'?",
+      "options": [
+        "That car is my father's.",
+        "That cars are my father's.",
+        "That an car is my father's.",
+        "That a car is my father's."
+      ],
+      "correct_answer": "That car is my father's."
+    },
+            {
+      "question": "Which sentence correctly uses 'either'?",
+      "options": [
+        "Either of the three books is good.",
+        "Either option is acceptable.",
+        "Either students were present.",
+        "Either apples are rotten."
+      ],
+      "correct_answer": "Either option is acceptable."
+    },
+    {
+      "question": "Which sentence correctly uses 'each'?",
+      "options": [
+        "Each of the boys were playing.",
+        "Each student must bring their ID card.",
+        "Each are responsible for their work.",
+        "Each the books were arranged neatly."
+      ],
+      "correct_answer": "Each student must bring their ID card."
+    },
+    {
+      "question": "Which sentence correctly uses 'neither'?",
+      "options": [
+        "Neither of the two roads is safe.",
+        "Neither students were present.",
+        "Neither the apples are fresh.",
+        "Neither option are correct."
+      ],
+      "correct_answer": "Neither of the two roads is safe."
+    },
+    {
+      "question": "Which sentence correctly uses 'every'?",
+      "options": [
+        "Every of the books is interesting.",
+        "Every child needs love and care.",
+        "Every two students got a prize.",
+        "Every both options are correct."
+      ],
+      "correct_answer": "Every child needs love and care."
+    },
+    {
+      "question": "Which is the correct usage of 'either'?",
+      "options": [
+        "You can take either of these two roads.",
+        "Either of the three students was late.",
+        "Either students are attending the seminar.",
+        "Either is going to the park."
+      ],
+      "correct_answer": "You can take either of these two roads."
+    },
+    {
+      "question": "Which of the following sentences is correct with 'neither'?",
+      "options": [
+        "Neither of them are happy.",
+        "Neither of them is happy.",
+        "Neither of them were happy.",
+        "Neither students was interested."
+      ],
+      "correct_answer": "Neither of them is happy."
+    },
+    {
+      "question": "Which sentence correctly uses 'each'?",
+      "options": [
+        "Each of the books are expensive.",
+        "Each book in this library is unique.",
+        "Each boys in the team played well.",
+        "Each were given a task."
+      ],
+      "correct_answer": "Each book in this library is unique."
+    },
+    {
+      "question": "Which sentence correctly uses 'every'?",
+      "options": [
+        "Every students was on time.",
+        "Every single person in the room was silent.",
+        "Every are responsible for their work.",
+        "Every of them is correct."
+      ],
+      "correct_answer": "Every single person in the room was silent."
+    },
+        {
+      "question": "Which sentence correctly uses 'asleep'?",
+      "options": [
+        "The asleep child was taken to bed.",
+        "The child is asleep.",
+        "The asleep dog barked loudly.",
+        "Asleep baby is cute."
+      ],
+      "correct_answer": "The child is asleep."
+    },
+    {
+      "question": "Which sentence correctly uses 'alone'?",
+      "options": [
+        "She is alone at home.",
+        "She alone is at home.",
+        "Alone she is at home.",
+        "She alone at home."
+      ],
+      "correct_answer": "She is alone at home."
+    },
+    {
+      "question": "Which sentence correctly uses 'ashamed'?",
+      "options": [
+        "She felt ashamed of her actions.",
+        "Ashamed girl apologized quickly.",
+        "The ashamed student cried.",
+        "He ashamed his decision."
+      ],
+      "correct_answer": "She felt ashamed of her actions."
+    },
+    {
+      "question": "Which sentence correctly uses 'alike'?",
+      "options": [
+        "The sisters look alike.",
+        "The alike boys are studying.",
+        "Alike boys played together.",
+        "The children have alike clothes."
+      ],
+      "correct_answer": "The sisters look alike."
+    },
+    {
+      "question": "Which is the correct usage of 'asleep'?",
+      "options": [
+        "The baby fell asleep.",
+        "The asleep baby is crying.",
+        "The baby asleep is in the room.",
+        "Asleep the baby fell."
+      ],
+      "correct_answer": "The baby fell asleep."
+    },
+    {
+      "question": "Which of the following sentences is correct with 'alone'?",
+      "options": [
+        "He works alone in his office.",
+        "He works in his office alone.",
+        "He is alone in his office.",
+        "All of the above."
+      ],
+      "correct_answer": "All of the above."
+    },
+    {
+      "question": "Which sentence correctly uses 'ashamed'?",
+      "options": [
+        "The man was ashamed of his mistake.",
+        "The ashamed man left the room.",
+        "Ashamed man left quickly.",
+        "He ashamed left the room."
+      ],
+      "correct_answer": "The man was ashamed of his mistake."
+    },
+    {
+      "question": "Which sentence correctly uses 'alike'?",
+      "options": [
+        "The two brothers are alike.",
+        "The alike brothers played football.",
+        "Alike the two sisters were standing.",
+        "She wore an alike dress."
+      ],
+      "correct_answer": "The two brothers are alike."
+    },
+            {
+      "question": "Which sentence correctly uses 'worth seeing'?",
+      "options": [
+        "The new museum is worth seeing.",
+        "The new museum is worth to see.",
+        "The new museum is worth see.",
+        "The new museum worth seeing."
+      ],
+      "correct_answer": "The new museum is worth seeing."
+    },
+    {
+      "question": "Which of the following is grammatically incorrect?",
+      "options": [
+        "This documentary is worth watching.",
+        "That historic place is worth visiting.",
+        "This book is worth to read.",
+        "The movie is worth seeing."
+      ],
+      "correct_answer": "This book is worth to read."
+    },
+    {
+      "question": "What is the correct sentence structure for 'worth seeing'?",
+      "options": [
+        "'Worth' + 'to' + verb",
+        "'Worth' + gerund (-ing verb)",
+        "'Worth' + noun + verb",
+        "'Worth' + infinitive"
+      ],
+      "correct_answer": "'Worth' + gerund (-ing verb)"
+    },
+    {
+      "question": "Which of the following sentences is correct?",
+      "options": [
+        "The Taj Mahal is worth seeing.",
+        "The Taj Mahal is worth to see.",
+        "The Taj Mahal is worth seen.",
+        "The Taj Mahal worth seeing."
+      ],
+      "correct_answer": "The Taj Mahal is worth seeing."
+    },
+    {
+      "question": "Which of these sentences uses 'worth seeing' incorrectly?",
+      "options": [
+        "The scenery here is worth seeing.",
+        "The scenery here is worth to be seen.",
+        "This city is worth visiting.",
+        "This film is really worth watching."
+      ],
+      "correct_answer": "The scenery here is worth to be seen."
     }
     ]
   }
