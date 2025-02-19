@@ -1,0 +1,60 @@
+{
+    "questions": [
+      {
+        "question": "Choose the correct order of adjectives in the sentence:\n'I bought ________ chairs from the store.'",
+        "options": [
+          "A) three wooden",
+          "B) wooden three",
+          "C) three woodens",
+          "D) wooden three's"
+        ],
+        "correct_answer": "A) three wooden",
+        "explanation": "Numerical adjectives (three) come before quality adjectives (wooden)."
+      },
+      {
+        "question": "Which of the following sentences is grammatically correct?",
+        "options": [
+          "A) She has beautiful two dresses.",
+          "B) She has two beautiful dresses.",
+          "C) She has dresses two beautiful.",
+          "D) She has two dress beautiful."
+        ],
+        "correct_answer": "B) She has two beautiful dresses.",
+        "explanation": "Numerical adjectives (two) come before quality adjectives (beautiful)."
+      },
+      {
+        "question": "Select the correct sentence:",
+        "options": [
+          "A) I saw five tall buildings.",
+          "B) I saw tall five buildings.",
+          "C) I saw buildings five tall.",
+          "D) I saw five buildings tall."
+        ],
+        "correct_answer": "A) I saw five tall buildings.",
+        "explanation": "Numerical adjectives (five) should be placed before quality adjectives (tall)."
+      },
+      {
+        "question": "Which sentence follows the correct order of adjectives?",
+        "options": [
+          "A) The old three books are on the table.",
+          "B) The three old books are on the table.",
+          "C) The books old three are on the table.",
+          "D) The books three old are on the table."
+        ],
+        "correct_answer": "B) The three old books are on the table.",
+        "explanation": "Numerical adjectives (three) must come before quality adjectives (old)."
+      },
+      {
+        "question": "Identify the correct sentence structure:",
+        "options": [
+          "A) We adopted cute four puppies.",
+          "B) We adopted four cute puppies.",
+          "C) We adopted puppies cute four.",
+          "D) We adopted four puppies cute."
+        ],
+        "correct_answer": "B) We adopted four cute puppies.",
+        "explanation": "Numerical adjectives (four) should precede quality adjectives (cute)."
+      }
+    ]
+  }
+  
