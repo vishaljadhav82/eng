@@ -146,6 +146,266 @@
         "We need several eggs and some sugar."
       ],
       "correct_answer": "We need several eggs and some sugar."
+    },
+        {
+      "question": "Which sentence correctly follows the rule of absolute adjectives?",
+      "options": [
+        "This is a unique idea.",
+        "This is a more unique idea.",
+        "This is the most unique idea.",
+        "This idea is uniquely better than others."
+      ],
+      "correct_answer": "This is a unique idea."
+    },
+    {
+      "question": "Choose the grammatically correct sentence:",
+      "options": [
+        "Her performance was excellent.",
+        "Her performance was more excellent than his.",
+        "Her performance was the most excellent of all.",
+        "She performed excellenter than others."
+      ],
+      "correct_answer": "Her performance was excellent."
+    },
+    {
+      "question": "Which of the following sentences is incorrect?",
+      "options": [
+        "His solution was perfect.",
+        "This is a perfectly designed model.",
+        "His work was more perfect than the others.",
+        "She aimed for perfection in her project."
+      ],
+      "correct_answer": "His work was more perfect than the others."
+    },
+    {
+      "question": "Which of the following is a correct sentence?",
+      "options": [
+        "That was a unique experience.",
+        "That was a most unique experience.",
+        "That was a more unique experience.",
+        "That was a uniquely better experience."
+      ],
+      "correct_answer": "That was a unique experience."
+    },
+    {
+      "question": "Identify the grammatically incorrect sentence:",
+      "options": [
+        "She wore a unique dress.",
+        "He gave an excellent speech.",
+        "Her performance was more perfect than before.",
+        "The team had a perfect record."
+      ],
+      "correct_answer": "Her performance was more perfect than before."
+    },
+        {
+      "question": "Which sentence correctly follows the rule of absolute adjectives?",
+      "options": [
+        "His skills are unmatched.",
+        "His skills are more unmatched than others.",
+        "His skills are the most unmatched of all.",
+        "His skills are unmatchedly better."
+      ],
+      "correct_answer": "His skills are unmatched."
+    },
+    {
+      "question": "Which of the following is grammatically correct?",
+      "options": [
+        "She has an unparalleled ability to solve problems.",
+        "She has a more unparalleled ability to solve problems.",
+        "Her ability is the most unparalleled of all.",
+        "Her ability is unparalleledly superior."
+      ],
+      "correct_answer": "She has an unparalleled ability to solve problems."
+    },
+    {
+      "question": "Choose the correct sentence:",
+      "options": [
+        "The project was a major success.",
+        "The project was more major than others.",
+        "The project was the most major of all.",
+        "The project was majorly better."
+      ],
+      "correct_answer": "The project was a major success."
+    },
+    {
+      "question": "Which sentence is incorrect?",
+      "options": [
+        "His performance was unmatched.",
+        "Her leadership is unparalleled.",
+        "That was a more major achievement.",
+        "The company achieved major growth this year."
+      ],
+      "correct_answer": "That was a more major achievement."
+    },
+    {
+      "question": "Identify the grammatically correct sentence:",
+      "options": [
+        "His dedication is unparalleled.",
+        "His dedication is the most unparalleled.",
+        "His dedication is more unparalleled than others.",
+        "His dedication is unparalleledly unique."
+      ],
+      "correct_answer": "His dedication is unparalleled."
+    },
+        {
+      "question": "Which sentence correctly follows the rule of absolute adjectives?",
+      "options": [
+        "The weather conditions were extreme.",
+        "The weather conditions were more extreme than yesterday.",
+        "The weather conditions were the most extreme of all.",
+        "The weather conditions were extremely extreme."
+      ],
+      "correct_answer": "The weather conditions were extreme."
+    },
+    {
+      "question": "Which of the following is grammatically correct?",
+      "options": [
+        "This law applies to the universal population.",
+        "This law applies to a more universal audience.",
+        "This law applies to the most universal audience.",
+        "This law applies to a universally broader group."
+      ],
+      "correct_answer": "This law applies to the universal population."
+    },
+    {
+      "question": "Choose the correct sentence:",
+      "options": [
+        "He read the whole book in one day.",
+        "He read the more whole book in one day.",
+        "He read the most whole book in one day.",
+        "He read the wholest book in one day."
+      ],
+      "correct_answer": "He read the whole book in one day."
+    },
+    {
+      "question": "Which sentence is incorrect?",
+      "options": [
+        "Her reaction was extreme.",
+        "The policy has universal acceptance.",
+        "That was a more whole project.",
+        "We need to consider the whole situation."
+      ],
+      "correct_answer": "That was a more whole project."
+    },
+    {
+      "question": "Identify the grammatically correct sentence:",
+      "options": [
+        "The impact of climate change is universal.",
+        "The impact of climate change is more universal.",
+        "The impact of climate change is the most universal.",
+        "The impact of climate change is universally extreme."
+      ],
+      "correct_answer": "The impact of climate change is universal."
+    },
+            {
+      "question": "Which sentence correctly follows the rule of absolute adjectives?",
+      "options": [
+        "The project is complete.",
+        "The project is more complete than before.",
+        "The project is the most complete of all.",
+        "The project is completely complete."
+      ],
+      "correct_answer": "The project is complete."
+    },
+    {
+      "question": "Which of the following is grammatically correct?",
+      "options": [
+        "Her glass is full of water.",
+        "Her glass is fuller of water.",
+        "Her glass is the fullest of water.",
+        "Her glass is more full of water."
+      ],
+      "correct_answer": "Her glass is full of water."
+    },
+    {
+      "question": "Choose the correct sentence:",
+      "options": [
+        "The earth is round.",
+        "The earth is more round than Mars.",
+        "The earth is the most round of all planets.",
+        "The earth is rounder than the moon."
+      ],
+      "correct_answer": "The earth is round."
+    },
+    {
+      "question": "Which sentence is incorrect?",
+      "options": [
+        "The table has a circular shape.",
+        "The moon appears circular in the sky.",
+        "The table is more circular than the chair.",
+        "The drawing is perfectly circular."
+      ],
+      "correct_answer": "The table is more circular than the chair."
+    },
+    {
+      "question": "Identify the grammatically correct sentence:",
+      "options": [
+        "The ball is spherical.",
+        "The ball is more spherical than another ball.",
+        "The ball is the most spherical object.",
+        "The ball is the sphericalest object."
+      ],
+      "correct_answer": "The ball is spherical."
+    },
+           {
+      "question": "Which of the following sentences is correct?",
+      "options": [
+        "The warning sign has a triangular shape.",
+        "The warning sign is more triangular than the road sign.",
+        "The warning sign is the most triangular sign.",
+        "The warning sign is triangularest."
+      ],
+      "correct_answer": "The warning sign has a triangular shape."
+    },
+    {
+      "question": "Which sentence correctly uses the adjective?",
+      "options": [
+        "The room is rectangular.",
+        "The room is more rectangular than the kitchen.",
+        "The room is the most rectangular in the house.",
+        "The room is rectangularest."
+      ],
+      "correct_answer": "The room is rectangular."
+    },
+    {
+      "question": "Identify the grammatically incorrect sentence.",
+      "options": [
+        "The two lines are parallel to each other.",
+        "The two lines are more parallel than the other lines.",
+        "The train tracks are parallel.",
+        "The walls of this building are parallel."
+      ],
+      "correct_answer": "The two lines are more parallel than the other lines."
+    },
+    {
+      "question": "Which of the following sentences is correct?",
+      "options": [
+        "The ancient crown is golden.",
+        "The ancient crown is more golden than the ring.",
+        "The ancient crown is the most golden object in the museum.",
+        "The ancient crown is goldenest."
+      ],
+      "correct_answer": "The ancient crown is golden."
+    },
+    {
+      "question": "Choose the sentence with the correct usage of the adjective.",
+      "options": [
+        "The river appears milky after the rains.",
+        "The river is milkier than the lake.",
+        "The river is the milkiest of all.",
+        "The river is milkyest."
+      ],
+      "correct_answer": "The river appears milky after the rains."
+    },
+    {
+      "question": "Which sentence correctly follows the rules of absolute adjectives?",
+      "options": [
+        "The lunar eclipse was visible last night.",
+        "The lunar eclipse was more lunar than before.",
+        "The lunar eclipse was the most lunar event.",
+        "The lunar eclipse was lunarest."
+      ],
+      "correct_answer": "The lunar eclipse was visible last night."
     }
     ]
   }
