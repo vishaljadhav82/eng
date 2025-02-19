@@ -85,6 +85,38 @@
       ],
       "correct_answer": "They have some ten chairs in the room."
     }
+        ,
+        {
+      "question": "Choose the correct adjective order:",
+      "options": [
+        "He won the second two times.",
+        "He won two second times.",
+        "He won the second time twice.",
+        "He won twice the second time."
+      ],
+      "correct_answer": "He won the second time twice."
+    },
+    {
+      "question": "Identify the correctly ordered sentence:",
+      "options": [
+        "She finished the third five times.",
+        "She finished five third times.",
+        "She finished the third time five times.",
+        "She finished five times the third time."
+      ],
+      "correct_answer": "She finished the third time five times."
+    },
+    {
+      "question": "Which sentence follows the correct adjective order?",
+      "options": [
+        "They attempted their first three times.",
+        "They attempted three first times.",
+        "They attempted their first time three times.",
+        "They attempted three times their first time."
+      ],
+      "correct_answer": "They attempted their first time three times."
+    }
+
     ]
   }
   
