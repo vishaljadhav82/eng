@@ -55,6 +55,37 @@
         "correct_answer": "B) We adopted four cute puppies.",
         "explanation": "Numerical adjectives (four) should precede quality adjectives (cute)."
       }
+        ,
+        {
+      "question": "Choose the correct sentence order:",
+      "options": [
+        "I have several five books on the table.",
+        "I have five several books on the table.",
+        "I have several books on the table.",
+        "I have five books on the table."
+      ],
+      "correct_answer": "I have five several books on the table."
+    },
+    {
+      "question": "Identify the correct adjective order:",
+      "options": [
+        "He bought many three apples.",
+        "He bought three many apples.",
+        "He bought three apples.",
+        "He bought many apples."
+      ],
+      "correct_answer": "He bought three many apples."
+    },
+    {
+      "question": "Which sentence follows the correct adjective order?",
+      "options": [
+        "They have some ten chairs in the room.",
+        "They have ten some chairs in the room.",
+        "They have some chairs in the room.",
+        "They have ten chairs in the room."
+      ],
+      "correct_answer": "They have ten some chairs in the room."
+    }
     ]
   }
   
