@@ -116,7 +116,37 @@
       ],
       "correct_answer": "They attempted their first time three times."
     }
-
+,
+        {
+      "question": "Choose the correct sentence with proper adjective order:",
+      "options": [
+        "She has little water and few books.",
+        "She has much water and many books.",
+        "She has few books and little water.",
+        "She has little books and much water."
+      ],
+      "correct_answer": "She has few books and little water."
+    },
+    {
+      "question": "Identify the correctly structured sentence:",
+      "options": [
+        "He drank little tea and several cups.",
+        "He drank several cups and little tea.",
+        "He drank many tea and little cups.",
+        "He drank little cups and much tea."
+      ],
+      "correct_answer": "He drank several cups and little tea."
+    },
+    {
+      "question": "Which sentence follows the correct adjective order?",
+      "options": [
+        "We need little sugar and many eggs.",
+        "We need many eggs and little sugar.",
+        "We need some sugar and several eggs.",
+        "We need several eggs and some sugar."
+      ],
+      "correct_answer": "We need several eggs and some sugar."
+    }
     ]
   }
   
