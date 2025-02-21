@@ -1,0 +1,159 @@
+{
+    "questions": [
+      {
+        "question": "Which of the following is the correct order of adjectives?",
+        "options": {
+          "A": "Opinion - Size - Shape - Age - Color - Origin - Material - Purpose",
+          "B": "Size - Opinion - Age - Shape - Color - Material - Origin - Purpose",
+          "C": "Opinion - Age - Shape - Size - Color - Material - Origin - Purpose",
+          "D": "Age - Size - Opinion - Color - Shape - Material - Origin - Purpose"
+        },
+        "correct_answer": "A",
+        "explanation": "Adjectives follow the correct order: Opinion, Size, Shape, Age, Color, Origin, Material, Purpose."
+      },
+      {
+        "question": "Which sentence contains an error in adjective usage?",
+        "options": {
+          "A": "She wore a beautiful red dress.",
+          "B": "This is the most unique idea I have heard.",
+          "C": "The small brown dog barked loudly.",
+          "D": "He bought an expensive Italian leather jacket."
+        },
+        "correct_answer": "B",
+        "explanation": "'Unique' is an absolute adjective and does not take 'most' or 'more'."
+      },
+      {
+        "question": "Identify the incorrect sentence:",
+        "options": {
+          "A": "He is elder than his brother.",
+          "B": "This is the best pizza I have ever eaten.",
+          "C": "The taller boy won the race.",
+          "D": "She is more intelligent than her sister."
+        },
+        "correct_answer": "A",
+        "explanation": "'Elder' is not used with 'than'. Instead, use 'older'."
+      },
+      {
+        "question": "Which of the following adjectives is in the correct form?",
+        "options": {
+          "A": "She is more cleverer than her brother.",
+          "B": "This book is much interesting than that one.",
+          "C": "That was the most ridiculous excuse I’ve heard.",
+          "D": "The weather today is more colder than yesterday."
+        },
+        "correct_answer": "C",
+        "explanation": "'Most ridiculous' is correct because 'ridiculous' is a long adjective that takes 'most'."
+      },
+      {
+        "question": "Which of the following adjectives is **NOT** gradable?",
+        "options": {
+          "A": "Cold",
+          "B": "Expensive",
+          "C": "Perfect",
+          "D": "Happy"
+        },
+        "correct_answer": "C",
+        "explanation": "'Perfect' is an absolute adjective and does not take comparative or superlative forms."
+      },
+      {
+        "question": "Which sentence is grammatically incorrect?",
+        "options": {
+          "A": "She is more happier now.",
+          "B": "This is the most exciting match ever!",
+          "C": "He is the tallest in his class.",
+          "D": "That’s a really delicious cake."
+        },
+        "correct_answer": "A",
+        "explanation": "'More happier' is incorrect; use either 'happier' or 'more happy', not both."
+      },
+      {
+        "question": "Which of the following adjectives is **correctly** used?",
+        "options": {
+          "A": "This is the less expensive phone I found.",
+          "B": "She is more kinder than her friend.",
+          "C": "I am feeling better today.",
+          "D": "This is the worser option."
+        },
+        "correct_answer": "C",
+        "explanation": "'Better' is the correct comparative form of 'good'."
+      },
+      {
+        "question": "Which sentence uses **adjectives correctly**?",
+        "options": {
+          "A": "This is the most fastest train.",
+          "B": "She has a very best friend.",
+          "C": "This is a truly wonderful experience.",
+          "D": "He is the most intelligentest student in the class."
+        },
+        "correct_answer": "C",
+        "explanation": "'Truly wonderful' is correct; 'most fastest' and 'intelligentest' are incorrect."
+      },
+      {
+        "question": "Which adjective is used incorrectly?",
+        "options": {
+          "A": "This is the worst mistake I have made.",
+          "B": "The weather is more better today.",
+          "C": "This car is cheaper than that one.",
+          "D": "He is the most talented actor."
+        },
+        "correct_answer": "B",
+        "explanation": "'More better' is incorrect; use either 'better' or 'more good', not both."
+      },
+      {
+        "question": "Which of these sentences is incorrect?",
+        "options": {
+          "A": "This cake is sweeter than the one I baked last time.",
+          "B": "She is more taller than her friend.",
+          "C": "That’s the most amazing painting I’ve ever seen.",
+          "D": "This problem is easier to solve."
+        },
+        "correct_answer": "B",
+        "explanation": "'More taller' is incorrect; use either 'taller' or 'more tall'."
+      },
+      {
+        "question": "Which of the following adjectives is in the correct form?",
+        "options": {
+          "A": "This is the most happiest day of my life.",
+          "B": "She is the elder of the two sisters.",
+          "C": "This is the most biggest building in the city.",
+          "D": "He is more faster than his opponent."
+        },
+        "correct_answer": "B",
+        "explanation": "'Elder' is correct when comparing family members."
+      },
+      {
+        "question": "Which of these adjectives is an absolute adjective?",
+        "options": {
+          "A": "Very huge",
+          "B": "More infinite",
+          "C": "Completely dead",
+          "D": "Much beautiful"
+        },
+        "correct_answer": "C",
+        "explanation": "'Dead' is an absolute adjective; it cannot take 'more' or 'very'."
+      },
+      {
+        "question": "Which sentence contains an error in the usage of adjectives?",
+        "options": {
+          "A": "This road is narrower than that one.",
+          "B": "She is the most cleverest girl in the class.",
+          "C": "This soup is tastier than the one I made last week.",
+          "D": "This is a more comfortable chair."
+        },
+        "correct_answer": "B",
+        "explanation": "'Most cleverest' is incorrect; use either 'most clever' or 'cleverest'."
+      },
+      {
+        "question": "Which sentence contains an incorrect comparative adjective?",
+        "options": {
+          "A": "This dress is more expensive than the other one.",
+          "B": "The river is more deeper than the lake.",
+          "C": "He is the richest man in town.",
+          "D": "This exam is easier than the last one."
+        },
+        "correct_answer": "B",
+        "explanation": "'More deeper' is incorrect; use either 'deeper' or 'more deep'."
+      }
+    ]
+  }
+  
