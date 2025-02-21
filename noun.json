@@ -1,0 +1,412 @@
+{
+    "questions": [
+      {
+        "question": "There are many ___ in the zoo, including lions and tigers.",
+        "options": {
+          "A": "animal",
+          "B": "animals",
+          "C": "animales",
+          "D": "animal's"
+        },
+        "correct_answer": "B",
+        "explanation": "'Many' is used with countable nouns, so the correct form is 'animals'."
+      },
+      {
+        "question": "The teacher gave me some useful ___.",
+        "options": {
+          "A": "advices",
+          "B": "advice",
+          "C": "advicing",
+          "D": "adviced"
+        },
+        "correct_answer": "B",
+        "explanation": "'Advice' is an uncountable noun, so it does not take a plural form."
+      },
+      {
+        "question": "The ___ of the story teaches us to be kind to others.",
+        "options": {
+          "A": "morale",
+          "B": "moral",
+          "C": "morals",
+          "D": "morality"
+        },
+        "correct_answer": "B",
+        "explanation": "'Moral' refers to the lesson of a story, whereas 'morale' means confidence or spirit."
+      },
+      {
+        "question": "She bought two ___ of bread from the store.",
+        "options": {
+          "A": "loafs",
+          "B": "loaves",
+          "C": "loaf",
+          "D": "loafes"
+        },
+        "correct_answer": "B",
+        "explanation": "The correct plural of 'loaf' is 'loaves'."
+      },
+      {
+        "question": "The ___ of the committee is responsible for making final decisions.",
+        "options": {
+          "A": "member",
+          "B": "members",
+          "C": "members'",
+          "D": "membership"
+        },
+        "correct_answer": "D",
+        "explanation": "'Membership' refers to the whole group, which fits the sentence."
+      },
+      {
+        "question": "There was no ___ left after the flood destroyed everything.",
+        "options": {
+          "A": "furniture",
+          "B": "furnitures",
+          "C": "furnituring",
+          "D": "furnitured"
+        },
+        "correct_answer": "A",
+        "explanation": "'Furniture' is an uncountable noun and does not take a plural form."
+      },
+      {
+        "question": "All of the ___ was destroyed in the fire.",
+        "options": {
+          "A": "equipments",
+          "B": "equipment",
+          "C": "equiping",
+          "D": "equipped"
+        },
+        "correct_answer": "B",
+        "explanation": "'Equipment' is uncountable and does not take a plural form."
+      },
+      {
+        "question": "The teacher gave us three different ___.",
+        "options": {
+          "A": "homeworks",
+          "B": "homework",
+          "C": "homework's",
+          "D": "homeworked"
+        },
+        "correct_answer": "B",
+        "explanation": "'Homework' is an uncountable noun and does not take a plural form."
+      },
+      {
+        "question": "She saw a herd of ___ grazing in the field.",
+        "options": {
+          "A": "cows",
+          "B": "cow",
+          "C": "cowses",
+          "D": "cowes"
+        },
+        "correct_answer": "A",
+        "explanation": "'Herd' refers to a group, and 'cows' is the correct plural form."
+      },
+      {
+        "question": "My brother bought two ___ of milk from the store.",
+        "options": {
+          "A": "carton",
+          "B": "cartons",
+          "C": "carton's",
+          "D": "cartons'"
+        },
+        "correct_answer": "B",
+        "explanation": "'Cartons' is the correct plural form, as 'milk' is an uncountable noun."
+      },
+      {
+        "question": "The lawyer presented strong ___ in court.",
+        "options": {
+          "A": "evidences",
+          "B": "evidence",
+          "C": "evidencing",
+          "D": "evidenced"
+        },
+        "correct_answer": "B",
+        "explanation": "'Evidence' is uncountable and does not take a plural form."
+      },
+      {
+        "question": "The news ___ very surprising.",
+        "options": {
+          "A": "is",
+          "B": "are",
+          "C": "were",
+          "D": "be"
+        },
+        "correct_answer": "A",
+        "explanation": "'News' is uncountable and is treated as singular, so 'is' is correct."
+      },
+      {
+        "question": "He gave me two ___ of paper to write on.",
+        "options": {
+          "A": "pieces",
+          "B": "piece",
+          "C": "peaces",
+          "D": "piece's"
+        },
+        "correct_answer": "A",
+        "explanation": "'Paper' is uncountable, so we use 'pieces' to quantify it."
+      },
+      {
+        "question": "She borrowed my book, but she didn’t return ___.",
+        "options": {
+          "A": "its",
+          "B": "it",
+          "C": "it's",
+          "D": "its'"
+        },
+        "correct_answer": "B",
+        "explanation": "'It' is the correct pronoun to refer to 'book'."
+      },
+      {
+        "question": "The baby's ___ was lost in the park.",
+        "options": {
+          "A": "toys",
+          "B": "toy",
+          "C": "toy’s",
+          "D": "toys'"
+        },
+        "correct_answer": "C",
+        "explanation": "'Toy’s' (possessive form) is correct as it shows possession by the baby."
+      },
+      {
+        "question": "My friend and I have different ___.",
+        "options": {
+          "A": "opinions",
+          "B": "opinion",
+          "C": "opinion's",
+          "D": "opinioning"
+        },
+        "correct_answer": "A",
+        "explanation": "'Different' suggests more than one, so 'opinions' (plural) is correct."
+      },
+      {
+        "question": "The ___ of the children were filled with joy.",
+        "options": {
+          "A": "faces",
+          "B": "face",
+          "C": "face's",
+          "D": "facing"
+        },
+        "correct_answer": "A",
+        "explanation": "'Children' is plural, so the plural form 'faces' is needed."
+      },
+      {
+        "question": "The audience ___ excited for the concert.",
+        "options": {
+          "A": "is",
+          "B": "are",
+          "C": "were",
+          "D": "be"
+        },
+        "correct_answer": "A",
+        "explanation": "'Audience' is treated as singular when referring to a collective group."
+      },
+      {
+        "question": "Which of the following nouns is always singular?",
+        "options": {
+          "A": "Scenery",
+          "B": "Clothes",
+          "C": "Glasses",
+          "D": "Scissors"
+        },
+        "correct_answer": "A",
+        "explanation": "'Scenery' is an uncountable noun and does not have a plural form."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "Furniture",
+          "B": "Cattle",
+          "C": "Information",
+          "D": "Homework"
+        },
+        "correct_answer": "B",
+        "explanation": "'Cattle' refers to a group of animals and is always plural."
+      },
+      {
+        "question": "Which of the following nouns is always singular?",
+        "options": {
+          "A": "Advice",
+          "B": "Pants",
+          "C": "Spectacles",
+          "D": "Trousers"
+        },
+        "correct_answer": "A",
+        "explanation": "'Advice' is an uncountable noun and does not take a plural form."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "Money",
+          "B": "Scissors",
+          "C": "Luggage",
+          "D": "Bread"
+        },
+        "correct_answer": "B",
+        "explanation": "'Scissors' is always plural; it does not have a singular form."
+      },
+      {
+        "question": "Which noun is always singular?",
+        "options": {
+          "A": "Mathematics",
+          "B": "Jeans",
+          "C": "Glasses",
+          "D": "Binoculars"
+        },
+        "correct_answer": "A",
+        "explanation": "'Mathematics' is singular even though it ends in -s."
+      },
+      {
+        "question": "Which of the following nouns is always plural?",
+        "options": {
+          "A": "Clothing",
+          "B": "Earnings",
+          "C": "Poetry",
+          "D": "Baggage"
+        },
+        "correct_answer": "B",
+        "explanation": "'Earnings' is always plural and does not have a singular form."
+      },
+      {
+        "question": "Which of the following is always singular?",
+        "options": {
+          "A": "Scissors",
+          "B": "Luggage",
+          "C": "Trousers",
+          "D": "Pliers"
+        },
+        "correct_answer": "B",
+        "explanation": "'Luggage' is uncountable and always singular."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "News",
+          "B": "Trousers",
+          "C": "Milk",
+          "D": "Happiness"
+        },
+        "correct_answer": "B",
+        "explanation": "'Trousers' is always plural and does not have a singular form."
+      },
+      {
+        "question": "Which of these is an uncountable noun that is always singular?",
+        "options": {
+          "A": "Equipment",
+          "B": "Spectacles",
+          "C": "Headphones",
+          "D": "Shorts"
+        },
+        "correct_answer": "A",
+        "explanation": "'Equipment' is uncountable and always singular."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "Furniture",
+          "B": "Pajamas",
+          "C": "Knowledge",
+          "D": "Weather"
+        },
+        "correct_answer": "B",
+        "explanation": "'Pajamas' is always plural and does not have a singular form."
+      },
+      {
+        "question": "Which noun is always singular?",
+        "options": {
+          "A": "Physics",
+          "B": "Socks",
+          "C": "Shoes",
+          "D": "Shorts"
+        },
+        "correct_answer": "A",
+        "explanation": "'Physics' is always singular despite ending in -s."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "Progress",
+          "B": "Goggles",
+          "C": "Laughter",
+          "D": "Sand"
+        },
+        "correct_answer": "B",
+        "explanation": "'Goggles' is always plural."
+      },
+      {
+        "question": "Which of the following nouns is always singular?",
+        "options": {
+          "A": "Bread",
+          "B": "Jeans",
+          "C": "Glasses",
+          "D": "Binoculars"
+        },
+        "correct_answer": "A",
+        "explanation": "'Bread' is uncountable and does not have a plural form."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "Water",
+          "B": "Police",
+          "C": "Flour",
+          "D": "Software"
+        },
+        "correct_answer": "B",
+        "explanation": "'Police' is always plural and takes a plural verb."
+      },
+      {
+        "question": "Which noun is always singular?",
+        "options": {
+          "A": "Cattle",
+          "B": "Mathematics",
+          "C": "Glasses",
+          "D": "Goggles"
+        },
+        "correct_answer": "B",
+        "explanation": "'Mathematics' is singular despite ending in -s."
+      },
+      {
+        "question": "Which noun is always plural?",
+        "options": {
+          "A": "Progress",
+          "B": "Baggage",
+          "C": "Pliers",
+          "D": "Furniture"
+        },
+        "correct_answer": "C",
+        "explanation": "'Pliers' is always plural."
+      },
+      {
+        "question": "Which noun is always singular?",
+        "options": {
+          "A": "Information",
+          "B": "Trousers",
+          "C": "Shorts",
+          "D": "Sunglasses"
+        },
+        "correct_answer": "A",
+        "explanation": "'Information' is always singular and uncountable."
+      },
+      {
+        "question": "Which of the following is always plural?",
+        "options": {
+          "A": "Jeans",
+          "B": "Advice",
+          "C": "Luggage",
+          "D": "Knowledge"
+        },
+        "correct_answer": "A",
+        "explanation": "'Jeans' is always plural and does not have a singular form."
+      },
+      {
+        "question": "Which noun is always singular?",
+        "options": {
+          "A": "Weather",
+          "B": "Trousers",
+          "C": "Pajamas",
+          "D": "Goggles"
+        },
+        "correct_answer": "A",
+        "explanation": "'Weather' is always singular and uncountable."
+      }
+    ]
+  }
+  
