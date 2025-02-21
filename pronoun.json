@@ -243,6 +243,182 @@
         },
         "correct_answer": "B",
         "explanation": "'Are' should be 'is' because distance is considered singular. The correct sentence is '10 Kms is a long distance.'"
+    },
+            {
+      "question": "Between you and ___, this matter must remain confidential.",
+      "options": {
+        "A": "I",
+        "B": "me",
+        "C": "myself",
+        "D": "mine"
+      },
+      "correct_answer": "B",
+      "explanation": "After a preposition like 'between', the objective case 'me' should be used."
+    },
+    {
+      "question": "Everyone should submit ___ own assignment before the deadline.",
+      "options": {
+        "A": "their",
+        "B": "his or her",
+        "C": "its",
+        "D": "our"
+      },
+      "correct_answer": "B",
+      "explanation": "'Everyone' is singular, so 'his or her' is grammatically correct instead of 'their'."
+    },
+    {
+      "question": "This is the student ___ won the national spelling bee.",
+      "options": {
+        "A": "who",
+        "B": "whom",
+        "C": "which",
+        "D": "whose"
+      },
+      "correct_answer": "A",
+      "explanation": "'Who' is the correct relative pronoun as it refers to a subject."
+    },
+    {
+      "question": "The teacher told John and ___ to finish the project.",
+      "options": {
+        "A": "I",
+        "B": "me",
+        "C": "myself",
+        "D": "mine"
+      },
+      "correct_answer": "B",
+      "explanation": "'Me' is the correct object form, as it follows the verb 'told'."
+    },
+    {
+      "question": "Neither of the players has received ___ prize yet.",
+      "options": {
+        "A": "their",
+        "B": "his",
+        "C": "our",
+        "D": "its"
+      },
+      "correct_answer": "B",
+      "explanation": "'Neither' is singular, so 'his' (or 'his or her') is correct."
+    },
+    {
+      "question": "Each of the team members should do ___ best.",
+      "options": {
+        "A": "his or her",
+        "B": "their",
+        "C": "our",
+        "D": "its"
+      },
+      "correct_answer": "A",
+      "explanation": "'Each' is singular, so 'his or her' should be used instead of 'their'."
+    },
+    {
+      "question": "The principal rewarded the students ___ performed well.",
+      "options": {
+        "A": "who",
+        "B": "whom",
+        "C": "whose",
+        "D": "which"
+      },
+      "correct_answer": "A",
+      "explanation": "'Who' is used for the subject of the clause, while 'whom' is for the object."
+    },
+    {
+      "question": "The company must decide who among them is best suited for ___ job.",
+      "options": {
+        "A": "their",
+        "B": "his or her",
+        "C": "our",
+        "D": "its"
+      },
+      "correct_answer": "B",
+      "explanation": "'Who' is singular, so 'his or her' should be used instead of 'their'."
+    },
+    {
+      "question": "She found herself in a situation ___ she had never imagined.",
+      "options": {
+        "A": "who",
+        "B": "which",
+        "C": "whom",
+        "D": "whose"
+      },
+      "correct_answer": "B",
+      "explanation": "'Which' refers to a situation, so it's the correct choice."
+    },
+    {
+      "question": "The two brothers blamed ___ for the accident.",
+      "options": {
+        "A": "each other",
+        "B": "one another",
+        "C": "themselves",
+        "D": "himself"
+      },
+      "correct_answer": "A",
+      "explanation": "'Each other' is used for two people, while 'one another' is used for more than two."
+    },
+    {
+      "question": "The CEO addressed the employees, most of ___ had concerns about the new policy.",
+      "options": {
+        "A": "who",
+        "B": "whom",
+        "C": "which",
+        "D": "whose"
+      },
+      "correct_answer": "B",
+      "explanation": "'Whom' is correct because it is the object of the clause."
+    },
+    {
+      "question": "If you are not feeling well, you should take care of ___.",
+      "options": {
+        "A": "you",
+        "B": "yourself",
+        "C": "yours",
+        "D": "me"
+      },
+      "correct_answer": "B",
+      "explanation": "'Yourself' is a reflexive pronoun used when the subject and object are the same."
+    },
+    {
+      "question": "She is one of those people who always ___ their work early.",
+      "options": {
+        "A": "complete",
+        "B": "completes",
+        "C": "completing",
+        "D": "completed"
+      },
+      "correct_answer": "A",
+      "explanation": "'Who' refers to 'people' (plural), so the verb should be plural: 'complete'."
+    },
+    {
+      "question": "My friend and ___ went to the movies last night.",
+      "options": {
+        "A": "I",
+        "B": "me",
+        "C": "myself",
+        "D": "mine"
+      },
+      "correct_answer": "A",
+      "explanation": "'I' is correct in compound subjects."
+    },
+    {
+      "question": "None of the scientists has completed ___ research yet.",
+      "options": {
+        "A": "his or her",
+        "B": "their",
+        "C": "its",
+        "D": "our"
+      },
+      "correct_answer": "A",
+      "explanation": "'None' is singular, so 'his or her' should be used instead of 'their'."
+    },
+    {
+      "question": "This is the book ___ I borrowed from the library.",
+      "options": {
+        "A": "who",
+        "B": "which",
+        "C": "whom",
+        "D": "whose"
+      },
+      "correct_answer": "B",
+      "explanation": "'Which' is used for objects, so it's the correct choice."
     }
     ]
   }
