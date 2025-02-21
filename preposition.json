@@ -1,0 +1,401 @@
+{
+    "questions": [
+      {
+        "question": "She arrived __ the airport on time.",
+        "options": {
+          "A": "at",
+          "B": "on",
+          "C": "by",
+          "D": "to"
+        },
+        "correct_answer": "A",
+        "explanation": "'At' is used for specific locations like the airport."
+      },
+      {
+        "question": "He traveled __ train to London.",
+        "options": {
+          "A": "by",
+          "B": "on",
+          "C": "with",
+          "D": "at"
+        },
+        "correct_answer": "A",
+        "explanation": "'By' is used when referring to a mode of transport."
+      },
+      {
+        "question": "The house is built __ wood and stone.",
+        "options": {
+          "A": "by",
+          "B": "with",
+          "C": "of",
+          "D": "from"
+        },
+        "correct_answer": "C",
+        "explanation": "'Of' is used when referring to material composition."
+      },
+      {
+        "question": "He was accused __ stealing the money.",
+        "options": {
+          "A": "for",
+          "B": "by",
+          "C": "with",
+          "D": "of"
+        },
+        "correct_answer": "D",
+        "explanation": "'Accused of' is the correct phrase."
+      },
+      {
+        "question": "She is interested __ learning new languages.",
+        "options": {
+          "A": "in",
+          "B": "on",
+          "C": "with",
+          "D": "by"
+        },
+        "correct_answer": "A",
+        "explanation": "'Interested in' is the correct phrase."
+      },
+      {
+        "question": "The book fell __ the table.",
+        "options": {
+          "A": "off",
+          "B": "on",
+          "C": "of",
+          "D": "down"
+        },
+        "correct_answer": "A",
+        "explanation": "'Off' is used when something falls from a surface."
+      },
+      {
+        "question": "This gift is __ you.",
+        "options": {
+          "A": "for",
+          "B": "to",
+          "C": "by",
+          "D": "from"
+        },
+        "correct_answer": "A",
+        "explanation": "'For' is used when something is intended for someone."
+      },
+      {
+        "question": "He borrowed a book __ the library.",
+        "options": {
+          "A": "on",
+          "B": "from",
+          "C": "at",
+          "D": "with"
+        },
+        "correct_answer": "B",
+        "explanation": "'From' is used when taking something from a place."
+      },
+      {
+        "question": "The cat is sitting __ the table.",
+        "options": {
+          "A": "on",
+          "B": "in",
+          "C": "at",
+          "D": "by"
+        },
+        "correct_answer": "A",
+        "explanation": "'On' is used when something is physically resting on a surface."
+      },
+      {
+        "question": "She is allergic __ peanuts.",
+        "options": {
+          "A": "to",
+          "B": "by",
+          "C": "with",
+          "D": "for"
+        },
+        "correct_answer": "A",
+        "explanation": "'Allergic to' is the correct phrase."
+      },
+      {
+        "question": "The child ran __ the room crying.",
+        "options": {
+          "A": "out",
+          "B": "through",
+          "C": "from",
+          "D": "across"
+        },
+        "correct_answer": "B",
+        "explanation": "'Through' is used when passing from one side to another."
+      },
+      {
+        "question": "She placed the lamp __ the table.",
+        "options": {
+          "A": "over",
+          "B": "under",
+          "C": "on",
+          "D": "in"
+        },
+        "correct_answer": "B",
+        "explanation": "'Under' is used when something is beneath another object."
+      },
+      {
+        "question": "I have been waiting __ morning.",
+        "options": {
+          "A": "since",
+          "B": "for",
+          "C": "from",
+          "D": "in"
+        },
+        "correct_answer": "A",
+        "explanation": "'Since' is used with specific points in time."
+      },
+      {
+        "question": "The car drove __ the tunnel.",
+        "options": {
+          "A": "through",
+          "B": "across",
+          "C": "by",
+          "D": "under"
+        },
+        "correct_answer": "A",
+        "explanation": "'Through' is used when passing inside something from one end to another."
+      },
+      {
+        "question": "He climbed __ the ladder carefully.",
+        "options": {
+          "A": "up",
+          "B": "down",
+          "C": "over",
+          "D": "above"
+        },
+        "correct_answer": "A",
+        "explanation": "'Up' is used when moving to a higher position."
+      },
+      {
+        "question": "He sat __ the hill, enjoying the sunset.",
+        "options": {
+          "A": "under",
+          "B": "down",
+          "C": "on",
+          "D": "at"
+        },
+        "correct_answer": "B",
+        "explanation": "'Down' is used when referring to a lower position."
+      },
+      {
+        "question": "We will meet __ lunch.",
+        "options": {
+          "A": "after",
+          "B": "around",
+          "C": "in",
+          "D": "by"
+        },
+        "correct_answer": "A",
+        "explanation": "'After' is used when something happens later than a specific time."
+      },
+      {
+        "question": "He walked __ the park for exercise.",
+        "options": {
+          "A": "around",
+          "B": "about",
+          "C": "against",
+          "D": "above"
+        },
+        "correct_answer": "A",
+        "explanation": "'Around' is used when moving in a circular direction."
+      },
+      {
+        "question": "He spoke out __ the injustice.",
+        "options": {
+          "A": "against",
+          "B": "with",
+          "C": "about",
+          "D": "to"
+        },
+        "correct_answer": "A",
+        "explanation": "'Against' is used when opposing something."
+      },
+      {
+        "question": "The teacher spoke __ the importance of reading.",
+        "options": {
+          "A": "about",
+          "B": "for",
+          "C": "with",
+          "D": "of"
+        },
+        "correct_answer": "A",
+        "explanation": "'About' is used when discussing a topic."
+      },
+      {
+        "question": "There was an argument __ the employees.",
+        "options": {
+          "A": "among",
+          "B": "between",
+          "C": "above",
+          "D": "against"
+        },
+        "correct_answer": "A",
+        "explanation": "'Among' is used when referring to more than two people."
+      },
+      {
+        "question": "The helicopter flew __ the buildings.",
+        "options": {
+          "A": "above",
+          "B": "over",
+          "C": "under",
+          "D": "through"
+        },
+        "correct_answer": "A",
+        "explanation": "'Above' is used when something is at a higher position."
+      },
+      {
+        "question": "They traveled __ the river by boat.",
+        "options": {
+          "A": "across",
+          "B": "over",
+          "C": "through",
+          "D": "under"
+        },
+        "correct_answer": "A",
+        "explanation": "'Across' is used when moving from one side to another."
+      },
+      {
+        "question": "She walked __ the room quietly.",
+        "options": {
+          "A": "into",
+          "B": "upon",
+          "C": "within",
+          "D": "behind"
+        },
+        "correct_answer": "A",
+        "explanation": "'Into' is used for movement toward the inside of a place."
+      },
+      {
+        "question": "He placed the book __ the table.",
+        "options": {
+          "A": "upon",
+          "B": "into",
+          "C": "within",
+          "D": "outside"
+        },
+        "correct_answer": "A",
+        "explanation": "'Upon' is a formal way to say 'on' and is used for placing things."
+      },
+      {
+        "question": "Please complete this task __ two days.",
+        "options": {
+          "A": "within",
+          "B": "without",
+          "C": "beneath",
+          "D": "between"
+        },
+        "correct_answer": "A",
+        "explanation": "'Within' is used to indicate a time limit."
+      },
+      {
+        "question": "He left __ saying a word.",
+        "options": {
+          "A": "without",
+          "B": "beneath",
+          "C": "below",
+          "D": "beside"
+        },
+        "correct_answer": "A",
+        "explanation": "'Without' is used when something is missing or absent."
+      },
+      {
+        "question": "The treasure was buried __ the ground.",
+        "options": {
+          "A": "beneath",
+          "B": "behind",
+          "C": "before",
+          "D": "beyond"
+        },
+        "correct_answer": "A",
+        "explanation": "'Beneath' is used to indicate something is under another object."
+      },
+      {
+        "question": "She sat __ her best friend at the wedding.",
+        "options": {
+          "A": "beside",
+          "B": "behind",
+          "C": "between",
+          "D": "outside"
+        },
+        "correct_answer": "A",
+        "explanation": "'Beside' means next to someone or something."
+      },
+      {
+        "question": "We arrived at the station __ sunrise.",
+        "options": {
+          "A": "before",
+          "B": "beyond",
+          "C": "below",
+          "D": "upon"
+        },
+        "correct_answer": "A",
+        "explanation": "'Before' is used to indicate an event happening earlier than another."
+      },
+      {
+        "question": "The mountains stretch far __ the horizon.",
+        "options": {
+          "A": "beyond",
+          "B": "below",
+          "C": "beneath",
+          "D": "between"
+        },
+        "correct_answer": "A",
+        "explanation": "'Beyond' means farther than a certain point."
+      },
+      {
+        "question": "The temperature dropped __ freezing point.",
+        "options": {
+          "A": "below",
+          "B": "beneath",
+          "C": "upon",
+          "D": "within"
+        },
+        "correct_answer": "A",
+        "explanation": "'Below' means at a lower level than something else."
+      },
+      {
+        "question": "He found the keys __ the couch cushions.",
+        "options": {
+          "A": "underneath",
+          "B": "beyond",
+          "C": "between",
+          "D": "beside"
+        },
+        "correct_answer": "A",
+        "explanation": "'Underneath' means directly under something, often covered."
+      },
+      {
+        "question": "The secret was hidden __ the two pages of the book.",
+        "options": {
+          "A": "between",
+          "B": "within",
+          "C": "beneath",
+          "D": "beside"
+        },
+        "correct_answer": "A",
+        "explanation": "'Between' is used when referring to two things."
+      },
+      {
+        "question": "He was standing __ the door when I arrived.",
+        "options": {
+          "A": "behind",
+          "B": "beyond",
+          "C": "upon",
+          "D": "below"
+        },
+        "correct_answer": "A",
+        "explanation": "'Behind' is used to indicate something at the back of another thing."
+      },
+      {
+        "question": "The kids were playing __ the house.",
+        "options": {
+          "A": "outside",
+          "B": "inside",
+          "C": "upon",
+          "D": "behind"
+        },
+        "correct_answer": "A",
+        "explanation": "'Outside' means not within an enclosed space."
+      }
+    ]
+  }
+  

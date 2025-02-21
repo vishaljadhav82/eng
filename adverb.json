@@ -1,0 +1,159 @@
+{
+    "questions": [
+      {
+        "question": "Which sentence contains an **adverb error**?",
+        "options": {
+          "A": "She sings beautifully.",
+          "B": "He runs too fastly to catch.",
+          "C": "They arrived early at the meeting.",
+          "D": "She always speaks politely."
+        },
+        "correct_answer": "B",
+        "explanation": "‘Fastly’ is incorrect because ‘fast’ is already an adverb. Correct sentence: ‘He runs too fast to catch.’"
+      },
+      {
+        "question": "Which sentence uses the **correct position** of the adverb?",
+        "options": {
+          "A": "She has completed her assignment already.",
+          "B": "She already has completed her assignment.",
+          "C": "She has already completed her assignment.",
+          "D": "Already she has completed her assignment."
+        },
+        "correct_answer": "C",
+        "explanation": "Adverbs like 'already' go **before the main verb** but after auxiliary verbs (has, have, had)."
+      },
+      {
+        "question": "Which sentence uses an adverb incorrectly?",
+        "options": {
+          "A": "She looked at him angrily.",
+          "B": "He plays guitar good.",
+          "C": "She rarely misses a class.",
+          "D": "They performed exceptionally well."
+        },
+        "correct_answer": "B",
+        "explanation": "'Good' is an adjective. The correct form is 'He plays guitar well.'"
+      },
+      {
+        "question": "Which sentence has an **incorrect placement** of an adverb?",
+        "options": {
+          "A": "She never forgets to call her mom.",
+          "B": "He drives carefully his car.",
+          "C": "They usually have dinner at 7 PM.",
+          "D": "She often reads before bed."
+        },
+        "correct_answer": "B",
+        "explanation": "Correct placement: 'He drives his car carefully.' Adverbs should be placed **after the verb and object**."
+      },
+      {
+        "question": "Which of the following sentences contains an **error in comparison of adverbs**?",
+        "options": {
+          "A": "She sings more beautifully than her sister.",
+          "B": "He runs more faster than his friend.",
+          "C": "This athlete trains harder than before.",
+          "D": "He spoke less confidently than usual."
+        },
+        "correct_answer": "B",
+        "explanation": "'More faster' is incorrect because 'faster' is already a **comparative** form. Correct sentence: 'He runs faster than his friend.'"
+      },
+      {
+        "question": "Which sentence **misuses an adverb of frequency**?",
+        "options": {
+          "A": "She often visits her grandmother.",
+          "B": "I am never late for work.",
+          "C": "He has been always honest.",
+          "D": "They rarely watch TV."
+        },
+        "correct_answer": "C",
+        "explanation": "'Always' should be placed before the **main verb**: 'He has always been honest.'"
+      },
+      {
+        "question": "Which sentence uses **an adverb incorrectly**?",
+        "options": {
+          "A": "She spoke very clearly.",
+          "B": "He arrived lately to the party.",
+          "C": "They work extremely hard.",
+          "D": "She nearly missed the train."
+        },
+        "correct_answer": "B",
+        "explanation": "'Lately' means 'recently'. The correct word is 'late': 'He arrived late to the party.'"
+      },
+      {
+        "question": "Which of the following sentences has an incorrect **intensifier**?",
+        "options": {
+          "A": "She was too tired to continue.",
+          "B": "This book is enough interesting.",
+          "C": "He runs fairly fast.",
+          "D": "They are rather happy with the decision."
+        },
+        "correct_answer": "B",
+        "explanation": "'Enough' comes **after** adjectives, not before. Correct sentence: 'This book is interesting enough.'"
+      },
+      {
+        "question": "Which sentence uses **'hardly' incorrectly**?",
+        "options": {
+          "A": "He hardly studies, so he failed the exam.",
+          "B": "She hardly could believe the news.",
+          "C": "They could hardly see in the fog.",
+          "D": "I hardly ever eat fast food."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct order is: 'She could hardly believe the news.' **'Hardly' comes after the auxiliary verb**."
+      },
+      {
+        "question": "Which of the following sentences contains a **double negative**?",
+        "options": {
+          "A": "I don’t need nothing from you.",
+          "B": "She barely slept last night.",
+          "C": "They hardly make mistakes.",
+          "D": "He seldom eats junk food."
+        },
+        "correct_answer": "A",
+        "explanation": "‘Don’t need nothing’ is incorrect because **two negatives cancel out**. Correct sentence: 'I don’t need anything from you.'"
+      },
+      {
+        "question": "Which sentence contains an **incorrect adverbial phrase**?",
+        "options": {
+          "A": "She left in a hurry.",
+          "B": "They arrived at the station lately.",
+          "C": "He spoke in a loud voice.",
+          "D": "I will meet you in the morning."
+        },
+        "correct_answer": "B",
+        "explanation": "'Lately' means 'recently', but here, 'late' is correct: 'They arrived at the station late.'"
+      },
+      {
+        "question": "Which sentence **misuses an adverb of degree**?",
+        "options": {
+          "A": "This soup is too hot to eat.",
+          "B": "She is enough tall to play basketball.",
+          "C": "He is quite intelligent.",
+          "D": "The movie was really interesting."
+        },
+        "correct_answer": "B",
+        "explanation": "'Enough' comes **after** adjectives, not before. Correct sentence: 'She is tall enough to play basketball.'"
+      },
+      {
+        "question": "Which sentence contains a **wrong placement of an adverb of manner**?",
+        "options": {
+          "A": "He spoke softly to the baby.",
+          "B": "She quickly finished her homework.",
+          "C": "He drives his car carefully.",
+          "D": "She explained the problem clearly to us."
+        },
+        "correct_answer": "D",
+        "explanation": "Adverbs of manner are placed after the **verb and object**. Correct sentence: 'She clearly explained the problem to us.'"
+      },
+      {
+        "question": "Which sentence uses an adverb incorrectly?",
+        "options": {
+          "A": "She danced gracefully.",
+          "B": "He always arrives on time.",
+          "C": "They felt happily after winning.",
+          "D": "The team worked hard to succeed."
+        },
+        "correct_answer": "C",
+        "explanation": "‘Felt’ is a **linking verb**, so an **adjective** (not an adverb) is used. Correct sentence: 'They felt happy after winning.'"
+      }
+    ]
+  }
+  

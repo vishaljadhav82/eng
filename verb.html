@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .question {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .explanation {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+            background: #f9f9f9;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>MCQ Practice Test</h2>
+    <h3 id="number">Total Number of Questions: 0</h3>
+
+    <label for="numQuestions">Number of Questions:</label>
+    <input type="number" id="numQuestions" min="1" value="3"><br><br>
+
+    <label for="rangeStart">Question Range Start:</label>
+    <input type="number" id="rangeStart" min="1" value="1">
+    
+    <label for="rangeEnd">End:</label>
+    <input type="number" id="rangeEnd" min="1" value="5"><br><br>
+
+    <label for="scoreMode">Score Display Mode:</label>
+    <select id="scoreMode">
+        <option value="percentage">Percentage</option>
+        <option value="total">Total Correct</option>
+    </select><br><br>
+
+    <button onclick="loadQuestions()">Start Quiz</button>
+
+    <div id="quizContainer" class="hidden">
+        <h3>Quiz</h3>
+        <div id="questions"></div>
+        <button onclick="submitQuiz()">Submit</button>
+    </div>
+
+    <h3 id="result" class="hidden"></h3>
+
+    <script>
+        let questionsData = {};
+
+        async function loadQuestions() {
+            try {
+                const response = await fetch('verb.json'); // Fetch JSON file
+                questionsData = await response.json();
+                
+                // Display total number of questions
+                
+                startQuiz();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+            }finally{
+                document.getElementById('number').textContent = `Total Number of Questions: ${questionsData.questions.length}`;
+
+            }
+        }
+
+        function startQuiz() {
+            let numQuestions = parseInt(document.getElementById('numQuestions').value);
+            let rangeStart = parseInt(document.getElementById('rangeStart').value) - 1;
+            let rangeEnd = parseInt(document.getElementById('rangeEnd').value);
+            
+            let quizContainer = document.getElementById('questions');
+            quizContainer.innerHTML = '';
+
+            let selectedQuestions = questionsData.questions.slice(rangeStart, rangeEnd).slice(0, numQuestions);
+
+            selectedQuestions.forEach((q, index) => {
+                let div = document.createElement('div');
+                div.className = 'question';
+                div.innerHTML = `<p>${index + 1}. ${q.question}</p>` + 
+                    Object.entries(q.options).map(([key, value]) => 
+                        `<label><input type="radio" name="q${index}" value="${key}"> ${value}</label><br>`
+                    ).join('') +
+                    `<button onclick="showExplanation(${index})">Explain Answer</button>
+                     <div id="explanation${index}" class="explanation">${q.explanation}</div>`;
+                quizContainer.appendChild(div);
+            });
+
+            document.getElementById('quizContainer').classList.remove('hidden');
+        }
+
+        function submitQuiz() {
+    let selectedQuestions = document.querySelectorAll('.question');
+    let correctCount = 0;
+
+    selectedQuestions.forEach((q, index) => {
+        let selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+        let correctAnswer = questionsData.questions[index].correct_answer;
+
+        // Reset styles before checking
+        q.querySelectorAll('label').forEach(label => {
+            label.style.color = 'black';
+            label.style.fontWeight = 'normal';
+        });
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswer) {
+                correctCount++;
+                selectedOption.parentElement.style.color = 'green';
+                selectedOption.parentElement.style.fontWeight = 'bold';
+            } else {
+                selectedOption.parentElement.style.color = 'red';
+                selectedOption.parentElement.style.fontWeight = 'bold';
+
+                // Highlight correct answer
+                let correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+                correctLabel.style.color = 'green';
+                correctLabel.style.fontWeight = 'bold';
+            }
+        } else {
+            // If no option selected, still highlight the correct answer
+            let correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+            correctLabel.style.color = 'green';
+            correctLabel.style.fontWeight = 'bold';
+        }
+    });
+
+    let scoreMode = document.getElementById('scoreMode').value;
+    let result = document.getElementById('result');
+
+    if (scoreMode === 'percentage') {
+        result.innerText = `Score: ${(correctCount / selectedQuestions.length * 100).toFixed(2)}%`;
+    } else {
+        result.innerText = `Total Correct: ${correctCount} / ${selectedQuestions.length}`;
+    }
+
+    result.classList.remove('hidden');
+}
+
+        function showExplanation(index) {
+            let explanationDiv = document.getElementById(`explanation${index}`);
+            explanationDiv.style.display = explanationDiv.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>

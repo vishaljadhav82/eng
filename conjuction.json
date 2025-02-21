@@ -1,0 +1,413 @@
+{
+    "questions": [
+      {
+        "question": "She is intelligent __ hardworking.",
+        "options": {
+          "A": "and",
+          "B": "but",
+          "C": "or",
+          "D": "so"
+        },
+        "correct_answer": "A",
+        "explanation": "'And' is used to connect similar qualities or ideas."
+      },
+      {
+        "question": "He is __ talented __ dedicated to his work.",
+        "options": {
+          "A": "both - and",
+          "B": "not only - but also",
+          "C": "either - or",
+          "D": "as well as"
+        },
+        "correct_answer": "A",
+        "explanation": "'Both - and' is used to emphasize two qualities."
+      },
+      {
+        "question": "The teacher, __ the students, enjoyed the trip.",
+        "options": {
+          "A": "as well as",
+          "B": "both - and",
+          "C": "not only - but also",
+          "D": "otherwise"
+        },
+        "correct_answer": "A",
+        "explanation": "'As well as' is used to add extra information."
+      },
+      {
+        "question": "She is __ a great singer __ a talented dancer.",
+        "options": {
+          "A": "not only - but also",
+          "B": "either - or",
+          "C": "neither - nor",
+          "D": "but"
+        },
+        "correct_answer": "A",
+        "explanation": "'Not only - but also' is used for emphasis when listing qualities."
+      },
+      {
+        "question": "He was tired, __ he continued working.",
+        "options": {
+          "A": "but",
+          "B": "so",
+          "C": "therefore",
+          "D": "hence"
+        },
+        "correct_answer": "A",
+        "explanation": "'But' is used to contrast two ideas."
+      },
+      {
+        "question": "I wanted to help, __ I was too busy.",
+        "options": {
+          "A": "only",
+          "B": "so",
+          "C": "for",
+          "D": "yet"
+        },
+        "correct_answer": "A",
+        "explanation": "'Only' is used to limit the possibility of something."
+      },
+      {
+        "question": "She is __ intelligent __ wise.",
+        "options": {
+          "A": "neither - nor",
+          "B": "either - or",
+          "C": "not only - but also",
+          "D": "as well as"
+        },
+        "correct_answer": "A",
+        "explanation": "'Neither - nor' is used to show negative choices."
+      },
+      {
+        "question": "You can __ go by train __ take a flight.",
+        "options": {
+          "A": "either - or",
+          "B": "neither - nor",
+          "C": "not only - but also",
+          "D": "otherwise"
+        },
+        "correct_answer": "A",
+        "explanation": "'Either - or' is used to show two choices."
+      },
+      {
+        "question": "Hurry up, __ you will miss the bus.",
+        "options": {
+          "A": "else",
+          "B": "or",
+          "C": "otherwise",
+          "D": "but"
+        },
+        "correct_answer": "A",
+        "explanation": "'Else' is used for alternatives or consequences."
+      },
+      {
+        "question": "We must act now; __, it will be too late.",
+        "options": {
+          "A": "otherwise",
+          "B": "but",
+          "C": "or",
+          "D": "still"
+        },
+        "correct_answer": "A",
+        "explanation": "'Otherwise' is used to show what will happen if something is not done."
+      },
+      {
+        "question": "He studied hard, __ he failed the exam.",
+        "options": {
+          "A": "yet",
+          "B": "therefore",
+          "C": "hence",
+          "D": "for"
+        },
+        "correct_answer": "A",
+        "explanation": "'Yet' is used to contrast unexpected results."
+      },
+      {
+        "question": "She wanted to go out; __, it was raining heavily.",
+        "options": {
+          "A": "however",
+          "B": "for",
+          "C": "so",
+          "D": "therefore"
+        },
+        "correct_answer": "A",
+        "explanation": "'However' is used to introduce a contrasting idea."
+      },
+      {
+        "question": "It was getting late, __ we decided to leave.",
+        "options": {
+          "A": "so",
+          "B": "but",
+          "C": "for",
+          "D": "hence"
+        },
+        "correct_answer": "A",
+        "explanation": "'So' is used to indicate a result."
+      },
+      {
+        "question": "I was hungry, __ I ate a sandwich.",
+        "options": {
+          "A": "for",
+          "B": "but",
+          "C": "yet",
+          "D": "otherwise"
+        },
+        "correct_answer": "A",
+        "explanation": "'For' is used to explain reasons."
+      },
+      {
+        "question": "He had no money; __, he couldn't buy the ticket.",
+        "options": {
+          "A": "hence",
+          "B": "but",
+          "C": "yet",
+          "D": "or"
+        },
+        "correct_answer": "A",
+        "explanation": "'Hence' is used to indicate a result."
+      },
+      {
+        "question": "The weather was bad; __, the match was postponed.",
+        "options": {
+          "A": "therefore",
+          "B": "but",
+          "C": "yet",
+          "D": "as well as"
+        },
+        "correct_answer": "A",
+        "explanation": "'Therefore' is used to show a logical result."
+      },
+      {
+        "question": "She was tired; __, she kept working.",
+        "options": {
+          "A": "still",
+          "B": "but",
+          "C": "or",
+          "D": "hence"
+        },
+        "correct_answer": "A",
+        "explanation": "'Still' is used to show persistence despite difficulty."
+      },
+      {
+        "question": "She ran __ fast __ she could.",
+        "options": {
+          "A": "so - that",
+          "B": "as - as",
+          "C": "if - then",
+          "D": "when - then"
+        },
+        "correct_answer": "A",
+        "explanation": "'So - that' is used to show the degree of an action."
+      },
+      {
+        "question": "He is __ intelligent __ his brother.",
+        "options": {
+          "A": "as - as",
+          "B": "so - that",
+          "C": "than - that",
+          "D": "while - then"
+        },
+        "correct_answer": "A",
+        "explanation": "'As - as' is used for comparisons of equality."
+      },
+      {
+        "question": "__ she entered the room, everyone became silent.",
+        "options": {
+          "A": "As soon as",
+          "B": "Unless",
+          "C": "Although",
+          "D": "Lest"
+        },
+        "correct_answer": "A",
+        "explanation": "'As soon as' is used to show immediate action."
+      },
+      {
+        "question": "He had __ left __ the guests arrived.",
+        "options": {
+          "A": "no sooner - than",
+          "B": "hardly - when",
+          "C": "so - that",
+          "D": "before - then"
+        },
+        "correct_answer": "A",
+        "explanation": "'No sooner - than' is used for past events occurring one after another."
+      },
+      {
+        "question": "I waited __ you returned.",
+        "options": {
+          "A": "till",
+          "B": "because",
+          "C": "unless",
+          "D": "as"
+        },
+        "correct_answer": "A",
+        "explanation": "'Till' is used to indicate waiting until a certain time."
+      },
+      {
+        "question": "She didn't go outside __ it was raining.",
+        "options": {
+          "A": "because",
+          "B": "unless",
+          "C": "though",
+          "D": "lest"
+        },
+        "correct_answer": "A",
+        "explanation": "'Because' is used to give a reason."
+      },
+      {
+        "question": "We stayed indoors __ it was stormy outside.",
+        "options": {
+          "A": "since",
+          "B": "while",
+          "C": "lest",
+          "D": "though"
+        },
+        "correct_answer": "A",
+        "explanation": "'Since' is used to indicate a reason."
+      },
+      {
+        "question": "Work hard __ you should fail.",
+        "options": {
+          "A": "lest",
+          "B": "so that",
+          "C": "till",
+          "D": "before"
+        },
+        "correct_answer": "A",
+        "explanation": "'Lest' is used to express a warning or negative consequence."
+      },
+      {
+        "question": "Study well __ you can pass the exam.",
+        "options": {
+          "A": "so that",
+          "B": "if",
+          "C": "unless",
+          "D": "before"
+        },
+        "correct_answer": "A",
+        "explanation": "'So that' is used to express purpose."
+      },
+      {
+        "question": "I will go __ you call me.",
+        "options": {
+          "A": "unless",
+          "B": "if",
+          "C": "before",
+          "D": "lest"
+        },
+        "correct_answer": "B",
+        "explanation": "'If' is used for conditional situations."
+      },
+      {
+        "question": "She is not as tall __ her sister.",
+        "options": {
+          "A": "as",
+          "B": "than",
+          "C": "so",
+          "D": "like"
+        },
+        "correct_answer": "A",
+        "explanation": "'As - as' is used for comparisons of equality."
+      },
+      {
+        "question": "__ you work hard, you will succeed.",
+        "options": {
+          "A": "If",
+          "B": "Unless",
+          "C": "Though",
+          "D": "Because"
+        },
+        "correct_answer": "A",
+        "explanation": "'If' is used to express conditions."
+      },
+      {
+        "question": "She will not go __ she is invited.",
+        "options": {
+          "A": "unless",
+          "B": "because",
+          "C": "if",
+          "D": "though"
+        },
+        "correct_answer": "A",
+        "explanation": "'Unless' is used for negative conditions."
+      },
+      {
+        "question": "He helped me __ he was kind.",
+        "options": {
+          "A": "because",
+          "B": "if",
+          "C": "though",
+          "D": "before"
+        },
+        "correct_answer": "A",
+        "explanation": "'Because' is used to indicate the reason."
+      },
+      {
+        "question": "I will finish the work __ I leave.",
+        "options": {
+          "A": "before",
+          "B": "after",
+          "C": "since",
+          "D": "so that"
+        },
+        "correct_answer": "A",
+        "explanation": "'Before' is used to show a sequence of events."
+      },
+      {
+        "question": "This is the place __ we met last year.",
+        "options": {
+          "A": "where",
+          "B": "when",
+          "C": "which",
+          "D": "who"
+        },
+        "correct_answer": "A",
+        "explanation": "'Where' is used to refer to a location."
+      },
+      {
+        "question": "The girl __ won the race is my sister.",
+        "options": {
+          "A": "who",
+          "B": "whom",
+          "C": "whose",
+          "D": "which"
+        },
+        "correct_answer": "A",
+        "explanation": "'Who' is used for subjects in relative clauses."
+      },
+      {
+        "question": "This is the book __ I borrowed from you.",
+        "options": {
+          "A": "which",
+          "B": "who",
+          "C": "whom",
+          "D": "where"
+        },
+        "correct_answer": "A",
+        "explanation": "'Which' is used for objects in relative clauses."
+      },
+      {
+        "question": "The boy __ bicycle was stolen is crying.",
+        "options": {
+          "A": "whose",
+          "B": "who",
+          "C": "whom",
+          "D": "where"
+        },
+        "correct_answer": "A",
+        "explanation": "'Whose' is used to show possession."
+      },
+      {
+        "question": "This is the man __ I met yesterday.",
+        "options": {
+          "A": "whom",
+          "B": "who",
+          "C": "whose",
+          "D": "where"
+        },
+        "correct_answer": "A",
+        "explanation": "'Whom' is used for objects in relative clauses."
+      }
+  
+    ]
+  }
+  

@@ -1,0 +1,170 @@
+{
+    "questions": [
+      {
+        "question": "Which sentence contains an incorrect use of a verb?",
+        "options": {
+          "A": "She enjoys playing the piano.",
+          "B": "He suggested to go for a walk.",
+          "C": "They admitted making a mistake.",
+          "D": "She avoids eating junk food."
+        },
+        "correct_answer": "B",
+        "explanation": "'Suggested' should be followed by a gerund, so the correct sentence is 'He suggested going for a walk.'"
+      },
+      {
+        "question": "Which sentence has the correct verb form?",
+        "options": {
+          "A": "She has went to the market.",
+          "B": "She has gone to the market.",
+          "C": "She have gone to the market.",
+          "D": "She go to the market."
+        },
+        "correct_answer": "B",
+        "explanation": "'Gone' is the correct past participle of 'go' and follows 'has'."
+      },
+      {
+        "question": "Which of the following sentences has a **subject-verb agreement error**?",
+        "options": {
+          "A": "Neither of the boys is ready.",
+          "B": "Each of the students has a textbook.",
+          "C": "The committee were divided in their opinions.",
+          "D": "My dog and cat loves to play together."
+        },
+        "correct_answer": "D",
+        "explanation": "'Dog and cat' is plural, so it should be 'love' instead of 'loves.'"
+      },
+      {
+        "question": "Which sentence has a **modal verb error**?",
+        "options": {
+          "A": "You must finish your homework before going out.",
+          "B": "She should to study harder for the exam.",
+          "C": "We might go to the concert tonight.",
+          "D": "Can you help me with this task?"
+        },
+        "correct_answer": "B",
+        "explanation": "'Should' is a modal verb and should not be followed by 'to'; correct form: 'She should study harder.'"
+      },
+      {
+        "question": "Which of the following uses **passive voice correctly**?",
+        "options": {
+          "A": "The letter was wrote by Sarah.",
+          "B": "The letter was written by Sarah.",
+          "C": "Sarah was written the letter.",
+          "D": "The letter wrote Sarah."
+        },
+        "correct_answer": "B",
+        "explanation": "Passive voice follows: 'be + past participle'; correct form: 'was written'."
+      },
+      {
+        "question": "Identify the **incorrect** use of past tense.",
+        "options": {
+          "A": "He ate dinner at 7 PM.",
+          "B": "She seen the movie last night.",
+          "C": "They visited Paris last summer.",
+          "D": "We met at the café yesterday."
+        },
+        "correct_answer": "B",
+        "explanation": "'Seen' is the past participle and requires 'have' (e.g., 'She has seen'). The correct sentence is 'She saw the movie last night.'"
+      },
+      {
+        "question": "Which of the following sentences contains a **conditional tense error**?",
+        "options": {
+          "A": "If I were you, I would apologize.",
+          "B": "If he studied more, he will pass.",
+          "C": "If it rains, we will stay inside.",
+          "D": "If she had worked harder, she would have succeeded."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct structure is 'If he studied more, he would pass' (Second Conditional)."
+      },
+      {
+        "question": "Which sentence has the **wrong participle form**?",
+        "options": {
+          "A": "Having finished his homework, he went outside to play.",
+          "B": "She is boring in class.",
+          "C": "The stolen car was found near the highway.",
+          "D": "The crying baby needs attention."
+        },
+        "correct_answer": "B",
+        "explanation": "'Boring' should be 'bored'. Correct sentence: 'She is bored in class.'"
+      },
+      {
+        "question": "Which sentence has an **error in reported speech**?",
+        "options": {
+          "A": "She said she would call me later.",
+          "B": "He asked if I could help him.",
+          "C": "She told me she will arrive soon.",
+          "D": "They said they had finished their work."
+        },
+        "correct_answer": "C",
+        "explanation": "In reported speech, 'will' changes to 'would'. Correct sentence: 'She told me she would arrive soon.'"
+      },
+      {
+        "question": "Which sentence contains a **gerund usage error**?",
+        "options": {
+          "A": "She enjoys swimming in the ocean.",
+          "B": "He denied stealing the money.",
+          "C": "They suggested to go to the park.",
+          "D": "I don’t mind waiting for a few minutes."
+        },
+        "correct_answer": "C",
+        "explanation": "'Suggested' should be followed by a gerund. Correct form: 'They suggested going to the park.'"
+      },
+      {
+        "question": "Which of the following sentences is grammatically incorrect?",
+        "options": {
+          "A": "He let me borrow his bike.",
+          "B": "She made me to cry.",
+          "C": "I saw him leaving the office.",
+          "D": "They heard the music playing."
+        },
+        "correct_answer": "B",
+        "explanation": "'Made' is followed by the base form of the verb. Correct sentence: 'She made me cry.'"
+      },
+      {
+        "question": "Which of the following has an **incorrect tense usage**?",
+        "options": {
+          "A": "She has lived here for five years.",
+          "B": "I had finished my homework before they arrived.",
+          "C": "He is eating lunch when I called him.",
+          "D": "They will visit us next weekend."
+        },
+        "correct_answer": "C",
+        "explanation": "Correct past continuous form: 'He was eating lunch when I called him.'"
+      },
+      {
+        "question": "Which sentence has a **wrong infinitive form**?",
+        "options": {
+          "A": "He decided to leave early.",
+          "B": "She made me to laugh.",
+          "C": "I hope to see you soon.",
+          "D": "They agreed to help us."
+        },
+        "correct_answer": "B",
+        "explanation": "'Made' does not take 'to'; correct sentence: 'She made me laugh.'"
+      },
+      {
+        "question": "Which sentence uses **incorrect passive voice**?",
+        "options": {
+          "A": "The book was written by a famous author.",
+          "B": "The window was broke by the storm.",
+          "C": "The project was completed on time.",
+          "D": "The invitation was sent yesterday."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct past participle is 'broken': 'The window was broken by the storm.'"
+      },
+      {
+        "question": "Which sentence contains an incorrect form of **phrasal verb**?",
+        "options": {
+          "A": "She looked after her younger brother.",
+          "B": "He ran into his old friend at the mall.",
+          "C": "She turned up the volume.",
+          "D": "I am looking forward to meet you."
+        },
+        "correct_answer": "D",
+        "explanation": "Correct form: 'I am looking forward to meeting you.'"
+      }
+    ]
+  }
+  
