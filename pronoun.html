@@ -110,27 +110,52 @@
         }
 
         function submitQuiz() {
-            let selectedQuestions = document.querySelectorAll('.question');
-            let correctCount = 0;
+    let selectedQuestions = document.querySelectorAll('.question');
+    let correctCount = 0;
 
-            selectedQuestions.forEach((q, index) => {
-                let selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-                if (selectedOption && selectedOption.value === questionsData.questions[index].correct_answer) {
-                    correctCount++;
-                }
-            });
+    selectedQuestions.forEach((q, index) => {
+        let selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+        let correctAnswer = questionsData.questions[index].correct_answer;
 
-            let scoreMode = document.getElementById('scoreMode').value;
-            let result = document.getElementById('result');
-            
-            if (scoreMode === 'percentage') {
-                result.innerText = `Score: ${(correctCount / selectedQuestions.length * 100).toFixed(2)}%`;
+        // Reset styles before checking
+        q.querySelectorAll('label').forEach(label => {
+            label.style.color = 'black';
+            label.style.fontWeight = 'normal';
+        });
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswer) {
+                correctCount++;
+                selectedOption.parentElement.style.color = 'green';
+                selectedOption.parentElement.style.fontWeight = 'bold';
             } else {
-                result.innerText = `Total Correct: ${correctCount} / ${selectedQuestions.length}`;
+                selectedOption.parentElement.style.color = 'red';
+                selectedOption.parentElement.style.fontWeight = 'bold';
+
+                // Highlight correct answer
+                let correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+                correctLabel.style.color = 'green';
+                correctLabel.style.fontWeight = 'bold';
             }
-            
-            result.classList.remove('hidden');
+        } else {
+            // If no option selected, still highlight the correct answer
+            let correctLabel = q.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+            correctLabel.style.color = 'green';
+            correctLabel.style.fontWeight = 'bold';
         }
+    });
+
+    let scoreMode = document.getElementById('scoreMode').value;
+    let result = document.getElementById('result');
+
+    if (scoreMode === 'percentage') {
+        result.innerText = `Score: ${(correctCount / selectedQuestions.length * 100).toFixed(2)}%`;
+    } else {
+        result.innerText = `Total Correct: ${correctCount} / ${selectedQuestions.length}`;
+    }
+
+    result.classList.remove('hidden');
+}
 
         function showExplanation(index) {
             let explanationDiv = document.getElementById(`explanation${index}`);
