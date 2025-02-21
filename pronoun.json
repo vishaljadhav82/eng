@@ -1,0 +1,249 @@
+{
+    "questions": [
+      {
+        "question": " The man, (1) whom is standing on the road, (2) our leader. (3)",
+        "options": {
+          "A": "(1) The man,",
+          "B": "(2) whom is standing on the road,",
+          "C": "(3) our leader.",
+          "D": "No error"
+        },
+        "correct_answer": "B",
+        "explanation": "\"Whom\" is incorrect here. It should be \"who\" because it is the subject of \"is standing.\""
+      },
+      {
+        "question": " Madhav is one of the greatest philosophers (1) that has ever lived. (2)",
+        "options": {
+          "A": "(1) Madhav is one of the greatest philosophers",
+          "B": "(2) that has ever lived.",
+          "C": "No error"
+        },
+        "correct_answer": "B",
+        "explanation": "\"That has\" should be \"that have\" because \"philosophers\" is plural."
+      },
+      {
+        "question": " This is the girl, (1) who they declared (2) a thief. (3)",
+        "options": {
+          "A": "(1) This is the girl,",
+          "B": "(2) who they declared",
+          "C": "(3) a thief.",
+          "D": "No error"
+        },
+        "correct_answer": "B",
+        "explanation": "\"Who\" is incorrect here. It should be \"whom\" because it is the object of \"declared.\""
+      },
+      {
+        "question": " My father does not like (1) me going to pictures (2) every day. (3)",
+        "options": {
+          "A": "(1) My father does not like",
+          "B": "(2) me going to pictures",
+          "C": "(3) every day.",
+          "D": "No error"
+        },
+        "correct_answer": "B",
+        "explanation": "\"Me going\" should be \"my going\" because a possessive pronoun is required before a gerund (going)."
+      },
+      {
+        "question": " She was more beautiful (1) than either of her (2) three sisters. (3)",
+        "options": {
+          "A": "(1) She was more beautiful",
+          "B": "(2) than either of her",
+          "C": "(3) three sisters.",
+          "D": "No error"
+        },
+        "correct_answer": "B",
+        "explanation": "\"Either\" is incorrect because it refers to two things, but \"three sisters\" is plural. \"Any\" should be used instead of \"either.\""
+      },
+      {
+        "question": "Let I go.",
+        "options": {
+            "A": "Let I go.",
+            "B": "Let me go.",
+            "C": "Let we go.",
+            "D": "Let us go."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct sentence is 'Let me go.' The pronoun 'me' should be used after 'let' instead of 'I'."
+    },
+    {
+        "question": "Between you and I, I am taller.",
+        "options": {
+            "A": "Between you and I",
+            "B": "Between you and me",
+            "C": "Between us",
+            "D": "Between I and you"
+        },
+        "correct_answer": "B",
+        "explanation": "The correct sentence is 'Between you and me, I am taller.' The pronoun 'me' should be used instead of 'I' because it is the object of the preposition 'between'."
+    },
+    {
+        "question": "Lata sings better than me.",
+        "options": {
+            "A": "Lata sings better than me.",
+            "B": "Lata sings better than I.",
+            "C": "Lata sings better than myself.",
+            "D": "Lata sings better than my."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct sentence is 'Lata sings better than I.' The full form would be 'Lata sings better than I do,' and 'I' is the subject."
+    },
+    {
+        "question": "One of the boys have a bicycle.",
+        "options": {
+            "A": "One of the boys have a bicycle.",
+            "B": "One of the boys has a bicycle.",
+            "C": "One among the boys have a bicycle.",
+            "D": "One of boys has a bicycle."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct sentence is 'One of the boys has a bicycle.' The verb should be 'has' instead of 'have' because 'one' is singular."
+    },
+    {
+        "question": "Many of the boys has bicycle.",
+        "options": {
+            "A": "Many of the boys has bicycle.",
+            "B": "Many of the boys have bicycles.",
+            "C": "Many boys have bicycle.",
+            "D": "Many of the boys had bicycle."
+        },
+        "correct_answer": "B",
+        "explanation": "The correct sentence is 'Many of the boys have bicycles.' The verb 'have' is used for plural subjects like 'many'."
+    },
+    {
+        "question": "(1) Neither of these three candidates (2) is fit for the post.",
+        "options": {
+            "A": "(1) Neither of these three candidates",
+            "B": "(2) is fit for the post.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'Neither' is used for two options, not three. The correct sentence is 'None of these three candidates is fit for the post.'"
+    },
+    {
+        "question": "(1) Both did not (2) go.",
+        "options": {
+            "A": "(1) Both did not",
+            "B": "(2) go.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'Both did not' is incorrect. The correct sentence is 'Neither of them went' because 'both' is affirmative, and negation should be handled differently."
+    },
+    {
+        "question": "(1) You and he (2) should not waste (3) his money.",
+        "options": {
+            "A": "(1) You and he",
+            "B": "(2) should not waste",
+            "C": "(3) his money.",
+            "D": "(4) No error"
+        },
+        "correct_answer": "C",
+        "explanation": "'His money' is incorrect. It should be 'your money' or 'their money' to correctly refer to both individuals."
+    },
+    {
+        "question": "(1) I who is (2) your father (3) should be respected.",
+        "options": {
+            "A": "(1) I who is",
+            "B": "(2) your father",
+            "C": "(3) should be respected.",
+            "D": "(4) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'I who is' is incorrect. The correct sentence is 'I who am your father should be respected.' Since 'I' is the subject, the verb should be 'am' instead of 'is'."
+    },
+    {
+        "question": "(1) He is (2) a friend of me.",
+        "options": {
+            "A": "(1) He is",
+            "B": "(2) a friend of me.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "B",
+        "explanation": "'A friend of me' is incorrect. The correct sentence is 'He is a friend of mine.' The pronoun should be in the possessive form."
+    },
+    {
+        "question": "(1) I hate him (2) talking too much.",
+        "options": {
+            "A": "(1) I hate him",
+            "B": "(2) talking too much.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'Him' should be 'his' because a possessive pronoun is required before a gerund (talking). The correct sentence is 'I hate his talking too much.'"
+    },
+    {
+        "question": "(1) None of we (2) accepted his invitation.",
+        "options": {
+            "A": "(1) None of we",
+            "B": "(2) accepted his invitation.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'None of we' is incorrect. It should be 'None of us' because 'none' takes an objective case pronoun."
+    },
+    {
+        "question": "(1) Who (2) are you referring to?",
+        "options": {
+            "A": "(1) Who",
+            "B": "(2) are you referring to?",
+            "C": "(3) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'Who' should be 'whom' because it is the object of the preposition 'to'. The correct sentence is 'Whom are you referring to?'."
+    },
+    {
+        "question": "(1) The jury (2) was divided (3) on this issue.",
+        "options": {
+            "A": "(1) The jury",
+            "B": "(2) was divided",
+            "C": "(3) on this issue.",
+            "D": "(4) No error"
+        },
+        "correct_answer": "D",
+        "explanation": "No error. 'Jury' is a collective noun, and when divided in opinion, it is treated as plural, but 'was divided' correctly conveys the meaning."
+    },
+    {
+        "question": "(1) Every of the boys (2) has taken (3) his share.",
+        "options": {
+            "A": "(1) Every of the boys",
+            "B": "(2) has taken",
+            "C": "(3) his share.",
+            "D": "(4) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'Every of the boys' is incorrect. The correct phrase should be 'Every boy' or 'Each of the boys'."
+    },
+    {
+        "question": "(1) One ought to do (2) his duty.",
+        "options": {
+            "A": "(1) One ought to do",
+            "B": "(2) his duty.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "B",
+        "explanation": "'His' should be 'one's' because 'one' is an indefinite pronoun and must be followed by 'one's' to maintain consistency."
+    },
+    {
+        "question": "(1) He and me (2) went to get (3) the seats reserved.",
+        "options": {
+            "A": "(1) He and me",
+            "B": "(2) went to get",
+            "C": "(3) the seats reserved.",
+            "D": "(4) No error"
+        },
+        "correct_answer": "A",
+        "explanation": "'Me' should be 'I' because it is the subject of the sentence. The correct phrase is 'He and I went to get the seats reserved.'"
+    },
+    {
+        "question": "(1) 10 Kms (2) are a long distance.",
+        "options": {
+            "A": "(1) 10 Kms",
+            "B": "(2) are a long distance.",
+            "C": "(3) No error"
+        },
+        "correct_answer": "B",
+        "explanation": "'Are' should be 'is' because distance is considered singular. The correct sentence is '10 Kms is a long distance.'"
+    }
+    ]
+  }
+  
