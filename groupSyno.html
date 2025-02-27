@@ -46,7 +46,7 @@
                 
                 filteredData.forEach((item, index) => {
                     const word = Object.keys(item)[0];
-                    const correctAnswer = item[word].split(",")[0];
+                    const correctAnswer = item[word].split("/")[0];
                     
                     const incorrectOptions = data.synonyms
                         .filter(entry => Object.keys(entry)[0] !== word)
