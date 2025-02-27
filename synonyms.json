@@ -6,28 +6,28 @@
         }
         ,
         {
-            "Abandon":"Cease/forsake"
+            "Abandon":"Cease,forsake"
         },
         {
-            "Abhor":"Hate/Loathe/Detest"
+            "Abhor":"Hate,Loathe,Detest"
         },
         {
-            "Abiding":"Enduring/durable"
+            "Abiding":"Enduring,durable"
         },
         {
-            "Ability":"Skill/power"
+            "Ability":"Skill,power"
         },
         {
-            "Abolish":"Destroy/undo"
+            "Abolish":"Destroy,undo"
         },
         {
-            "Abortive":"Fruitless/futile"
+            "Abortive":"Fruitless,futile"
         },
         {
-            "Abridge":"Shorten/curtail"
+            "Abridge":"Shorten,curtail"
         },
         {
-            "Abrupt":"Brusque/precipitous/sudden"
+            "Abrupt":"Brusque,precipitous,sudden"
         },
         {
             "Abscond":"To run away"
@@ -36,10 +36,10 @@
             "Absolutely":"Entirely"
         },
         {
-            "Absolve":"Forgive/pardon"
+            "Absolve":"Forgive,pardon"
         },
         {
-            "Abstain from":"Keep away from / Refrain"
+            "Abstain from":"Keep away from , Refrain"
         },
         {
             "Abundant":"Plenty"
@@ -54,37 +54,37 @@
             "Accord":"Agreement"
         },
         {
-            "Accumulate":"Collect/store/Amass"
+            "Accumulate":"Collect,store,Amass"
         },
         {
             "Accurate":"Up to the mark"
         },
         {
-            "Adamant":"Hard/inflexible"
+            "Adamant":"Hard,inflexible"
         },
         {
-            "Abodes":"Living places/dwelings"
+            "Abodes":"Living places,dwelings"
         },
         {
-            "Adept":"Expert/skillful"
+            "Adept":"Expert,skillful"
         },
         {
             "Admonish":"Warning"
         },
         {
-            "Adversity":"Misfortune/Distress"
+            "Adversity":"Misfortune,Distress"
         },
         {
-            "Affecting":"toching/moving"
+            "Affecting":"toching,moving"
         },
         {
-            "Affict":"Punish/subdue"
+            "Affict":"Punish,subdue"
         },
         {
             "Afraid":"fearful"
         },
         {
-            "Aggravate":"Heighten/Intensity"
+            "Aggravate":"Heighten,Intensity"
         },
         {
             "Agile":"Nimble"
@@ -96,22 +96,22 @@
             "Alloy":"Mixture of metals"
         },
         {
-            "Allure":"Attract/entice"
+            "Allure":"Attract,entice"
         },
         {
             "Ally":"Colleague"
         },
         {
-            "Ambiguous":"Vague/Unclear"
+            "Ambiguous":"Vague,Unclear"
         },
         {
-            "Ameliorate":"Improve/advance"
+            "Ameliorate":"Improve,advance"
         },
         {
-            "Amiable":"Cordial/friendly"
+            "Amiable":"Cordial,friendly"
         },
         {
-            "Ample":"Sufficient/abundant"
+            "Ample":"Sufficient,abundant"
         },
         {
             "Alien":"Foreign"
@@ -120,7 +120,7 @@
             "Analogy":"Resemblunce"
         },
         {
-            "Annexation":"Increase/expansion"
+            "Annexation":"Increase,expansion"
         },
         {
             "Antagonism":"Opposition"
@@ -152,13 +152,13 @@
             "Augment":"increase"
         },
         {
-            "Auspecious":"Favorable/Proptious"
+            "Auspecious":"Favorable,Proptious"
         },
         {
             "Austere":"Simple & neat"
         },
         {
-            "Authentic":"True/Genuine"
+            "Authentic":"True,Genuine"
         },
         {
             "Annihilation":"destruction or obliteration"
@@ -170,7 +170,7 @@
             "Aversion":"dislike"
         },
         {
-            "Adipose":"Oleaginous/Fatty"
+            "Adipose":"Oleaginous,Fatty"
         },
         {
             "Aptitude":"Knack"
@@ -179,7 +179,7 @@
             "Agility":"Quikness"
         },
         {
-            "Accolade":"an award/honour"
+            "Accolade":"an award,honour"
         },
         {
             "Authority":"consent"
@@ -206,22 +206,1865 @@
             "Banished":"Expelled"
         },
         {
-            "Bankrupt":"insolvent/ruined"
+            "Bankrupt":"insolvent,ruined"
         },
         {
-            "Barbarous":"Savage/brutal"
+            "Barbarous":"Savage,brutal"
         },
         {
             "Blunder":"Mistake"
         },
         {
-            "Base":"Corrupt/mean"
+            "Base":"Corrupt,mean"
         },
         {
             "Beseech":"Pray"
         },
         {
-            "Brash":"rude/impudent"
+            "Brash":"rude,impudent"
+        },
+        {
+            "Brevity":"concise"
         }
+        ,
+        {
+            "Baseless":"False,groundless"
+        },
+        {
+            "Bashful":"Shy"
+        },
+        {
+            "Bare":"Necked"
+        },
+        {
+            "Benign":"Harmless"
+        },
+        {
+            "Beside the mark":"Irrevalant"
+        },
+        {
+            "Bedlam":"mad house"
+        },
+        {
+            "Benevolence":"kindness,sympathy"
+        },
+        {
+            "Bitter":"Sour,severe"
+        },
+        {
+            "Blithe":"Graceful,heedless"
+        },
+        {
+            "Bold":"Daring"
+        },
+        {
+            "Boisterous":"Noisy,Stormy"
+        },
+        {
+            "Boost":"Encourage,lift"
+        },
+        {
+            "Brittle":"Fragile"
+        },
+        {
+            "Brace":"Strengthen"
+        },
+        {
+            "Brave":"Courageous,heroic"
+        },
+        {
+            "Breed":"Produce"
+        },
+        {
+            "Brevity":"concise,short"
+        },
+        {
+            "Brief":"Short,concise"
+        },
+        {
+            "Bright":"Vivid,Radiant"
+        },
+        {
+            "Brisk":"Quick,active"
+        },
+        {
+            "Brutal":"Savage,cruel"
+        },
+        {
+            "Bucolic":"Rural,rustic"
+        },
+        {
+            "Buoyant":"Jovial,cheerful"
+        },
+        {
+            "Cajole":"Praise,flatter"
+        },
+        {
+            "Calamity":"Catastrophe,disaster"
+        },
+        {
+            "Callous":"Insensitive"
+        },
+        {
+            "Candid":"Frank,open"
+        },
+        {
+            "Capital offence":"Punishable by death"
+        },
+        {
+            "Carnivore":"Non-vegetarian"
+        },
+        {
+            "Cautious":"Careful,wary"
+        },
+        {
+            "Cease":"End,stop"
+        },
+        {
+            "Chronic":"Deep rooted"
+        },
+        {
+            "Coarse":"Rough"
+        },
+        {
+            "Crucial":"Deciding"
+        },
+        {
+            "Clemency":"Mercy"
+        },
+        {
+            "Contentment":"Satisfaction"
+        },
+        {
+            "Catalogue":"List,index"
+        },
+        {
+            "Celebrated":"Famous,popular"
+        },
+        {
+            "Censorship":"Disapproval,ban"
+        },
+        {
+            "Chaos":"Confusion,disorder"
+        },
+        {
+            "Chastisement":"Punishmentt"
+        },
+        {
+            "Cheat":"deceive,hoax"
+        },
+        {
+            "Chivalry":"gallantry"
+        },
+        {
+            "Circumspect":"Careful,attentive"
+        },
+        {
+           "Clandestine":"Secret,hole-and-corner"
+        },
+        {
+            "Coherance":"harmony,unity"
+        },
+        {
+            "Cold":"Passionless"
+        },
+        {
+            "Commend":"Praise"
+        },
+        {
+            "Commotion":"Confusion"
+        },
+        {
+            "Companion":"Friend,colleague"
+        },
+        {
+            "Compassionate":"Pitful,sympathetic"
+        },
+        {
+            "Combat":"battle"
+        },
+        {
+            "Compel":"Force,oblige"
+        },
+        {
+            "Competence":"Ability"
+        },
+        {
+            "Compress":"Condesne,Abbreviate"
+        },
+        {
+            "Concrete":"Specific,definite"
+        },
+        {
+            "Confidence":"Trust,Reliance"
+        },
+        {
+            "Conjuncture":"Crisis"
+        },
+        {
+            "Conscientious":"Analytic,prudent,serously"
+        },
+        {
+            "Consensus":"Agreement,harmony"
+        },
+        {
+            "Considerable":"Notably large"
+        },
+        {
+            "Conspicuous":"Noticeable,Distinguished"
+        },
+        {
+            "Constant":"Staedy,uniform,steadfast"
+        },
+        {
+            "Consumption":"to take in"
+        },
+        {
+            "Contempt":"Dislike,hate"
+        },
+        {
+            "Contemptible":"Vile,hateful"
+        },
+        {
+            "Contrary":"Hostile,averse"
+        },
+        {
+            "Controversy":"Dispute,debate"
+        },
+        {
+            "Calamity":"Catastrophe"
+        },
+        {
+            "Convenient":"Suitable"
+        },
+        {
+            "Conventional":"Customary"
+        },
+        {
+            "Cordial":"Friendly,Hearty"
+        },
+        {
+            "Collision":"Striking together"
+        },
+        {
+            "Collusion":"Secret Agreement"
+        },
+        {
+            "Command":"Order"
+        },
+        {
+            "Confer":"Consult"
+        },
+        {
+            "Corporal":"Physical"
+        },
+        {
+            "Costly":"Expensive,Dear"
+        },
+        {
+            "Courteous":"Civil,elegant"
+        },
+        {
+            "Covert":"Hidden,secret"
+        },
+        {
+            "Crutial":"Critical"
+        },
+        {
+            "Crafty":"Cunning,Sly"
+        },
+        {
+            "Credible":"Believable"
+        },
+        {
+            "Credulas":"Gullible,trusting"
+        },
+        {
+            "Creed":"Belief,faith,religion"
+        },
+        {
+            "Crucial":"Critical"
+        },
+        {
+            "Curse":"bane,malediction"
+        },
+        {
+            "Cursory":"Rapid,superficial"
+        },
+        {
+            "Constraint":"restriction,limitation"
+        },
+        {
+            "Consummate":"perfect,exemplary,supreme,ultimate"
+        },
+        {
+            "Cop":"Police"
+        },
+        {
+            "Full complement":"full amount"
+        },
+        {
+            "Causal":"relating to or acting as a cause"
+        },
+        {
+            "Cultivate":"enrich"
+        },
+        {
+            "Counterfeit":"forged,fake"
+        },
+        {
+            "Childlike":"Puerile,boyish"
+        },
+        {
+            "Conceit":"vanity,narcissism,self love,pride"
+        },
+        {
+            "Callous":"Unkind"
+        },
+        {
+            "Competence":"Ability"
+        },
+        {
+            "Cite":"quote"
+        },
+        {
+            "Cogenital":"Inborn"
+        },
+        {
+            "Daggers drawn":"In open entity"
+        },
+        {
+            "Debilitating":"Weak,feeble"
+        },
+        {
+            "Diamond year":"60 years"
+        },
+        {
+            "Dainty":"Charming,delicate"
+        },
+        {
+            "Data":"Information"
+        },
+        {
+            "Dazzling":"Brilliant"
+        },
+        {
+            "Dearth":"Scarcity,lack"
+        },
+        {
+            "Death":"Decease,Demise"
+        },
+        {
+            "Demonstrate":"Substantiate"
+        },
+        {
+            "Denounce":"Revile"
+        },
+        {
+            "Decay":"Dissolution,Decline"
+        },
+        {
+            "Deception":"Fraud,trickery"
+        },
+        {
+            "Decisive":"final"
+        },
+        {
+            "Defame":"Disgrace,discredit"
+        },
+        {
+            "Defection":"Deviation"
+        },
+        {
+            "Defend":"Protect,guard"
+        },
+        {
+            "Defiant":"Audacious"
+        },
+        {
+            "Deficient":"Lacking,Inadequat"
+        },
+        {
+            "Delectable":"Agreeable"
+        },
+        {
+            "Delectable":"Enjoyable"
+        },
+        {
+            "Delicious":"Pleasant,tasty"
+        },
+        {
+            "Denote":"Indicate,imply"
+        },
+        {
+            "Dependence":"Reliance"
+        },
+        {
+            "Derision":"Scorn"
+        },
+        {
+            "Desolate":"Lonely,Deserted"
+        },
+        {
+            "Despise":"Hate,loath"
+        },
+        {
+            "Destitute":"Needy,impecunious"
+        },
+        {
+            "Destroy":"Ruin,destruct"
+        },
+        {
+            "Deviation":"Digression"
+        },
+        {
+            "Devoted":"Loving,ardent"
+        },
+        {
+            "Didactic":"Suggestive"
+        },
+        {
+            "Diligent":"Persevering"
+        },
+        {
+            "Diminish":"Curtail,lessen"
+        },
+        {
+            "Diplomatic":"Prudent,shrewd"
+        },
+        {
+            "Discipline":"Good behaviour"
+        },
+        {
+            "Disclaim":"Disown"
+        },
+        {
+            "Discontent":"Dissatisfaction"
+        },
+        {
+            "Disgrace":"Dishonour,Discredit"
+        },
+        {
+            "Disintrested":"Impersonal"
+        },
+        {
+            "Dismay":"Dejection"
+        },
+        {
+            "Distant":"Remote"
+        },
+        {
+            "Diversity":"Variety"
+        },
+        {
+            "Divine":"Heavenly"
+        },
+        {
+            "Docile":"Obedient,Quite"
+        },
+        {
+            "Domineering":"Dominating"
+        },
+        {
+            "Dreadful":"Horrible"
+        },
+        {
+            "Earthly":"Terrestrial,Mundane"
+        },
+        {
+            "Easily hurt":"Sensitive"
+        },
+        {
+            "Ecstasy":"Rapture"
+        },
+        {
+            "Effect":"Result,outcome"
+        },
+        {
+            "Enigmatic":"Mysterious"
+        },
+        {
+            "Encroach":"Intrude"
+        },
+        {
+            "Endeavour":"Try"
+        },
+        {
+            "Enfeeble":"Weaken"
+        },
+        {
+            "Enlarge":"Expand,grow"
+        },
+        {
+            "Entice":"Entrap"
+        },
+        {
+            "Enlightened":"Fully Awakened"
+        },
+        {
+            "Erect":"Build,raise"
+        },
+        {
+            "Erratic":"Irregular"
+        },
+        {
+            "Erudite":"Learned,Scholer"
+        },
+        {
+            "Easteem":"Respect,regard"
+        },
+        {
+            "Estimating":"Gauging,guessing"
+        },
+        {
+            "Even":"Fair,just"
+        },
+        {
+            "Eccentric":"Odd"
+        },
+        {
+            "Emphasize":"Stress"
+        },
+        {
+            "Extra-terrestrial bodies":"Celestial"
+        },
+        {
+            "Exonerated":"Freed"
+        },
+        {
+            "Exceptional":"Uncommon,rare"
+        },
+        {
+            "Excited":"Impassioned,Stimulated"
+        },
+        {
+            "Execute":"Carry out"
+        },
+        {
+            "Exigency":"Urgency"
+        },
+        {
+            "Expand":"to spread out"
+        },
+        {
+            "Expel":"Excommunicate"
+        },
+        {
+            "Expose":"Disclose,reveal"
+        },
+        {
+            "Extraordinary":"Uncommon,Remarkable"
+        },
+        {
+            "Extravagant":"Lavish,Prodigal,Wasteful"
+        },
+        {
+            "Extricate":"Release,free"
+        },
+        {
+            "Excellent":"Superior"
+        },
+        {
+            "Eager":"Enthusiastic"
+        },
+        {
+            "Exorbitant":"Excessivaly high"
+        },
+        {
+            "Every eanch":"Completely"
+        },
+        {
+            "Flummoxed":"Confuse,Bewilder"
+        },
+        {
+            "Fade":"Discloser"
+        },
+        {
+            "El Dorado":"Gold city"
+        },
+        {
+            "Fictitious":"False"
+        },
+        {
+            "Filthy":"Dirty,impure"
+        },
+        {
+            "Fleeting":"Temporary"
+        },
+        {
+            "Fluctuate":"Vacillate"
+        },
+        {
+            "Foibles":"Failing,Flaw,Frailty,Infirmity,Idiosyncracy,weakness"
+        },
+        {
+            "Fortitude":"Courage"
+        },
+        {
+            "Fragile":"Delicate,breakable"
+        },
+        {
+            "French":"The man of France"
+        },
+        {
+            "Frenzy":"Fury,rage"
+        },
+        {
+            "Frugal":"Without waste"
+        },
+        {
+            "Fundamental":"basic,organic"
+        },
+        {
+            "Gaiety":"Joy,hilarity"
+        },
+        {
+            "Gain":"Benefit,earn"
+        },
+        {
+            "Gallant":"Brave,Courageous"
+        },
+        {
+            "Gape":"Yawn,split"
+        },
+        {
+            "Garrulas":"Talkative,loquacious"
+        },
+        {
+            "Gay":"Happy"
+        },
+        {
+            "Genteel":"Stylish"
+        },
+        {
+            "Generous":"Liberal,nobel"
+        },
+        {
+            "Genious":"Gift,skill"
+        },
+        {
+            "Genuine":"Authentic"
+        },
+        {
+            "Giantic":"Huge,colossal"
+        },
+        {
+            "Glamourous":"Charismatic"
+        },
+        {
+            "Glorious":"Splendid"
+        },
+        {
+            "Glory":"Splendour,fame"
+        },
+        {
+            "Govern":"Control,Command"
+        },
+        {
+            "Gratitude":"Gratefulness,respect"
+        },
+        {
+            "Greedy":"Voracious,rapacious"
+        },
+        {
+            "Grief":"Distress,sorrow,gloom"
+        },
+        {
+            "Guest":"Visitor"
+        },
+        {
+            "Guile":"Fraud,trickery"
+        },
+        {
+            "Gusto":"zest,enthusiasm"
+        },
+        {
+            "Gregarious":"Sociable"
+        },
+        {
+            "Gratis":"Without charge,fee"
+        },
+        {
+            "Handed down from generations in a culture":"Tradition"
+        },
+        {
+            "Hallucination":"Illusion"
+        },
+        {
+            "Hamper":"Hinder,Obstruct"
+        },
+        {
+            "Hardship":"Calamity,burden"
+        },
+        {
+            "Haughty":"Imperious"
+        },
+        {
+            "Hazardous":"Dangerous,perilous"
+        },
+        {
+            "Head strong":"Stubborn"
+        },
+        {
+            "Heartfelt":"Ardent,cordial"
+        },
+        {
+            "Highlight":"Main part"
+        },
+        {
+            "Hilarity":"Gaiety,Amusement"
+        },
+        {
+            "Hoarse":"Harsh,husky,rough"
+        },
+        {
+            "Hole":"An open place"
+        },
+        {
+            "Honest":"trustworthy"
+        },
+        {
+            "Honourable":"Honorary"
+        },
+        {
+            "Hope":"Belief,conviction"
+        },
+        {
+            "Humid":"Wet,moist"
+        },
+        {
+            "Humility":"Modesty"
+        },
+        {
+            "Hurt":"Injure,damage"
+        },
+        {
+            "Hypocrisy":"Pretence,deception"
+        },
+        {
+            "Hypothesis":"Supposition,law"
+        },
+        {
+            "Hysterical":"very excited"
+        },
+        {
+            "Illicit":"Illegal,unlawful"
+        },
+        {
+            "Idle threats":"meaningless"
+        },
+        {
+            "Idosyncratic":"unusual"
+        },
+        {
+            "Incessant":"Continuous"
+        },
+        {
+            "Incredible":"Unimaginable,Incredible"
+        },
+        {
+            "Invitable":"Definite"
+        },
+        {
+            "Insinuating":"hint,indicate"
+        },
+        {
+            "Indolent":"lazy"
+        },
+        {
+            "Insufferable":"intolerable"
+        },
+        {
+            "Instance":"example"
+        },
+        {
+            "Intractable":"Hard to control, hard to save"
+        },
+        {
+            "Indifferance":"disinterst"
+        },
+        {
+            "Illness":"Malady"
+        },
+        {
+            "Illustrious":"Notable,Distinguished"
+        },
+        {
+            "Indeed":"Actually"
+        },
+        {
+            "Irreproachable":"Faultless"
+        },
+        {
+            "Imitate":"copy"
+        },
+        {
+            "Immature":"Unripe"
+        },
+        {
+            "Immense":"Enormous,huge"
+        },
+        {
+            "Impeccable":"Faultless"
+        },
+        {
+            "Impose":"Dictate"
+        },
+        {
+            "Impotent":"Weak,feeble"
+        },
+        {
+            "Implies":"Hidden"
+        },
+        {
+            "Indolence":"Laziness"
+        },
+        {
+            "Indolent":"Slothful,lethargic"
+        },
+        {
+            "Industrious":"Hard working"
+        },
+        {
+            "Inert":"Dull,idle"
+        },
+        {
+            "Inference":"Conclusion"
+        },
+        {
+            "Inferior":"Subordinate"
+        },
+        {
+            "Infinite":"Eternal,Unlimited"
+        },
+        {
+            "Inherit":"Bequeath"
+        },
+        {
+            "Innocent":"Sinless"
+        },
+        {
+            "Insane":"Abormal"
+        },
+        {
+            "Inculcate":"Deep impression"
+        },
+        {
+            "Insolent":"Rude"
+        },
+        {
+            "Intensify":"Aggravate"
+        },
+        {
+            "Jealous":"Envious"
+        },
+        {
+            "Journey":"Trip,Voyage"
+        },
+        {
+            "Joy":"Jovial,Merry"
+        },
+        {
+            "Judicious":"Discreet,Prudent"
+        },
+        {
+            "Keen":"Enthusiastic,Curious"
+        },
+        {
+            "Kindle":"Light"
+        },
+        {
+            "Knavery":"Dishonesty"
+        },
+        {
+            "Knotty":"Tangled"
+        },
+        {
+            "Knowledge":"Enlightenment,Learning"
+        },
+        {
+            "Laborious":"Industrious,Assiduous"
+        },
+        {
+            "Laudable":"Praiseworthy,commendable"
+        },
+        {
+            "Libera":"Generous"
+        },
+        {
+            "Lament":"Mourn"
+        },
+        {
+            "Latent":"Hidden,Concealed"
+        },
+        {
+            "Legitimate":"Legal"
+        },
+        {
+            "Lenient":"Mild,Forbearing"
+        },
+        {
+            "Lethal":"Deadly,Fatal,Mortal"
+        },
+        {
+            "Liberal":"Generous,Tolerant"
+        },
+        {
+            "Liberty":"Freedom,Emancipation"
+        },
+        {
+            "Lively":"Animated,active"
+        },
+        {
+            "Loathsome":"Abominable"
+        },
+        {
+            "Locate":"Find out"
+        },
+        {
+            "Loyal":"Fortune"
+        },
+        {
+            "Lucrative":"Profitable"
+        },
+        {
+            "Luxury":"Extravagance"
+        },
+        {
+            "Masterly touch":"Skillful"
+        },
+        {
+            "Manifold":"Diverse"
+        },
+        {
+            "Malefactor":"A criminal"
+        },
+        {
+            "Malevolent":"Wishing evil toward others"
+        },
+        {
+            "Malice":"Bitterness"
+        },
+        {
+            "Mature":"Adult"
+        },
+        {
+            "Meagre":"Small"
+        },
+        {
+            "Mean":"Mediocre,selfish"
+        },
+        {
+            "Melancholy":"Hopelessness"
+        },
+        {
+            "Mendacious":"False,Untruthful"
+        },
+        {
+            "Mention":"Refer"
+        },
+        {
+            "Meticulas":"Very careful and precise"
+        },
+        {
+            "Mundane":"Earthly"
+        },
+        {
+            "Mundane":"Dull,Boring"
+        },
+        {
+            "Melodious":"Musical"
+        },
+        {
+            "Multitude":"Crowd"
+        },
+        {
+            "Margin":"Difference"
+        },
+        {
+            "Mourn":"Lament"
+        },
+        {
+            "Mollified":"Pacify"
+        },
+        {
+            "Mild":"Soft,Tender"
+        },
+        {
+            "Misery":"Sorrow,Distress"
+        },
+        {
+            "Misfortune":"Adversity,Mishap"
+        },
+        {
+            "Monstrous":"colossal,Enormous,Giantic"
+        },
+        {
+            "Moumful":"Sorrowful,Sad"
+        },
+        {
+            "Mystique":"Mysterious"
+        },
+        {
+            "Native":"Indigenous"
+        },
+        {
+            "Naughty":"Mischievous"
+        },
+        {
+            "Negligent":"Careless,Heedless"
+        },
+        {
+            "Negotiate":"Mediate"
+        },
+        {
+            "Nimble":"Agile,Active"
+        },
+        {
+            "Noble":"Royale"
+        },
+        {
+            "Notorious":"Infamous,Disreputable"
+        },
+        {
+            "Nourish":"Nurse,Feed"
+        },
+        {
+            "Numerous":"Uncountable"
+        },
+        {
+            "Neologism":"A new word coined by an author"
+        },
+        {
+            "Novel":"New,Innovative"
+        },
+        {
+            "Novel":"Book,Story"
+        },
+        {
+            "Nerve":"Courage"
+        },
+        {
+            "Obedient":"Submissive,Compliant"
+        },
+        {
+            "Object":"Oppose"
+        },
+        {
+            "Obligatory":"Binding,Compulsory,Necessary"
+        },
+        {
+            "Oblique":"Slanting,sloping"
+        },
+        {
+            "Oblivious":"Unknown"
+        },
+        {
+            "Obsecure":"Indistinct"
+        },
+        {
+            "Obsolete":"Antiquity,out-oof-date"
+        },
+        {
+            "Obvious":"Clear,Evident"
+        },
+        {
+            "Omit":"Exclude,Neglect"
+        },
+        {
+            "Omnipotent":"All powerful"
+        },
+        {
+            "Onerous":"Burdensome,Boring"
+        },
+        {
+            "Obfuscate":"Jumble,Confuse,Blur"
+        },
+        {
+            "Obstinate":"Stubborn"
+        },
+        {
+            "Opportune":"Timely,Seasonable"
+        },
+        {
+            "Optimist":"Hopeful"
+        },
+        {
+            "Opulence":"Wealth,Richness"
+        },
+        {
+            "Oral":"By Mouth"
+        },
+        {
+            "Outspoken":"Blunt,Candid"
+        },
+        {
+            "Pawaky":"Mocking"
+        },
+        {
+            "Predominantly":"Mostly,Mainly"
+        },
+        {
+            "Publish":"Promulgate"
+        },
+        {
+            "Prodigal":"Prodigious,Extravagant,Spendthrift"
+        },
+        {
+            "Parity":"Similarity,Equality"
+        },
+        {
+            "Prone":"Inclined"
+        },
+        {
+            "Precious":"Valuable"
+        },
+        {
+            "Polite":"Courteous"
+        },
+        {
+            "Provenance":"Origin"
+        },
+        {
+            "Pacify":"Quiet,Mitigate,Subside"
+        },
+        {
+            "Palatable":"Tasty,Delicious"
+        },
+        {
+            "Paramount":"Foremost"
+        },
+        {
+            "Parsimonious":"Frugal,Miserly"
+        },
+        {
+            "Paternal":"Related to father"
+        },
+        {
+            "Pathetic":"Touching"
+        },
+        {
+            "Pause":"Break,Halt"
+        },
+        {
+            "Peerless":"Unique,Outstanding"
+        },
+        {
+            "Peppery":"Spicy,Tasty"
+        },
+        {
+            "Perilous":"Dangerous"
+        },
+        {
+            "Perjury":"Breaking of an oath"
+        },
+        {
+            "Perpetual":"Constan,Unbroken"
+        },
+        {
+            "Persist":"Continue,Consistent"
+        },
+        {
+            "Persuade":"Urge,induce"
+        },
+        {
+            "Persuasive":"Impressive,Convincing"
+        },
+        {
+            "Physical":"Carnal,Fleshy"
+        },
+        {
+            "Pitiable":"Moving,Pathetic"
+        },
+        {
+            "Plentiful":"Replete,Ample"
+        },
+        {
+            "Plump":"Fat,Thick"
+        },
+        {
+            "Polite":"Cilized,Courteous"
+        },
+        {
+            "Ponder":"Contemplate,Review"
+        },
+        {
+            "Positive":"Definite,Sure"
+        },
+        {
+            "Pragmatic":"Realastic,Practical"
+        },
+        {
+            "Praise":"Applause,Eulogy"
+        },
+        {
+            "Praiseworthy":"Creditable"
+        },
+        {
+            "Precarious":"Alertness"
+        },
+        {
+            "Precious":"Costly,Valuable"
+        },
+        {
+            "Predictable":"Foreseen"
+        },
+        {
+            "Prediction":"Forecast,Prophecy"
+        },
+        {
+            "Prelude":"Prefix,Prologue"
+        },
+        {
+            "Prestigious":"Reputable,Respected"
+        },
+        {
+            "Pretence":"Pretext"
+        },
+        {
+            "Pretty":"Charming,Cute"
+        },
+        {
+            "Prevalant":"Current,Usual"
+        },
+        {
+            "Previous":"Former,Prior"
+        },
+        {
+            "Profane":"Immoral,Impious"
+        },
+        {
+            "Plaintive":"Sad and mournful"
+        },
+        {
+            "Possibilities":"Prospects"
+        },
+        {
+            "Posthumous":"After death"
+        },
+        {
+            "Point Blank":"Direct,Frank,Straight-out"
+        },
+        {
+            "Procure":"Acquire"
+        },
+        {
+            "Penury":"Extreme poverty,Indigence"
+        },
+        {
+            "Penultimate":"Second last"
+        },
+        {
+            "Perpetual":"Never ending,everlasting"
+        },
+        {
+            "Per centum":"In each hundred"
+        },
+        {
+            "Prologue":"Introduction,Foreword,Preface,Preamble"
+        },
+        {
+            "Prohibit":"Forbid,Ban,Proscribe"
+        },
+        {
+            "Profusely":"Abundantly"
+        },
+        {
+            "Prolong":"Lengthen,Postpone"
+        },
+        {
+            "Prominent":"Distinguished"
+        },
+        {
+            "Prosperity":"Progress,Opulence"
+        },
+        {
+            "Prototype":"Original"
+        },
+        {
+            "Profusely":"Abundantly"
+        },
+        {
+            "Provenance":"Origin"
+        },
+        {
+            "Providence":"God's Mercy"
+        },
+        {
+            "Pugnacious":"Aggressive"
+        },
+        {
+            "Punctual":"Prompt,Timely"
+        },
+        {
+            "Putrid":"Rotten,Decayed"
+        },
+        {
+            "Quaint":"Odd,Old-fashioned"
+        },
+        {
+            "Quash":"Suppress,Crush"
+        },
+        {
+            "Queer":"Strange"
+        },
+        {
+            "Quell":"Suppress,subdue"
+        },
+        {
+            "Quite":"Totaly,Wholly"
+        },
+        {
+            "Quote":"Cite,Repeat"
+        },
+        {
+            "Radical":"Fundamental"
+        },
+        {
+            "Rapidly":"Speed,Haste"
+        },
+        {
+            "Rapport":"Communication"
+        },
+        {
+            "Revered":"Respected"
+        },
+        {
+            "Recklessly":"Rashly"
+        },
+        {
+            "Rare":"Not Available easily,Scarce"
+        },
+        {
+            "Rash":"Hasty,Reckless"
+        },
+        {
+            "Ravage":"Devastate"
+        },
+        {
+            "Realastic":"Authentic,Genuine"
+        },
+        {
+            "Reasoning":"Rational,Logical"
+        },
+        {
+            "Rebellion":"Mutiny,Revolt"
+        },
+        {
+            "Receptive":"Responsive"
+        },
+        {
+            "Reciprocal":"Complementary"
+        },
+        {
+            "Recreation":"Entertainment"
+        },
+        {
+            "Refind":"Polished,Elegant"
+        },
+        {
+            "Regress":"Degenerate"
+        },
+        {
+            "Release":"Liberate,free"
+        },
+        {
+            "Reliable":"Dependable"
+        },
+        {
+            "Relinquish":"Yield,to leave"
+        },
+        {
+            "Reluctant":"Unwilling"
+        },
+        {
+            "Remember":"Restore,Recall"
+        },
+        {
+            "Remorseful":"Repentant"
+        },
+        {
+            "Remote":"Distant"
+        },
+        {
+            "Renounce":"Abandon,forsake"
+        },
+        {
+            "Renowned":"Famous,Reputed"
+        },
+        {
+            "Riot":"Disorder"
+        },
+        {
+            "Rectified":"Amended"
+        },
+        {
+            "Race":"Root"
+        },
+        {
+            "Remorse":"Guilt for a wrong committed"
+        },
+        {
+            "Remember":"Recall"
+        },
+        {
+            "Repentance":"Regret,Compunction"
+        },
+        {
+            "Reproach":"Blame,Reprove"
+        },
+        {
+            "Repugnant":"disgusting"
+        },
+        {
+            "Reserved":"Introvert"
+        },
+        {
+            "Resourceful":"Imaginative,Inventive,Adroit"
+        },
+        {
+            "Respectful":"Showing respect"
+        },
+        {
+            "Revoke":"Abolish,Abrogate"
+        },
+        {
+            "Revolting":"Appalling"
+        },
+        {
+            "Riddle":"Puzzle,Problem"
+        },
+        {
+            "Rigid":"Stiff,Unyielding"
+        },
+        {
+            "Rigorous":"Severe,Mecrciless"
+        },
+        {
+            "Ritual":"Ceremony,Convention"
+        },
+        {
+            "Roar":"Shout,Thunder"
+        },
+        {
+            "Rob":"Steal,Plunder"
+        },
+        {
+            "Stationary":"Motionless"
+        },
+        {
+            "Sheet anchor":"Chief support"
+        },
+        {
+            "Scared":"Holy,Sanctified"
+        },
+        {
+            "Sane":"Sound"
+        },
+        {
+            "Scandalous":"Disgraceful"
+        },
+        {
+            "Scold":"Clyde,rebuke"
+        },
+        {
+            "Scrupulous":"Careful of details"
+        },
+        {
+            "Scurrilous":"Insulting"
+        },
+        {
+            "Sections":"Division,Department"
+        },
+        {
+            "Segregate":"Seperate"
+        },
+        {
+            "Seize":"Catch,snatch"
+        },
+        {
+            "Seldom":"Hardly,rarely"
+        },
+        {
+            "Sensitive":"Easily hurt"
+        },
+        {
+            "Sequester":"Seclude"
+        },
+        {
+            "Serious":"Grave,earnest"
+        },
+        {
+            "Shallow":"Superficial"
+        },
+        {
+            "Sham":"Pretention"
+        },
+        {
+            "Sporadic":"Scattered"
+        },
+        {
+            "Shy":"Coy"
+        },
+        {
+            "Simple":"Plain,artless"
+        },
+        {
+            "Sobriety":"Serenity"
+        },
+        {
+            "Solace":"Comfort,relief"
+        },
+        {
+            "Solicit":"Request"
+        },
+        {
+            "Solitary":"Single,Lonely"
+        },
+        {
+            "Spiteful":"Malicious,rancorous"
+        },
+        {
+            "Spurious":"Sham,false"
+        },
+        {
+            "Stagnation":"Motionless"
+        },
+        {
+            "Stand-by":"Reverse"
+        },
+        {
+            "Steady":"Constant,stable"
+        },
+        {
+            "Stout":"Resolute,strong"
+        },
+        {
+            "Stranger":"Unknown person"
+        },
+        {
+            "Street":"Road"
+        },
+        {
+            "Strengthen":"Encourage,fortify"
+        },
+        {
+            "Strive":"Try,Struggle"
+        },
+        {
+            "Stupendous":"Amazing,fabulous"
+        },
+        {
+            "Sublime":"Noble"
+        },
+        {
+            "Submit":"Toiled & to offer"
+        },
+        {
+            "Sufficient":"Enough"
+        },
+        {
+            "Superior":"Excellent"
+        },
+        {
+            "Surplus":"Excess"
+        },
+        {
+            "Swell":"Magnify,Enhance,Enrich"
+        },
+        {
+            "Suffrage":"Vote"
+        },
+        {
+            "Social malady":"Poverty"
+        },
+        {
+            "Story":"Tale"
+        },
+        {
+            "Savvy":"Practical Knowledge"
+        },
+        {
+            "Savour":"Interest"
+        },
+        {
+            "Schism":"Separation"
+        },
+        {
+            "Spurious":"False,Imaginary"
+        },
+        {
+            "Slander":"Defamation"
+        },
+        {
+            "Songs":"Lyrics"
+        },
+        {
+            "Stark":"Crisp,Distinct,Obvious,Evident,clear"
+        },
+        {
+            "Sycophants":"Flatterers"
+        },
+        {
+            "Taboo":"Banned,Prohibited"
+        },
+        {
+            "Tacit":"Implicit,Implied"
+        },
+        {
+            "Tact":"Skill,Cleverness"
+        },
+        {
+            "Tame":"Gentle,Mild,Domesticated"
+        },
+        {
+            "Tangled":"Mixed,Jumbling"
+        },
+        {
+            "Therapeutic":"Curative,Healing"
+        },
+        {
+            "Tornado":"Violant,Whirlwind"
+        },
+        {
+            "Touch":"Experties"
+        },
+        {
+            "Talkative":"Garrulous,Gossipy"
+        },
+        {
+            "Thrifly":"Frugal,stingy"
+        },
+        {
+            "Turbid":"Solution"
+        },
+        {
+            "Tease":"Provoke,Mock"
+        },
+        {
+            "Temperate":"Moderate,mild"
+        },
+        {
+            "Temporal":"Wordly,mundane,earthly"
+        },
+        {
+            "Tempting":"Seductive,Attractive"
+        },
+        {
+            "Tenable":"Rational,justifiable"
+        },
+        {
+            "Tenacious":"Firm,Clinging"
+        },
+        {
+            "Tender":"Sensitive"
+        },
+        {
+            "Terse":"Short,Laconic"
+        },
+        {
+            "Thick":"Fat,Dense"
+        },
+        {
+            "Thorough":"Complete,meticulas"
+        },
+        {
+            "Thrive":"Flourish,prosper"
+        },
+        {
+            "Thwart":"Restrict,hinder"
+        },
+        {
+            "Timid":"Shy,bashful"
+        },
+        {
+            "Torture":"Agony,toment"
+        },
+        {
+            "Town":"City"
+        },
+        {
+            "Tranquil":"Calm,peaceful,placid"
+        },
+        {
+            "Transient":"Momentary,temporary"
+        },
+        {
+            "Tremble":"Waver,quiver"
+        },
+        {
+            "Tribulation":"Misery,Distress"
+        },
+        {
+            "Trubunal":"Court"
+        },
+        {
+            "Truculent":"Antagonistic"
+        },
+        {
+            "Tedious":"Difficult"
+        },
+        {
+            "Transparent":"Clear"
+        },
+        {
+            "Tacitum":"Untalkative,reticent"
+        },
+        {
+            "Trustworthy":"Reliable"
+        },
+        {
+            "Tyranny":"Autocracy,Dictorship"
+        },
+        {
+            "Ugly":"Repulsive,hideous"
+        },
+        {
+            "Uncertain":"Infinite,unsure"
+        },
+        {
+            "Undesirable":"Unwanted,nasty"
+        },
+        {
+            "Uneasy":"Restless,Disturbed"
+        },
+        {
+            "Unison":"Harmony,Concord"
+        },
+        {
+            "Upbraid":"Reprimand,rebuke,reproach,scold"
+        },
+        {
+            "Venal":"Mercenary"
+        },
+        {
+            "Vivo":"Live,Vivid"
+        },
+        {
+            "Viz":"Namely"
+        },
+        {
+            "Vacant":"Empty,Blank"
+        },
+        {
+            "Vague":"Uncertain,hazy"
+        },
+        {
+            "Valid":"Legal,Logical"
+        },
+        {
+            "Valuable":"Costly,Precious"
+        },
+        {
+            "Vamoose":"To depart quickly"
+        },
+        {
+            "Vanish":"Disappear,fade"
+        },
+        {
+            "Vanity":"Conciet,futility"
+        },
+        {
+            "Vehement":"Passionate"
+        },
+        {
+            "Velocity":"Quickness,speed"
+        },
+        {
+            "Verbal":"Spoken,oral"
+        },
+        {
+            "Verbose":"Wordy"
+        },
+        {
+            "Versatile":"Clever,Expert"
+        },
+        {
+            "Vibrate":"Quiver,tremble"
+        },
+        {
+            "Vigilance":"Watch,Alertness"
+        },
+        {
+            "Venial":"Paradonable,excusable"
+        },
+        {
+            "Viz":"Namely"
+        },
+        {
+            "Vacillate":"Waver,teeter,Fluctuate"
+        },
+        {
+            "Vestibule":"A large entrance or reception room"
+        },
+        {
+            "Vigilant":"Watchful"
+        },
+        {
+            "Vigorous":"Energetic"
+        },
+        {
+            "Vindictive":"Revengeful"
+        },
+        {
+            "Violation":"Trepass"
+        },
+        {
+            "Virulent":"Hostile"
+        },
+        {
+            "Vocation":"Occupation"
+        },
+        {
+            "Vulgar":"Coarse,unrefined"
+        },
+        {
+            "Wholehearted":"Determined"
+        },
+        {
+            "Wholesome":"Healthy"
+        },
+        {
+            "Wicked":"Evil,immoral,Impious"
+        },
+        {
+            "Windfall":"Jackpot"
+        },
+        {
+            "Wise":"Judicious"
+        },
+        {
+            "Worldly":"Materialistic"
+        },
+        {
+            "Worship":"Homage,revere"
+        },
+        {
+            "Worthless":"Cheap,base"
+        },
+        {
+            "Wee Hours":"at dawn"
+        },
+        {
+            "Working":"Wage Earners"
+        },
+        {
+            "Wrath":"Great Anger"
+        },
+        {
+            "Wreck":"Ruin,Destroy"
+        },
+        {
+            "Yield":"Submit,surrender"
+        },
+        {
+            "Zeal":"Zest,devotion"
+        },
+        {
+            "Zenith":"Climax,Summit"
+        },
+        {
+            "Zest":"enthusiasm"
+        }       
     ]
 }
