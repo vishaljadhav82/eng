@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('antonyms.json')
+                .then(response => response.json())
+                .then(jsonData => {
+                    populateDropdown(jsonData);
+                    document.getElementById("generate-btn").addEventListener("click", function () {
+                        const selectedLetter = document.getElementById("letter-select").value;
+                        if (!selectedLetter) {
+                            alert("Please select a letter");
+                            return;
+                        }
+                        generateMCQs(jsonData, selectedLetter);
+                    });
+                })
+                .catch(error => console.error('Error loading JSON:', error));
+
+            function populateDropdown(data) {
+                const dropdown = document.getElementById("letter-select");
+                const uniqueLetters = [...new Set(data.antonyms.map(item => Object.keys(item)[0][0]))];
+                uniqueLetters.sort();
+                uniqueLetters.forEach(letter => {
+                    const option = document.createElement("option");
+                    option.value = letter;
+                    option.textContent = letter;
+                    dropdown.appendChild(option);
+                });
+            }
+
+            function generateMCQs(data, letter) {
+                const container = document.getElementById("mcq-container");
+                container.innerHTML = '';
+                const filteredData = data.antonyms.filter(item => Object.keys(item)[0].startsWith(letter));
+                
+                if (filteredData.length === 0) {
+                    container.innerHTML = '<p class="text-danger">No words found for the selected letter.</p>';
+                    return;
+                }
+                
+                filteredData.forEach((item, index) => {
+                    const word = Object.keys(item)[0];
+                    const correctAnswer = item[word].split("/")[0];
+                    
+                    const incorrectOptions = data.antonyms
+                        .filter(entry => Object.keys(entry)[0] !== word)
+                        .map(entry => Object.values(entry)[0].split(",")[0]);
+                    
+                    const shuffledIncorrectOptions = incorrectOptions.sort(() => Math.random() - 0.5).slice(0, 2);
+                    
+                    const allOptions = [correctAnswer, ...shuffledIncorrectOptions].sort(() => Math.random() - 0.5);
+                    
+                    const questionHTML = `
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">What is a antonym for <strong>${word}</strong>?</h5>
+                                ${allOptions.map(option => `
+                                    <button class="btn btn-outline-primary option-btn" data-correct="${option === correctAnswer}">
+                                        ${option}
+                                    </button>
+                                `).join(" ")}
+                                <p class="mt-2 feedback text-bold"></p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    container.innerHTML += questionHTML;
+                });
+                
+                document.querySelectorAll(".option-btn").forEach(button => {
+                    button.addEventListener("click", function () {
+                        const isCorrect = this.getAttribute("data-correct") === "true";
+                        const feedback = this.parentElement.querySelector(".feedback");
+                        feedback.textContent = isCorrect ? "Correct! 🎉" : "Wrong! ❌ Try again.";
+                        feedback.classList.add(isCorrect ? "text-success" : "text-danger");
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+<body class="container py-4">
+    <h2 class="text-center">MCQ Antonyms Quiz</h2>
+    <div class="mb-3">
+        <label for="letter-select" class="form-label">Select Letter:</label>
+        <select id="letter-select" class="form-select">
+            <option value="">--Choose a letter--</option>
+        </select>
+        <button id="generate-btn" class="btn btn-primary mt-2">Generate MCQs</button>
+    </div>
+    <div id="mcq-container"></div>
+</body>
+</html>
