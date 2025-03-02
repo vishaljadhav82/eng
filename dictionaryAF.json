@@ -785,121 +785,125 @@
             "Constant": "सतत,अखंड"
         },
         {
-            "Consumption": ""
+            "Consumption": "भक्षण"
         },
         {
-            "Contempt": ""
+            "Contempt": "तिरस्कार, घृणा"
         },
         {
-            "Contemptible": ""
+            "Contemptible": "घृणास्पद"
         },
         {
-            "Contrary": ""
+            "Contrary": "विरुद्ध, विपरीत"
         },
         {
-            "Controversy": ""
+            "Controversy": "जाहीर मतभेद,वाद"
         },
         {
-            "Calamity": ""
+            "Calamity": "संकट"
         },
         {
-            "Convenient": ""
+            "Convenient": "उत्तम सोयीचा, अनुकूल,योग्य"
         },
         {
-            "Conventional": ""
+            "Conventional": "पारंपरिक"
         },
         {
-            "Cordial": ""
+            "Cordial": "मैत्रीपूर्ण"
         },
         {
-            "Collision": ""
+            "Collision": "एकामेकावर आदलाने"
         },
         {
-            "Collusion": ""
+            "Collusion": "गुप्त समझोता"
         },
         {
-            "Command": ""
+            "Command": "आकर्षित करणे"
         },
         {
-            "Confer": ""
+            "Confer": "चर्चा करणे"
         },
         {
-            "Commend": ""
+            "Commend": आकर्षित करणे""
         },
         {
-            "Corporal": ""
+            "Corporal": "शारीरिक"
         },
         {
-            "Costly": ""
+            "Costly": "महागडा"
         },
         {
-            "Courteous": ""
+            "Courteous": "नम्र,सज्जन"
         },
         {
-            "Covert": ""
+            "Covert": "लपलेला,गुप्त"
         },
         {
-            "Crutial": ""
+            "Crutial": "गंभीर"
         },
         {
-            "Crafty": ""
+            "Crafty": "लबाड,धूर्त"
         },
         {
-            "Credible": ""
+            "Credible": "विश्वासार्ह"
         },
         {
-            "Credulas": ""
+            "Credulas": "भोळसर"
         },
         {
-            "Creed": ""
+            "Creed": "संप्रदाय,पंथ"
         },
         {
-            "Crucial": ""
+            "Crucial": "निर्णायक स्वरूपाचा"
         },
         {
-            "Curse": ""
+            "Curse": "शिव्याशाप देणे"
         },
         {
-            "Cursory": ""
+            "Cursory": "वरवरचा त्रोटक"
         },
         {
-            "Constarint": ""
+            "Constarint": "बंधन"
         },
         {
-            "Consummate": ""
+            "Consummate": "परिपूर्ण"
         },
         {
-            "Cop": ""
+            "Cop": "पोलिस"
         },
         {
-            "Full complement": "पुर्न क्शमता"
+            "Full complement": "पुर्ण क्षमता"
         },
         {
-            "Causal": ""
+            "Causal": "च्या शी संबंधित"
         },
         {
-            "Cultivate": ""
+            "Cultivate": "मशागत करणे, समृद्ध बनविणे"
         },
         {
-            "Counterfeit": ""
+            "Counterfeit": "बनावट"
         },
         {
-            "Childlike": ""
+            "Childlike": "पोरकट"
         },
         {
-            "Conciet": ""
+            "Conciet": "आत्मप्रौढी"
         },
         {
-            "Callous": ""
+            "Callous": "निर्दयी"
         },
         {
-            "Competence": ""
+            "Competence": "क्षमता"
         },
         {
-            "Cite": ""
+            "Cite": "कथन करणे"
         },
         {
-            "Casual":""
+ "Congenital":"जन्मजात"
+        },
+
+        {
+            "Casual":"च्या शी संबंधित"
         },
         {
             "Convex":""
@@ -1133,238 +1137,238 @@
             "Charitable":""
         },
         {
-            "Congenital": ""
+            "Congenital": "जन्मजात"
         },
         {
-            "Defer":""
+            "Defer":"पुढे ढकलणे"
         },
         {
-            "Delightful":""
+            "Delightful":"आनंदी"
         },
         {
-            "Domitable":""
+            "Domitable":"नियंत्रण योग्य"
         },
         {
-            "Discount":""
+            "Discount":"सुट"
         },
         {
-            "Disparity":""
+            "Disparity":"मतभेद"
         },
         {
-            "Defend":""
+            "Defend":"प्रतिकार"
         },
         {
-            "Deference":""
+            "Deference":"आदर"
         },
         {
-            "Dry":""
+            "Dry":"निरुत्साही,सुका"
         },
         {
-            "Debility":""
+            "Debility":"क्षिनता,थकवा"
         },
         {
-            "Definite":""
+            "Definite":"निश्चित"
         },
         {
-            "Dangerous":""
+            "Dangerous":"धोकादायक"
         },
         {
-            "Decision":""
+            "Decision":"निर्णय"
         },
         {
-            "Decrease":""
+            "Decrease":"कमी,घट"
         },
         {
-            "Deep":""
+            "Deep":"सखोल"
         },
         {
-            "Defame":""
+            "Defame":"बदनामी"
         },
         {
-            "Defence":""
+            "Defence":"बचाव"
         },
         {
-            "Delay":""
+            "Delay":"लांबवने"
         },
         {
-            "Demon":""
+            "Demon":"असुर"
         },
         {
-            "Deplorable":""
+            "Deplorable":"खेदकारक"
         },
         {
-            "Deprive":""
+            "Deprive":"हिरवून घेणे"
         },
         {
-            "Derogatory":""
+            "Derogatory":"मानहानीकारक"
         },
         {
-            "Destruction":""
+            "Destruction":"नष्ट करणे"
         },
         {
-            "Detest":""
+            "Detest":"तिटकारा करणे"
         },
         {
-            "Detriment":""
+            "Detriment":"घातक"
         },
         {
-            "Diffuse":""
+            "Diffuse":"पसरवणे"
         },
         {
-            "Disclose":""
+            "Disclose":"उघड करणे"
         },
         {
-            "Discontent":""
+            "Discontent":"असंतोष"
         },
         {
-            "Domestic":""
+            "Domestic":"घरगुती"
         },
         {
-            "Drab":""
+            "Drab":"रटाळ"
         },
         {
-            "Duplicity":""
+            "Duplicity":"फसवणूक"
         },
         {
-            "Dwarf":""
+            "Dwarf":"बुटका"
         },
         {
-            "Daggers down": ""
+            "Daggers down": "उघड शत्रुत्व"
         },
         {
-            "Debilitating": ""
+            "Debilitating": "कमकुवत,अशक्त"
         },
         {
-            "Diamond year": ""
+            "Diamond year": "हीरक महोत्सव"
         },
         {
-            "Dainty": ""
+            "Dainty": "सुंदर आणि नाजूक"
         },
         {
-            "Data": ""
+            "Data": "संगणकाने विश्लेषण करायची माहिती"
         },
         {
-            "Dazzaling": ""
+            "Dazzaling": "नेत्रदीपक"
         },
         {
-            "Dearth": ""
+            "Dearth": "तुटवडा,अभाव"
         },
         {
-            "Death": ""
+            "Death": "मृत्यू"
         },
         {
-            "Demonstrate": ""
+            "Demonstrate": "सिध्द करणे, प्रसिद्ध करणे"
         },
         {
-            "Denounce": ""
+            "Denounce": "दोष देणे"
         },
         {
-            "Decay": ""
+            "Decay": "ह्रास पावने"
         },
         {
-            "Deception": ""
+            "Deception": "लबाडी, फसवणूक"
         },
         {
-            "Decisive": ""
+            "Decisive": "निर्णायक स्थिती"
         },
         {
-            "Decline": ""
+            "Decline": "धुडकावून लावणे"
         },
         {
-            "Defame": ""
+            "Defame": "बदनामी करणे"
         },
         {
-            "Defection": ""
+            "Defection": "देशांतर, पक्षांतर"
         },
         {
-            "Defend": ""
+            "Defend": "संरक्षण,बचाव"
         },
         {
-            "Defiant": ""
+            "Defiant": "उद्धाम, उद्धट"
         },
         {
-            "Deficient": ""
+            "Deficient": "अभावपूर्न, अपूर्ण"
         },
         {
-            "Delectable": ""
+            "Delectable": "संतोषकारक, मन प्रसन्न करणारे"
         },
         {
-            "Delicious": ""
+            "Delicious": "चविष्ट, आवडीचा"
         },
         {
-            "Denote": ""
+            "Denote": "निर्दोष करणे"
         },
         {
-            "Dependence": ""
+            "Dependence": "पारतंत्र्य, आश्रय"
         },
         {
-            "Derision": ""
+            "Derision": "उपहास, थट्टा, चेष्टा"
         },
         {
-            "Desolate": ""
+            "Desolate": "निर्जन,ओसाड"
         },
         {
-            "Despise": ""
+            "Despise": "तिरस्कार करणे"
         },
         {
-            "Destitute": ""
+            "Destitute": "गरीब,बेघर"
         },
         {
-            "Destroy": ""
+            "Destroy": "नष्ट करणे"
         },
         {
-            "Deviation": ""
+            "Deviation": "मार्गच्युती, बहकावा"
         },
         {
-            "Devoted": ""
+            "Devoted": "समर्पित"
         },
         {
-            "Didactic": ""
+            "Didactic": "सुचक, सूचित करणारा"
         },
         {
-            "Diligent": ""
+            "Diligent": "मेहनती,उद्योगी,कष्टाळू"
         },
         {
-            "Diminish": ""
+            "Diminish": "कमी करणे"
         },
         {
-            "Diplomatic": ""
+            "Diplomatic": "चतुर"
         },
         {
-            "Discipline": ""
+            "Discipline": "शिस्त"
         },
         {
-            "Disclaim": ""
+            "Disclaim": "नाकारणे"
         },
         {
-            "Discontent": ""
+            "Discontent": "असंतोष"
         },
         {
-            "Disgrace": ""
+            "Disgrace": "बदनामी, लज्जास्पद गोष्ट"
         },
         {
-            "Disinterested": ""
+            "Disinterested": "निरपेक्ष, निषपृह"
         },
         {
-            "Dismay": ""
+            "Dismay": "धास्ती,भय,चिंता"
         },
         {
-            "Distant": ""
+            "Distant": "दूरचा,लांबचा"
         },
         {
-            "Diversity": ""
+            "Diversity": "फरक, विविधता"
         },
         {
-            "Divine": ""
+            "Divine": "अलौकिक,दैवी,दिव्य"
         },
         {
-            "Docile": ""
+            "Docile": "शांत, आज्ञाधारक"
         },
         {
-            "Domineering": ""
+            "Domineering": "हुकूमत गाजवणारा"
         },
         {
-            "Dreadful": ""
+            "Dreadful": "भयंकर"
         },
         {
             "Dermatology":""
@@ -1421,94 +1425,94 @@
             "Despite":""
         },
         {
-            "Earthly": ""
+            "Earthly": "एहलोकीचा, ऐहिक"
         },
         {
-            "Easily hurt": ""
+            "Easily hurt": "हळवा"
         },
         {
-            "Ecstasy": ""
+            "Ecstasy": "परमानंद, अत्यानंद"
         },
         {
-            "Effect": ""
+            "Effect": "परिणाम"
         },
         {
-            "Enigmatic": ""
+            "Enigmatic": "गुढ"
         },
         {
-            "Encroach": ""
+            "Encroach": "अतिक्रमण करणे"
         },
         {
-            "Endeavour": ""
+            "Endeavour": "प्रयत्न करणे"
         },
         {
-            "Enfeeble": ""
+            "Enfeeble": "कमकुवत करणे, खाच्चिकरण"
         },
         {
-            "Enlarge": ""
+            "Enlarge": "विस्तार करणे"
         },
         {
-            "Entice": ""
+            "Entice": "भुलवून नेणे"
         },
         {
-            "Enlightened": ""
+            "Enlightened": "प्रबुद्ध, जागृत अवस्था"
         },
         {
-            "Erect": ""
+            "Erect": "बांधणे, स्थापन करणे,उभारणे"
         },
         {
-            "Erratic": ""
+            "Erratic": "बेभरवशाचा"
         },
         {
-            "Erudite": ""
+            "Erudite": "विद्वान,पंडित"
         },
         {
-            "Esteem": ""
+            "Esteem": "आदर करणे"
         },
         {
-            "Estimating": ""
+            "Estimating": "अंदाज बांधण्यासारखा"
         },
         {
-            "Even": ""
+            "Even": "समान, सारखा"
         },
         {
-            "Eccentric": ""
+            "Eccentric": "विचित्र, विक्षिप्त"
         },
         {
-            "Emphasize": ""
+            "Emphasize": "जोर"
         },
         {
-            "Extra-terrestrial bodies": ""
+            "Extra-terrestrial bodies": "स्वर्गीय"
         },
         {
-            "Exonerated": ""
+            "Exonerated": "निर्दोष"
         },
         {
-            "Exceptional": ""
+            "Exceptional": "असाधारण"
         },
         {
-            "Excited": ""
+            "Excited": "चेतवलेला, उद्धित, क्षुब्ध"
         },
         {
-            "Execute": ""
+            "Execute": "अमलात आणणे"
         },
         {
-            "Exigency": ""
+            "Exigency": "आणीबाणी"
         },
         {
-            "Expand": ""
+            "Expand": "प्रसरण पावणे,वाढणे"
         },
         {
-            "Expel": ""
+            "Expel": "काढून टाकने"
         },
         {
-            "Expose": ""
+            "Expose": "उघड करून घेणे"
         },
         {
-            "Extraordinary": ""
+            "Extraordinary": "अलौकिक असाधारण"
         },
         {
-            "Extravagant": ""
+            "Extravagant": "खर्चिक, उधळ्या"
         },
         {
             "Extricate": ""
