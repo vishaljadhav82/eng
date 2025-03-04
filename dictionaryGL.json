@@ -70,22 +70,22 @@
             "Gratis":"मोफत"
         },
         {
-            "Gather":""
+            "Gather":"गोळा करणे"
         },
         {
-            "General":""
+            "General":"सामान्य"
         },
         {
-            "Grace":""
+            "Grace":"सौंदर्य"
         },
         {
-            "Guilty":""
+            "Guilty":"दोषी"
         },
         {
-            "Gradual":""
+            "Gradual":"क्रमनुक्रमाने"
         },
         {
-            "Grateful":""
+            "Grateful":"कृतज्ञ"
         },
         {
             "Gynaecology":""
@@ -193,79 +193,82 @@
             "Hysterical":"बेभान"
         },
         {
-            "Hetrogeneous":""
+            "Hetrogeneous":"बहुविध"
         },
         {
-            "Heavy":""
+            "Heavy":"जड"
         },
         {
-            "Honour":""
+            "Honour":"सन्मान"
         },
         {
-            "Hesitate":""
+            "Hesitate":"डळमळीत"
         },
         {
-            "Homicide":""
+            "Homicide":"मनुष्यवध"
         },
         {
-            "Hydrophobia":""
+            "Hydrophobia":"जल भीती"
         },
         {
-            "Herbivorous":""
+            "Herbivorous":"शाकाहारी"
         },
         {
-            "Hostage":""
+            "Hostage":"ओलीस"
         },
         {
-            "Host":""
+            "Host":"यजमान"
         },
         {
-            "Herculean":""
+            "Herculean":"बलवान"
         },
         {
-            "Hospitable":""
+            "Hospitable":"आतिथ्यशिल"
         },
         {
-            "Homogeneous":""
+            "Homogeneous":"एकजिनसी"
         },
         {
-            "Hymn":""
+            "Hymn":"स्त्रोत"
         },
         {
-            "Hedonism":""
+            "Hedonism":"विलासवाद"
         },
         {
-            "Hanger":""
+            "Hanger":"विमानगृहे"
         },
         {
-            "Honorary":""
+            "Honorary":"मानद"
         },
         {
-            "Homesick":""
+            "Homesick":"घरापासून दूर असल्याने दुःखी"
         },
         {
-            "Hardcopy":""
+            "Hardcopy":"सत्यप्रत"
         },
         {
-            "Hijacked":""
+            "Hijacked":"अपहरण"
         },
         {
-            "Hive":""
+            "Hive":"पोळे"
         },
         {
-            "Heretic":""
+            "Heretic":"पाखंडी"
         },
         {
-            "Homage":""
+            "Homage":"आदरांजली"
         },
         {
-            "Hen pecked":""
+            "Hen pecked":"बायकोच्या ताब्यातील"
         },
         {
-            "Highbrow":""
+            "Highbrow":"उच्चभ्रू"
         },
         {
-            "Humbug":""
+            "Humbug":"फसवा"
+        },
+        {
+            "Hoodoo":"दुर्दैव"
         },
         {
             "Illicit":"अवैध"
@@ -376,52 +379,52 @@
             "Intensify":"तीव्र करणे, उग्ररुप धारण करणे"
         },
         {
-            "Illusion":""
+            "Illusion":"भ्रम"
         },
         {
-            "Incessantly":""
+            "Incessantly":"सातत्याने"
         },
         {
-            "Impede":""
+            "Impede":"अडथळा करणे"
         },
         {
-            "Illegible":""
+            "Illegible":"दुर्वाच्य"
         },
         {
-            "Implicit":""
+            "Implicit":"गर्भित"
         },
         {
-            "Include":""
+            "Include":"समाविष्ट करणे"
         },
         {
-            "Indigent":""
+            "Indigent":"दरिद्री"
         },
         {
-            "Inordinate":""
+            "Inordinate":"बेसुमार"
         },
         {
-            "Ignorance":""
+            "Ignorance":"अज्ञान"
         },
         {
-            "Insert":""
+            "Insert":"समविष्ट करणे"
         },
         {
-            "Intentional":""
+            "Intentional":"हेतु ने केलेला"
         },
         {
-            "Intricate":""
+            "Intricate":"गुंतागुंतीचे"
         },
         {
-            "Intripid":""
+            "Intripid":"धीट"
         },
         {
-            "Intermittent":""
+            "Intermittent":"अधूनमधून"
         },
         {
-            "Imperfect":""
+            "Imperfect":"अर्धवट, गबाळा"
         },
         {
-            "Introvert":""
+            "Introvert":"अंतर्मुख"
         },
         {
             "Infanticide":""
@@ -430,124 +433,124 @@
             "Indegent":""
         },
         {
-            "Insecticides":""
+            "Insecticides":"किटनाशक"
         },
         {
-            "Inaccessible":""
+            "Inaccessible":"दुर्गम"
         },
         {
-            "Insatiable":""
+            "Insatiable":"अतृप्त"
         },
         {
-            "Infallible":""
+            "Infallible":"अस्खलित,अचूक"
         },
         {
-            "Illiterate":""
+            "Illiterate":"निरक्षर"
         },
         {
-            "Irritable":""
+            "Irritable":"चिडका"
         },
         {
-            "Indigenous":""
+            "Indigenous":"स्थानिक"
         },
         {
-            "Indispensable":""
+            "Indispensable":"अनिवार्य"
         },
         {
-            "Indescribable":""
+            "Indescribable":"अवर्णनीय"
         },
         {
-            "Inexplicable":""
+            "Inexplicable":"न उलगडणारे"
         },
         {
-            "Inflammable":""
+            "Inflammable":"ज्वालाग्राही"
         },
         {
-            "Imminent":""
+            "Imminent":"तोंडाशी आलेला"
         },
         {
-            "Illegitimate":""
+            "Illegitimate":"निषिद्ध, बेकायदा"
         },
         {
-            "Inaudible":""
+            "Inaudible":"अश्रव्य"
         },
         {
-            "Indelible":""
+            "Indelible":"खोडून टाकण्यास अशक्य"
         },
         {
-            "Instigation":""
+            "Instigation":"चिथावणी"
         },
         {
-            "Insurmountabel":""
+            "Insurmountabel":"दुर्लघ्य"
         },
         {
-            "Illegal":""
+            "Illegal":"अवैध"
         },
         {
-            "Investiture":""
+            "Investiture":"अधिकार बहाली"
         },
         {
-            "Inviolable":""
+            "Inviolable":"आदरणीय"
         },
         {
-            "Invidious":""
+            "Invidious":"मत्सरजणक"
         },
         {
-            "Invisible":""
+            "Invisible":"अदृष्य"
         },
         {
-            "Insoluble":""
+            "Insoluble":"अविद्राव्य"
         },
         {
-            "Inevitable":""
+            "Inevitable":"अटळ"
         },
         {
-            "Indictable":""
+            "Indictable":"आरोपपत्र"
         },
         {
-            "Impecunious":""
+            "Impecunious":"कंगाल"
         },
         {
-            "Irreparable":""
+            "Irreparable":"भरून न येणारे"
         },
         {
-            "Infectious":""
+            "Infectious":"संसर्गजण्य"
         },
         {
-            "Insolvent":""
+            "Insolvent":"नादार, कर्ज न फेडू शकणारा"
         },
         {
-            "Impromptu":""
+            "Impromptu":"उत्स्फूर्त"
         },
         {
-            "Iconoclast":""
+            "Iconoclast":"जुन्या चालीवर हल्ला करणारा"
         },
         {
-            "Inanimate":""
+            "Inanimate":"मृत , निर्जीव"
         },
         {
-            "Immigrant":""
+            "Immigrant":"दुसऱ्या देशातून कायमचा आलेला"
         },
         {
-            "Migratory":""
+            "Migratory":"स्थलांतर करणारा"
         },
         {
-            "Interpretor":""
+            "Interpretor":"द्विभाषिक"
         },
         {
-            "Invincible":""
+            "Invincible":"अजिंक्य"
         },
         {
-            "Incorrigible":""
+            "Incorrigible":"दुरुस्त न होणारा"
         },
         {
-            "Irrevocable":""
+            "Irrevocable":"अंतिम"
         },
         {
-            "Immaculate":""
+            "Immaculate":"निष्कलंक"
         },
         {
-            "Igloo":""
+            "Igloo":"एस्किमो लोकांचे बर्फाचे घर"
         },
         {
             "Jealous":"मत्सर हेवा"
@@ -562,7 +565,7 @@
             "Judicious":"विवेकशील, सुज्ञ"
         },
         {
-            "Jurist":""
+            "Jurist":"कायदेपंडित"
         },
         {
             "Keen":"उत्साही, रसिक"
@@ -580,7 +583,7 @@
             "Knowledge":"ज्ञान, समज"
         },
         {
-            "Kernal":""
+            "Kernal":"गाभा"
         },
         {
             "Laborious":"कष्टाचा, परिश्रमाचा"
@@ -613,52 +616,52 @@
             "Liberty":"स्वांतत्र्य"
         },
         {
-            "Lively":""
+            "Lively":"जोमदार,जिवंत"
         },
         {
-            "Loathsome":""
+            "Loathsome":"किळसवाणा"
         },
         {
-            "Locate":""
+            "Locate":"जागा हुडकणे,शोधणे"
         },
         {
-            "Loyal":""
+            "Loyal":"एकनिष्ठ, ईमानदार"
         },
         {
-            "Lucky":""
+            "Lucky":"नशीबवान,भाग्यवान"
         },
         {
-            "Lucrative":""
+            "Lucrative":"फायदेशीर, किफायतशीर"
         },
         {
-            "Luxury":""
+            "Luxury":"विलासी, ऐशआरामी"
         },
         {
-            "Launched":""
+            "Launched":"सुरू करणे"
         },
         {
-            "Languid":""
+            "Languid":"सुस्त"
         },
         {
-            "Lavish":""
+            "Lavish":"उदार"
         },
         {
-            "Legal":""
+            "Legal":"कायदेशीर"
         },
         {
-            "Lassitude":""
+            "Lassitude":"निरुत्साह"
         },
         {
-            "Liquid":""
+            "Liquid":"द्रवरूप"
         },
         {
-            "Logical":""
+            "Logical":"तार्किक"
         },
         {
-            "Lexicographer":""
+            "Lexicographer":"शब्दकोषगार"
         },
         {
-            "Lair":""
+            "Lair":"गुहा"
         }
 
     ]
