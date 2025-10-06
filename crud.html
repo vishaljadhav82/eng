@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Direct Excel Access</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h2>Excel Data (Direct Access)</h2>
+  <table border="1" id="excelTable"></table>
+
+  <script>
+    async function loadExcel() {
+      // Fetch Excel file from same host or CDN
+      const response = await fetch("data.xlsx");
+      const arrayBuffer = await response.arrayBuffer();
+
+      // Parse Excel using SheetJS
+      const workbook = XLSX.read(arrayBuffer, { type: "array" });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const json = XLSX.utils.sheet_to_json(sheet, { header: 1 }); // get 2D array
+
+      // Display in table
+      const table = document.getElementById("excelTable");
+      json.forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+    }
+
+    loadExcel();
+  </script>
+</body>
+</html>
