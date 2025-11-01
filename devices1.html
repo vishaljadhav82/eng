@@ -146,7 +146,7 @@
     function populateDeviceMenu() {
       const devices = [...new Set(issues.map(i => i.deviceType))];
       deviceMenu.innerHTML = `
-        <li class="nav-item"><a href="issue-logger.html" class="nav-link">➕ Add Issues</a></li>
+        <li class="nav-item"><a href="issue-logger1.html" class="nav-link">➕ Add Issues</a></li>
         <li class="nav-item"><a href="#" class="nav-link ${selectedDevice === 'All' ? 'active' : ''}" onclick="showAll()">All</a></li>
       `;
       devices.forEach(d => {
