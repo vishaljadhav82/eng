@@ -77,16 +77,7 @@
 
             <div class="col-md-6">
               <label class="form-label">Device Type</label>
-              <select id="deviceType" class="form-select" required>
-                <option value="">-- Select --</option>
-                <option>Printer</option>
-                <option>Monitor</option>
-                <option>CPU</option>
-                <option>Keyboard</option>
-                <option>Mouse</option>
-                <option>Software</option>
-                <option>Network</option>
-              </select>
+              
             </div>
 
             <div class="col-md-12">
@@ -101,7 +92,31 @@
 
             <div class="col-md-12">
               <label class="form-label">Resolution (Detailed Steps)</label>
-              <textarea id="resolution" class="form-control" rows="5" placeholder="Write detailed fix or troubleshooting steps..."></textarea>
+ <select id="deviceType" class="form-select" required>
+  <option value="">-- Select --</option>
+  
+  <!-- Existing Options -->
+  <option>Printer</option>
+  <option>Monitor</option>
+  <option>CPU</option>
+  <option>Keyboard</option>
+  <option>Mouse</option>
+  <option>Software</option>
+  <option>Network</option>
+
+  <!-- New Categories Added -->
+  <option>Hardware Issue</option>
+  <option>Operating System Issue</option>
+  <option>Network & Connectivity</option>
+  <option>Email / Outlook Issue</option>
+  <option>Application / Software Issue</option>
+  <option>File Server / Data Access</option>
+  <option>User Account / Security</option>
+  <option>Printer & Peripheral</option>
+  <option>Cloud / Remote Access</option>
+  <option>Configuration / Deployment</option>
+  <option>Miscellaneous / User Support</option>
+ </select>             <textarea id="resolution" class="form-control" rows="5" placeholder="Write detailed fix or troubleshooting steps..."></textarea>
             </div>
 
             <div class="col-12 text-center mt-3">
