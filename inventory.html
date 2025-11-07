@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Device Inventory (Firestore)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { background-color: #f8f9fa; font-size: 0.95rem; }
+    .navbar-brand { font-weight: 600; }
+    .nav-link { padding: 6px 10px !important; }
+    .container { padding-top: 10px; }
+    .item-card { border-left: 4px solid #0d6efd; padding: 10px !important; cursor: pointer; transition: all 0.2s ease; }
+    .item-card:hover { background-color: #f1f3f5; transform: scale(1.02); }
+    .item-card h5 { font-size: 1rem; margin-bottom: 5px; }
+    .item-card p { margin: 2px 0; }
+    .search-bar { max-width: 500px; margin: 10px auto; }
+    #modalDetails { white-space: pre-line; line-height: 1.5; word-wrap: break-word; background-color: #f8f9fa; border-radius: 6px; padding: 8px; }
+    .modal-body { max-height: 70vh; overflow-y: auto; }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand" href="#">🖥️ Device Inventory</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto small" id="manufacturerMenu">
+          <li class="nav-item"><a href="#" class="nav-link active" onclick="showAll()">All</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <div class="container">
+    <div class="input-group search-bar">
+      <span class="input-group-text bg-primary text-white py-1 px-2">🔍</span>
+      <input type="text" id="searchInput" class="form-control py-1" placeholder="Search inventory...">
+    </div>
+
+    <h6 id="pageTitle" class="text-center text-secondary mb-3"></h6>
+
+    <div id="inventoryContainer" class="row g-2 justify-content-center"></div>
+  </div>
+
+  <!-- Item Details Modal -->
+  <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white py-2">
+          <h5 class="modal-title" id="itemModalLabel">Device Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body small">
+          <p><strong>Manufacturer:</strong> <span id="modalManufacturer"></span></p>
+          <p><strong>Model:</strong> <span id="modalModel"></span></p>
+          <p><strong>Serial Number:</strong> <span id="modalSerial"></span></p>
+          <p><strong>RAM:</strong> <span id="modalRAM"></span></p>
+          <p><strong>Storage:</strong> <span id="modalStorage"></span></p>
+          <p><strong>Processor:</strong> <span id="modalProcessor"></span></p>
+          <p><strong>Quick Check:</strong></p>
+          <div id="modalDetails" class="mb-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase & Firestore -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyA5ezNWECVn4vkdEHWhap-mv1B-D8LCN70",
+      authDomain: "quiz-43b3e.firebaseapp.com",
+      projectId: "quiz-43b3e",
+      storageBucket: "quiz-43b3e.appspot.com",
+      messagingSenderId: "477037762591",
+      appId: "1:477037762591:web:ea30670a704b0063819d2a",
+      measurementId: "G-7RWKDV2SLP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // DOM Elements
+    const inventoryContainer = document.getElementById("inventoryContainer");
+    const searchInput = document.getElementById("searchInput");
+    const pageTitle = document.getElementById("pageTitle");
+    const manufacturerMenu = document.getElementById("manufacturerMenu");
+
+    let inventory = [];
+    let selectedManufacturer = localStorage.getItem("selectedManufacturer") || "All";
+
+    // Real-time Firestore listener
+    onSnapshot(collection(db, "inventory"), (snapshot) => {
+      inventory = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      populateManufacturerMenu();
+      renderInventory();
+    });
+
+    function populateManufacturerMenu() {
+      const manufacturers = [...new Set(inventory.map(i => i.manufacturer))];
+      manufacturerMenu.innerHTML = `<li class="nav-item"><a href="#" class="nav-link ${selectedManufacturer === 'All' ? 'active' : ''}" onclick="showAll()">All</a></li>`;
+      manufacturers.forEach(m => {
+        manufacturerMenu.innerHTML += `<li class="nav-item"><a href="#" class="nav-link ${selectedManufacturer === m ? 'active' : ''}" onclick="filterByManufacturer('${m}')">${m}</a></li>`;
+      });
+    }
+
+    function renderInventory(filterText = "") {
+      inventoryContainer.innerHTML = "";
+      let filtered = inventory;
+
+      if (selectedManufacturer && selectedManufacturer !== "All") {
+        filtered = filtered.filter(i => i.manufacturer === selectedManufacturer);
+        pageTitle.textContent = selectedManufacturer + " Devices";
+      } else {
+        pageTitle.textContent = "All Devices";
+      }
+
+      if (filterText.trim() !== "") {
+        filtered = filtered.filter(i =>
+          i.manufacturer.toLowerCase().includes(filterText.toLowerCase()) ||
+          i.model.toLowerCase().includes(filterText.toLowerCase()) ||
+          i.serialNumber.toLowerCase().includes(filterText.toLowerCase()) ||
+          (i.ram && i.ram.toLowerCase().includes(filterText.toLowerCase())) ||
+          (i.storage && i.storage.toLowerCase().includes(filterText.toLowerCase())) ||
+          (i.processor && i.processor.toLowerCase().includes(filterText.toLowerCase())) ||
+          (i.quickCheck && i.quickCheck.toLowerCase().includes(filterText.toLowerCase()))
+        );
+      }
+
+      if (filtered.length === 0) {
+        inventoryContainer.innerHTML = `<p class="text-center text-muted mt-2">No devices found.</p>`;
+        return;
+      }
+
+      filtered.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "col-12 col-md-6 col-lg-4";
+        card.innerHTML = `
+          <div class="card item-card shadow-sm" onclick="showItem('${item.id}')">
+            <h5 class="text-primary">${item.model}</h5>
+            <p><strong>Manufacturer:</strong> ${item.manufacturer}</p>
+            <p><strong>Serial Number:</strong> ${item.serialNumber}</p>
+            <p class="small text-muted">Quick Check: ${item.quickCheck ? item.quickCheck.substring(0, 50) + "..." : "N/A"}</p>
+          </div>
+        `;
+        inventoryContainer.appendChild(card);
+      });
+    }
+
+    window.showItem = function (id) {
+      const item = inventory.find(i => i.id === id);
+      if (!item) return;
+
+      document.getElementById("modalManufacturer").textContent = item.manufacturer;
+      document.getElementById("modalModel").textContent = item.model;
+      document.getElementById("modalSerial").textContent = item.serialNumber;
+      document.getElementById("modalRAM").textContent = item.ram || "N/A";
+      document.getElementById("modalStorage").textContent = item.storage || "N/A";
+      document.getElementById("modalProcessor").textContent = item.processor || "N/A";
+      document.getElementById("modalDetails").textContent = item.quickCheck || "No details provided.";
+
+      new bootstrap.Modal(document.getElementById("itemModal")).show();
+    };
+
+    window.filterByManufacturer = function (manufacturer) {
+      localStorage.setItem("selectedManufacturer", manufacturer);
+      selectedManufacturer = manufacturer;
+      populateManufacturerMenu();
+      renderInventory(searchInput.value);
+    };
+
+    window.showAll = function () {
+      localStorage.setItem("selectedManufacturer", "All");
+      selectedManufacturer = "All";
+      populateManufacturerMenu();
+      renderInventory(searchInput.value);
+    };
+
+    searchInput.addEventListener("input", (e) => renderInventory(e.target.value));
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
