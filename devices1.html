@@ -59,20 +59,39 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid px-2">
-      <a class="navbar-brand" href="#">🖥️ IT Issues</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ms-auto small" id="deviceMenu">
-          <li class="nav-item"><a href="issue-logger1.html" class="nav-link">➕ Add Issues</a></li>
-          <li class="nav-item"><a href="#" class="nav-link active" onclick="showAll()">All</a></li>
-        </ul>
-      </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid px-3">
+    <a class="navbar-brand fw-semibold" href="devices1.html">🖥️ IT Inventory</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto small" id="navLinks">
+        <li class="nav-item"><a href="devices1.html" class="nav-link">📋 See Issues</a></li>
+        <li class="nav-item"><a href="inventory.html" class="nav-link">💾 Inventory</a></li>
+        <li class="nav-item"><a href="edit-inventory.html" class="nav-link">✏️ Edit Inventory</a></li>
+        <li class="nav-item"><a href="issue-logger1.html" class="nav-link">🧾 Add Issues</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<script>
+  // Highlight active page in navbar
+  document.addEventListener("DOMContentLoaded", () => {
+    const current = window.location.pathname.split("/").pop();
+    document.querySelectorAll("#navLinks .nav-link").forEach(link => {
+      if (link.getAttribute("href") === current) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+</script>
+
 
   <!-- Main -->
   <div class="container">
