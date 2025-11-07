@@ -7,24 +7,53 @@
 <style>
     body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; }
     h1 { color: #333; }
-    table { border-collapse: collapse; width: 100%; background: #fff; }
+    .controls { margin-bottom: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+    select, button { padding: 5px 10px; cursor: pointer; border: none; border-radius: 3px; }
+    button { color: white; }
+    .delete-btn { background: #E74C3C; }
+    .edit-btn { background: #F1C40F; }
+    .export-btn { background: #2ECC71; }
+    .clear-btn { background: #8E44AD; }
+    .filter-select { background: #007ACC; color: white; }
+
+    .table-container {
+        overflow-x: auto;
+        position: relative;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+    }
+
+    /* Gradient scroll indicator */
+    .table-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        pointer-events: none;
+        background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
+
+    table { border-collapse: collapse; width: 100%; background: #fff; min-width: 1200px; }
     th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-    th { background: #007ACC; color: white; }
-    button { padding: 5px 10px; margin: 2px; cursor: pointer; border: none; }
-    .delete-btn { background: #E74C3C; color: white; }
-    .edit-btn { background: #F1C40F; color: white; }
-    .export-btn { background: #2ECC71; color: white; }
-    .clear-btn { background: #8E44AD; color: white; }
+    th { background: #007ACC; color: white; position: sticky; top: 0; z-index: 2; }
+
 </style>
 </head>
 <body>
 
 <h1>System Info Dashboard</h1>
-<div style="margin-bottom:10px;">
+
+<div class="controls">
     <button class="export-btn" onclick="exportToExcelJS()">Export to Excel</button>
     <button class="clear-btn" onclick="deleteCollection()">Delete Entire Collection</button>
+    <select class="filter-select" id="clientFilter" onchange="applyFilter()">
+        <option value="">All Clients</option>
+    </select>
 </div>
 
+<div class="table-container">
 <table id="systemTable">
     <thead>
         <tr>
@@ -41,12 +70,13 @@
             <th>Storage</th>
             <th>Serial</th>
             <th>Timestamp</th>
-            <th>Remarks</th> <!-- Second-last column -->
+            <th>Remarks</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody></tbody>
 </table>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver/dist/FileSaver.min.js"></script>
@@ -57,6 +87,7 @@ const collection = "systemInfo";
 const baseUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/${collection}`;
 
 let currentData = [];
+let filteredData = [];
 
 // Standard sizes
 const ramSizes = [8, 16, 32, 64, 128, 256]; // GB
@@ -85,12 +116,36 @@ async function fetchData() {
     const res = await fetch(baseUrl);
     const data = await res.json();
     currentData = data.documents || [];
+    filteredData = currentData;
+    populateClientFilter();
+    renderTable();
+}
+
+function populateClientFilter() {
+    const select = document.getElementById("clientFilter");
+    const clients = [...new Set(currentData.map(d => d.fields.clientName?.stringValue).filter(Boolean))];
+    select.innerHTML = '<option value="">All Clients</option>';
+    clients.forEach(c => {
+        const option = document.createElement("option");
+        option.value = c;
+        option.textContent = c;
+        select.appendChild(option);
+    });
+}
+
+function applyFilter() {
+    const value = document.getElementById("clientFilter").value;
+    filteredData = value ? currentData.filter(d => d.fields.clientName?.stringValue === value) : currentData;
+    renderTable();
+}
+
+function renderTable() {
     const tbody = document.querySelector("#systemTable tbody");
     tbody.innerHTML = "";
 
-    if (!currentData.length) return;
+    if (!filteredData.length) return;
 
-    currentData.forEach(doc => {
+    filteredData.forEach(doc => {
         const fields = doc.fields;
         const tr = document.createElement("tr");
 
@@ -105,7 +160,7 @@ async function fetchData() {
             tr.appendChild(td);
         });
 
-        // Remarks as second last column
+        // Remarks as second-last column
         const remarksTd = document.createElement("td");
         remarksTd.textContent = fields.remarks?.stringValue || "";
         tr.appendChild(remarksTd);
@@ -173,7 +228,7 @@ async function deleteCollection() {
 
 // ----- ExcelJS Export -----
 async function exportToExcelJS() {
-    if (!currentData.length) return alert("No data to export.");
+    if (!filteredData.length) return alert("No data to export.");
 
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('System Info');
@@ -195,7 +250,7 @@ async function exportToExcelJS() {
         { header: 'Remarks', key: 'remarks', width: 30 },
     ];
 
-    currentData.forEach(row => {
+    filteredData.forEach(row => {
         const f = row.fields;
         worksheet.addRow({
             clientName: f.clientName?.stringValue || "",
@@ -215,11 +270,18 @@ async function exportToExcelJS() {
         });
     });
 
+    // Center all cells
+    worksheet.eachRow((row) => {
+        row.eachCell(cell => {
+            cell.alignment = { vertical: 'middle', horizontal: 'center' };
+        });
+    });
+
+    // Style header
     worksheet.getRow(1).eachCell(cell => {
         cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
         cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF007ACC' } };
         cell.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
-        cell.alignment = { vertical: 'middle', horizontal: 'center' };
     });
 
     worksheet.eachRow((row, rowNumber) => {
@@ -233,10 +295,9 @@ async function exportToExcelJS() {
 
     worksheet.views = [{ state: 'frozen', ySplit: 1 }];
 
-    workbook.xlsx.writeBuffer().then(buffer => {
-        const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
-        saveAs(blob, "Advanced_System_Info.xlsx");
-    });
+    const buffer = await workbook.xlsx.writeBuffer();
+    const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+    saveAs(blob, "Advanced_System_Info.xlsx");
 }
 
 // Load table on page load
