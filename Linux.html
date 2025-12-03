@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Linux MCQ Quiz — Explanations (After Q + Answer Sheet)</title>
+<style>
+  :root{
+    --bg1:#6a11cb; --bg2:#2575fc; --card:#ffffff; --muted:#6b7280;
+    --good:#d4edda; --bad:#f8d7da; --accent:#ff7a59;
+  }
+  body{
+    margin:0; font-family:Inter,system-ui,Arial; background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    padding:16px; color:#111;
+  }
+  .wrap{ max-width:820px; margin:16px auto; background:var(--card); border-radius:14px; padding:18px; box-shadow:0 8px 30px rgba(0,0,0,0.18);}
+  h1{ margin:0 0 10px; font-size:20px; text-align:center;}
+  .row{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  label{ font-weight:600; color:var(--muted); }
+  select, button{ font-size:16px; padding:12px 14px; border-radius:10px; border:1px solid #ddd; }
+  button.primary{ background:linear-gradient(90deg,#2575fc,#6a11cb); color:#fff; border:none; cursor:pointer; }
+  button.primary:active{ transform:translateY(1px); }
+  #quizArea{ margin-top:18px; }
+  .card{ background:linear-gradient(180deg,#fff,#fbfdff); border-radius:10px; padding:14px; box-shadow:0 6px 18px rgba(6,22,46,0.06); }
+  .question{ font-size:18px; font-weight:700; margin-bottom:10px; }
+  .opts{ display:flex; flex-direction:column; gap:8px; }
+  .opt{ padding:10px; border-radius:8px; border:1px solid #e6eef8; background:#f7fbff; display:flex; align-items:center; gap:10px; }
+  .opt input{ transform:scale(1.1); }
+  .explain{ margin-top:12px; padding:10px; border-radius:8px; background:#f3f6ff; color:#0b2540; line-height:1.45; }
+  .explain.good{ background:var(--good); }
+  .explain.bad{ background:var(--bad); }
+  .controls{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  .small{ font-size:13px; color:var(--muted); }
+  .answer-sheet{ margin-top:14px; }
+  .as-item{ padding:10px; border-radius:8px; border:1px solid #eee; margin-bottom:8px; background:#fff; }
+  .as-correct{ border-left:6px solid #28a745; }
+  .as-wrong{ border-left:6px solid #dc3545; }
+  @media (max-width:520px){
+    .row{ flex-direction:column; align-items:stretch; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Linux Topic-wise MCQ Quiz — Explanations (After Q + Answer Sheet)</h1>
+
+    <div class="row">
+      <label for="topic">Select topic:</label>
+      <select id="topic">
+        <option value="">-- choose topic --</option>
+        <option value="file">File Management</option>
+        <option value="user">User & Permissions</option>
+        <option value="process">Process Management</option>
+        <option value="network">Networking</option>
+        <option value="disk">Disk & System Info</option>
+        <option value="package">Package Management</option>
+        <option value="archive">Compression & Archiving</option>
+        <option value="vim">VIM / VI Editor</option>
+        <option value="script">Shell & Scripting</option>
+        <option value="service">System Services</option>
+        <option value="all">All Topics (100 MCQ)</option>
+      </select>
+
+      <button class="primary" id="startBtn">Start Quiz</button>
+      <div style="flex:1"></div>
+      <div class="small">Each question shows an explanation after you answer. Final sheet repeats the explanation.</div>
+    </div>
+
+    <div id="quizArea"></div>
+  </div>
+
+<script>
+/* ============================
+   MCQ BANK with explanations
+   Each item: { q:..., o:[...], a:"", exp:"deep explanation..." }
+   10 topics × 10 questions = 100 questions
+   ============================ */
+
+const fileMCQ = [
+  {q:"Which command lists files?", o:["ls","dir","show","view"], a:"ls",
+   exp:"ls (list) is the standard command to display directory contents on Unix-like systems. It supports options such as -l for long listing and -a to include hidden files."},
+  {q:"Command to display file content?", o:["read","cat","open","show"], a:"cat",
+   exp:"cat prints a file's contents to stdout. It is commonly used to quickly view small files or to concatenate files together."},
+  {q:"Create an empty file?", o:["mkfile","touch","new","create"], a:"touch",
+   exp:"touch creates an empty file or updates an existing file's timestamps. It's handy for creating placeholder files."},
+  {q:"Copy files?", o:["mv","copy","cp","clone"], a:"cp",
+   exp:"cp (copy) duplicates files or directories. Use -r to copy directories recursively."},
+  {q:"Move/rename a file?", o:["move","sh","mv","rename"], a:"mv",
+   exp:"mv moves or renames files and directories. Moving inside same filesystem is just a rename; across filesystems copies+removes."},
+  {q:"Delete a file?", o:["remove","rm","del","erase"], a:"rm",
+   exp:"rm removes files. Be cautious—rm deletes permanently; use -i for interactive confirmation or trash utilities for safer deletion."},
+  {q:"Make a directory?", o:["mkdir","md","mkfolder","createdir"], a:"mkdir",
+   exp:"mkdir creates directories. Use -p to create parent directories as needed (e.g., mkdir -p a/b/c)."},
+  {q:"Remove an empty directory?", o:["rmdir","removedir","del","rm -dir"], a:"rmdir",
+   exp:"rmdir removes empty directories only. To remove non-empty directories use rm -r (recursive) with caution."},
+  {q:"Find files by name?", o:["search","locate","find","grep"], a:"find",
+   exp:"find searches the filesystem with many filters (name, type, size, mtime). locate uses a pre-built database and is faster for simple queries."},
+  {q:"Show current working directory?", o:["path","loc","pwd","where"], a:"pwd",
+   exp:"pwd prints the full path of the current shell directory — useful in scripts and when navigating nested folders."}
+];
+
+const userMCQ = [
+  {q:"Create a new user account?", o:["mkuser","useradd","adduser","newusr"], a:"useradd",
+   exp:"useradd is the low-level command to create users. Many distributions provide adduser as an interactive friendlier script."},
+  {q:"Change a user's password?", o:["passwd","chpass","pwdchange","password"], a:"passwd",
+   exp:"passwd sets or changes a user's password and updates system authentication files securely."},
+  {q:"Modify file permissions?", o:["perm","chmod","chperm","role"], a:"chmod",
+   exp:"chmod changes permission bits (rwx) for user/group/others; numeric (e.g., 755) or symbolic (e.g., u+x) modes are common."},
+  {q:"Change file owner?", o:["chown","owner","changeowner","usermod"], a:"chown",
+   exp:"chown changes file ownership (user:group). Use recursively with caution (chown -R)."},
+  {q:"Show who is logged-in?", o:["who","users","login","log"], a:"who",
+   exp:"who lists users currently logged into the system and their login terminals; w provides more detail including CPU and load."},
+  {q:"Switch to another user account?", o:["switch","su","root","change"], a:"su",
+   exp:"su switches user context; su - starts a login shell. For single-command elevated actions prefer sudo."},
+  {q:"List groups the current user belongs to?", o:["groups","roles","lsgrp","permissions"], a:"groups",
+   exp:"groups shows the group membership of a user, useful for checking access privileges."},
+  {q:"Run a command as root temporarily?", o:["admin","super","sudo","root"], a:"sudo",
+   exp:"sudo executes a command with another user's privileges (usually root), using fine-grained policies in /etc/sudoers."},
+  {q:"Delete a user account?", o:["rmuser","deluser","userdel","delete"], a:"userdel",
+   exp:"userdel removes a user; to remove home directory and mail use userdel -r (check distribution-specific tools first)."},
+  {q:"Modify an existing user account?", o:["usermod","useredit","modify","edit"], a:"usermod",
+   exp:"usermod edits user account attributes (home directory, shell, groups); requires caution to avoid locking the account."}
+];
+
+const processMCQ = [
+  {q:"List running processes for the current user?", o:["proc","top","ps","run"], a:"ps",
+   exp:"ps shows process snapshots. Use ps aux or ps -ef to view all system processes; combine with grep to filter."},
+  {q:"Terminate a process by PID?", o:["stop","end","kill","ps -k"], a:"kill",
+   exp:"kill sends signals to a process (default SIGTERM). Use kill -9 (SIGKILL) only when process won't terminate cleanly."},
+  {q:"Interactive process viewer with more features than top?", o:["htop","system","stats","usage"], a:"htop",
+   exp:"htop provides colored, user-friendly, interactive process view with shortcuts; install separately on some distros."},
+  {q:"Bring a background job to the foreground?", o:["fg","run","front","active"], a:"fg",
+   exp:"fg resumes a stopped/background job in the foreground. Use job control commands like jobs, bg, fg in shells."},
+  {q:"Send a stopped job to the background?", o:["bg","run &","back","async"], a:"bg",
+   exp:"bg resumes suspended jobs in the background so the shell is free for other commands."},
+  {q:"List shell jobs started from current terminal?", o:["jobs","tasks","psjobs","active"], a:"jobs",
+   exp:"jobs lists jobs started in the current shell/session with their status (running, stopped)." },
+  {q:"Change the scheduling priority of a process?", o:["nice","priority","level","pr"], a:"nice",
+   exp:"nice starts a process with adjusted niceness value; renice changes priority of running processes."},
+  {q:"Show system load averages and uptime?", o:["uptime","load","sys","stat"], a:"uptime",
+   exp:"uptime prints how long the system has been up and the load averages for 1, 5, and 15 minutes — helpful for performance checks."},
+  {q:"Monitor CPU and memory usage interactively?", o:["stat","top","usg","usage"], a:"top",
+   exp:"top dynamically shows processes sorted by CPU or memory; useful for live troubleshooting."},
+  {q:"Kill processes by name?", o:["killall","stop","endall","terminate"], a:"killall",
+   exp:"killall sends signals to all processes matching a name — convenient but use carefully to avoid collateral termination."}
+];
+
+const networkMCQ = [
+  {q:"Show network interfaces and addresses?", o:["ip a","net","network","nic"], a:"ip a",
+   exp:"ip a (ip addr) lists network interfaces and their addresses; modern replacement for older ifconfig utility."},
+  {q:"Send ICMP echo to check host reachability?", o:["test","signal","ping","connect"], a:"ping",
+   exp:"ping tests connectivity and latency using ICMP; a useful first step when diagnosing network issues."},
+  {q:"List listening sockets and connections?", o:["ports","ss","netopen","conn"], a:"ss",
+   exp:"ss shows sockets and connections (TCP/UDP). It's faster and more featureful than older netstat in many distros."},
+  {q:"Connect to a host over SSH?", o:["remote","ssh","connect","login"], a:"ssh",
+   exp:"ssh establishes secure remote shell/command execution over an encrypted channel (port 22 by default)."},
+  {q:"Copy files over SSH?", o:["copy","scp","file-ssh","transfer"], a:"scp",
+   exp:"scp copies files securely over SSH. rsync over SSH is often preferred for large or incremental transfers."},
+  {q:"Show routing table?", o:["route","ip r","network","router"], a:"ip r",
+   exp:"ip r (ip route) displays kernel routing table entries; helps identify default gateway and network routes."},
+  {q:"Restart network service (systemd)?", o:["netrestart","systemctl restart network","neton","netstart"], a:"systemctl restart network",
+   exp:"Restarting network via systemctl triggers the distribution's network service. On modern systems NetworkManager or systemd-networkd may be used."},
+  {q:"Download files from web via CLI?", o:["wget","get","pull","download"], a:"wget",
+   exp:"wget is a non-interactive downloader supporting HTTP/HTTPS/FTP and resume; curl is another flexible option."},
+  {q:"Show the system hostname?", o:["name","host","hostname","whoami"], a:"hostname",
+   exp:"hostname prints or sets the system's network name; useful when configuring or troubleshooting network identity."},
+  {q:"Port and vulnerability scanner?", o:["scan","pingall","nmap","find"], a:"nmap",
+   exp:"nmap scans hosts and ports and provides service/OS detection; used by admins for network inventory and auditing."}
+];
+
+const diskMCQ = [
+  {q:"Show filesystem disk free space (summary)?", o:["disk","df","du","size"], a:"df",
+   exp:"df reports filesystem disk space usage (available, used). Use -h for human-readable sizes."},
+  {q:"Show directory and file sizes (summarized)?", o:["size","du","df","check"], a:"du",
+   exp:"du calculates disk usage of files/directories. Combine du -sh to get a human-readable summary for a directory."},
+  {q:"Show memory (RAM) usage?", o:["ram","free","mem","sys"], a:"free",
+   exp:"free displays used/free memory and swap; modern systems may show cache/buffer usage which reduces 'available' RAM."},
+  {q:"Show kernel and system information?", o:["sys","uname -a","info","version"], a:"uname -a",
+   exp:"uname -a prints kernel name, hostname, kernel version and architecture — useful for compatibility checks."},
+  {q:"Show kernel boot messages buffer?", o:["boot","msgs","dmesg","start"], a:"dmesg",
+   exp:"dmesg prints kernel ring buffer messages (device initialization, drivers). Good for hardware troubleshooting."},
+  {q:"Display CPU architecture and cores?", o:["cpu","lscpu","cpustat","info"], a:"lscpu",
+   exp:"lscpu provides concise CPU architecture details including sockets, cores, threads and CPU flags."},
+  {q:"List hardware information?", o:["lshw","hw","info","sys"], a:"lshw",
+   exp:"lshw prints detailed hardware info. It may require root to display full details of devices."},
+  {q:"List block devices and partitions?", o:["fdisk -l","lsblk","blocks","part"], a:"lsblk",
+   exp:"lsblk lists block devices in a tree with sizes and mount points — very handy to inspect disks and partitions."},
+  {q:"Show system uptime and load?", o:["time","uptime","runtime","sys"], a:"uptime",
+   exp:"uptime indicates how long the system has been running and the load averages; high loads may indicate performance issues."},
+  {q:"Mount a filesystem?", o:["mount","fs","load","attach"], a:"mount",
+   exp:"mount attaches a filesystem to the directory tree. Use /etc/fstab for persistent mounts across reboots."}
+];
+
+const packageMCQ = [
+  {q:"Install a package on Debian/Ubuntu (APT)?", o:["pkg add","apt install","install apt","aptget"], a:"apt install",
+   exp:"apt install fetches and installs packages using APT. Use sudo and apt update before installing to refresh package lists."},
+  {q:"Update package lists (APT)?", o:["update","apt update","apt refresh","pkgupdate"], a:"apt update",
+   exp:"apt update refreshes package metadata; run before apt upgrade or apt install to get latest package versions."},
+  {q:"Install a package on RHEL/CentOS (YUM)?", o:["yum add","yum install","inst","install yum"], a:"yum install",
+   exp:"yum install is used on older RHEL/CentOS systems. Newer versions use dnf with similar commands."},
+  {q:"Show package details (APT)?", o:["apt show","pkg info","show pkg","info"], a:"apt show",
+   exp:"apt show displays package metadata such as version, dependencies, and description."},
+  {q:"Remove a package (APT)?", o:["apt del","apt remove","delete","pkg"], a:"apt remove",
+   exp:"apt remove uninstalls a package but may leave configuration files; apt purge removes package plus config."},
+  {q:"Install an RPM file directly?", o:["rpm install","rpm -i","rpm add","rpm setup"], a:"rpm -i",
+   exp:"rpm -i installs a local RPM package; dependency resolution is manual; dnf/rpm can be used depending on distro."},
+  {q:"Install a DEB package directly?", o:["dpkg add","dpkg -i","dpkg install","dpkg setup"], a:"dpkg -i",
+   exp:"dpkg -i installs a local .deb file; dependencies may need apt-get -f install to resolve afterwards."},
+  {q:"Upgrade installed packages (APT)?", o:["update","apt upgrade","upgrade pkg","apt up"], a:"apt upgrade",
+   exp:"apt upgrade upgrades installed packages to latest versions after running apt update. Use apt full-upgrade for additional changes."},
+  {q:"List installed packages (APT)?", o:["apt list","apt installed","list","pkgs"], a:"apt list --installed",
+   exp:"apt list --installed outputs installed packages; use grep to search for a package name."},
+  {q:"Clear apt cache files?", o:["apt clean","clear apt","cache clear","clean"], a:"apt clean",
+   exp:"apt clean removes downloaded package files from the cache to free disk space."}
+];
+
+const archiveMCQ = [
+  {q:"Create a tar archive?", o:["tar new","tar cvf","tar add","pack"], a:"tar cvf",
+   exp:"tar cvf creates a tarball (c=create, v=verbose, f=file). Add compression flags (z for gzip) to compress: tar cvfz."},
+  {q:"Extract a tar archive?", o:["tar extract","tar xvf","untar","extract"], a:"tar xvf",
+   exp:"tar xvf extracts archive contents (x=extract, v=verbose, f=file). Use -z for gzip-compressed tarballs."},
+  {q:"Compress a file with gzip?", o:["zip","gzip","compress","zs"], a:"gzip",
+   exp:"gzip compresses files producing .gz files. It's a single-file compressor; tar + gzip is common for archives."},
+  {q:"Extract a .gz file?", o:["ungz","unzip","gunzip","extract"], a:"gunzip",
+   exp:"gunzip decompresses .gz files, restoring the original file. Use z flag in tar to handle .tar.gz automatically."},
+  {q:"Create a zip archive?", o:["zip -c","compress","zip","archive"], a:"zip",
+   exp:"zip creates compressed archives in .zip format, commonly used for cross-platform sharing."},
+  {q:"Extract a zip file?", o:["unzip","untar","extract zip","open"], a:"unzip",
+   exp:"unzip extracts .zip archives. Many GUI file managers also support zip natively."},
+  {q:"List contents of a tar archive?", o:["tar tvf","view tar","list tar","show"], a:"tar tvf",
+   exp:"tar tvf lists files inside a tarball without extracting them (t=list)." },
+  {q:"Concatenate files into one archive-like file?", o:["cat","combine","tar","pack"], a:"tar",
+   exp:"tar concatenates multiple files into a single archive. cat concatenates file contents but doesn't create archives."},
+  {q:"Detect a file's type?", o:["type","ftype","file","info"], a:"file",
+   exp:"file analyzes file content/magic bytes to guess the file type — useful when extensions are missing or misleading."},
+  {q:"Split a large file into parts?", o:["split","break","divide","cut"], a:"split",
+   exp:"split divides files into chunks of a given size so they can be transferred or stored more easily; combine with cat to rejoin."}
+];
+
+const vimMCQ = [
+  {q:"Enter insert mode in vim?", o:["i","edit","ins","open"], a:"i",
+   exp:"i switches vim from normal mode into insert mode so you can type text. Press Esc to return to normal mode."},
+  {q:"Save changes and exit vim?", o:[":q",":wq","save","quit"], a:":wq",
+   exp:":wq writes (saves) the buffer and quits; :q will fail if there are unsaved changes."},
+  {q:"Exit without saving changes?", o:[":quit",":exit",":q!",":close"], a:":q!",
+   exp:":q! quits forcibly discarding unsaved changes — use with caution to avoid data loss."},
+  {q:"Delete the current line in vim?", o:["dd","del","delete","cut"], a:"dd",
+   exp:"dd deletes the current line in normal mode. You can combine with a number (e.g., 3dd deletes 3 lines)."},
+  {q:"Copy (yank) a line in vim?", o:["yy","copy","cp","cc"], a:"yy",
+   exp:"yy yanks (copies) the current line into vim's unnamed register. Use p to paste."},
+  {q:"Paste yanked text after cursor in vim?", o:["pp","paste","p","v"], a:"p",
+   exp:"p pastes the yanked text after the cursor; P pastes before the cursor."},
+  {q:"Move to the start of the current line in vim?", o:["0","home","start","^"], a:"0",
+   exp:"0 moves the cursor to the first column (start) of the current line in normal mode."},
+  {q:"Undo the last change in vim?", o:["undo","uu","u","ctrl+u"], a:"u",
+   exp:"u undoes the last change. Use Ctrl-r to redo changes."},
+  {q:"Redo an undone change in vim?", o:["r","rr","redo","ctrl+r"], a:"ctrl+r",
+   exp:"Ctrl-r redoes the last undone change; r is a replace command, so avoid confusion."},
+  {q:"Search for text in vim (forward)?", o:["find","search","/","?"], a:"/",
+   exp:"/ starts a forward search in vim; enter the pattern and press n to move to the next match."}
+];
+
+const scriptMCQ = [
+  {q:"Print text to standard output in shell?", o:["echo","print","show","out"], a:"echo",
+   exp:"echo writes arguments to stdout and is commonly used in scripts for output and debugging."},
+  {q:"Read a value from standard input in shell?", o:["scan","input","read","get"], a:"read",
+   exp:"read reads a line from stdin and assigns it to a variable — useful for interactive scripts."},
+  {q:"Reference a variable's value in shell?", o:["$var","var","${var}","v"], a:"$var",
+   exp:"$var expands the variable's value. ${var} is used to disambiguate boundaries; both are common."},
+  {q:"Proper if-statement syntax in POSIX shell?", o:["if()","if[]","if [ ]","if<>"], a:"if [ ]",
+   exp:"if [ condition ]; then ... fi is POSIX-compliant; note spaces around brackets and use test constructs correctly."},
+  {q:"Standard for loop syntax in shell scripting?", o:["for()", "for do","for","loop"], a:"for",
+   exp:"for i in ...; do ...; done iterates over items. Remember to quote variables to avoid word splitting."},
+  {q:"Default interactive shell on many Linux systems?", o:["shell","sh","bash","cmd"], a:"bash",
+   exp:"bash (Bourne Again Shell) is the common interactive shell with scripting extensions; sh is the POSIX shell."},
+  {q:"Make a script executable?", o:["chmod +x","exec","permit","run"], a:"chmod +x",
+   exp:"chmod +x grants execute permission so a script can be run as ./script.sh. Shebang (#!) indicates interpreter."},
+  {q:"Run a script from current directory?", o:["run file","shell file","./file.sh","execute"], a:"./file.sh",
+   exp:"Use ./script.sh to execute a file in current directory because '.' is not in PATH by default for security."},
+  {q:"Check exit status of last command?", o:["exit","status","$?","code"], a:"$?",
+   exp:"$? returns the numeric exit code of the previous command; zero indicates success by convention."},
+  {q:"Add a comment line in shell script?", o:["//","#","/* */","--"], a:"#",
+   exp:"# starts a comment in shell scripts. Use it to document logic and avoid unexpected behavior."}
+];
+
+const serviceMCQ = [
+  {q:"Start a systemd service?", o:["systemctl on","service start","systemctl start","service run"], a:"systemctl start",
+   exp:"systemctl start SERVICE starts the service immediately in systemd-based systems. Use enable for boot start."},
+  {q:"Stop a running service (systemd)?", o:["stop sys","systemctl stop","service kill","halt"], a:"systemctl stop",
+   exp:"systemctl stop SERVICE asks the service to stop gracefully; check status and logs after stopping."},
+  {q:"Restart a service immediately?", o:["systemctl restart","restart","refresh","srv restart"], a:"systemctl restart",
+   exp:"systemctl restart does a stop+start; use reload when only configuration reload is needed without stopping processes."},
+  {q:"Check the status of a systemd service?", o:["status","sys status","systemctl status","info"], a:"systemctl status",
+   exp:"systemctl status SERVICE shows active state, recent logs, and hints — a primary troubleshooting command."},
+  {q:"Enable a service to start at boot?", o:["systemctl enable","auto","boot","enable"], a:"systemctl enable",
+   exp:"systemctl enable creates unit symlinks so the service starts at boot; use disable to remove that behavior."},
+  {q:"Disable a service from starting at boot?", o:["systemctl disable","disable","service disable","off"], a:"systemctl disable",
+   exp:"systemctl disable prevents auto-start at boot but doesn't stop the currently running service."},
+  {q:"View the system journal logs?", o:["system logs","log","journalctl","srvlog"], a:"journalctl",
+   exp:"journalctl reads logs collected by systemd-journald. Use -u SERVICE to filter by unit and -f to follow."},
+  {q:"List loaded systemd units (services)?", o:["list","services","systemctl list-units","srv"], a:"systemctl list-units",
+   exp:"systemctl list-units shows active units; add --type=service to focus on services only."},
+  {q:"Edit the transient or drop-in configuration of a unit?", o:["conf","srvconf","/etc/systemd","systemctl edit"], a:"systemctl edit",
+   exp:"systemctl edit SERVICE creates an override file for unit settings without editing packaged unit files directly."},
+  {q:"Reload systemd manager configuration after unit file changes?", o:["daemon reload","systemctl daemon-reload","refresh","sys reload"], a:"systemctl daemon-reload",
+   exp:"daemon-reload makes systemd re-scan unit files after manual edits; necessary before starting a modified unit."}
+];
+
+/* ============================
+   Quiz engine (show explanation after each answer + final answer sheet)
+   ============================ */
+
+let selected = [];
+let idx = 0;
+let score = 0;
+let answers = []; // { question, chosen, correct, exp, correctBool }
+
+const topics = {
+  file: fileMCQ, user: userMCQ, process: processMCQ, network: networkMCQ, disk: diskMCQ,
+  package: packageMCQ, archive: archiveMCQ, vim: vimMCQ, script: scriptMCQ, service: serviceMCQ
+};
+
+const topicSelect = document.getElementById('topic');
+const startBtn = document.getElementById('startBtn');
+const quizArea = document.getElementById('quizArea');
+
+startBtn.addEventListener('click', startQuiz);
+
+function startQuiz(){
+  const t = topicSelect.value;
+  if(!t){ alert('Please choose a topic.'); return; }
+
+  if(t === 'all'){
+    selected = [].concat(...Object.values(topics));
+  } else {
+    selected = topics[t] ? [...topics[t]] : [];
+  }
+
+  // optional: shuffle selected for variety (commented out)
+  // selected = shuffleArray(selected);
+
+  idx = 0; score = 0; answers = [];
+  renderQuestion();
+}
+
+function renderQuestion(){
+  quizArea.innerHTML = '';
+  if(idx >= selected.length){
+    renderResult();
+    return;
+  }
+
+  const q = selected[idx];
+  const card = document.createElement('div'); card.className='card';
+  const question = document.createElement('div'); question.className='question';
+  question.textContent = `${idx+1}. ${q.q}`;
+  card.appendChild(question);
+
+  const opts = document.createElement('div'); opts.className='opts';
+  q.o.forEach((opt, i) => {
+    const b = document.createElement('label'); b.className='opt';
+    const inp = document.createElement('input'); inp.type='radio'; inp.name='opt'; inp.value = opt;
+    b.appendChild(inp);
+    const span = document.createElement('span'); span.textContent = opt;
+    b.appendChild(span);
+    opts.appendChild(b);
+  });
+
+  card.appendChild(opts);
+
+  const controls = document.createElement('div'); controls.className='controls';
+  const submit = document.createElement('button'); submit.className='primary'; submit.textContent='Submit Answer';
+  const skip = document.createElement('button'); skip.textContent='Skip';
+  controls.appendChild(submit); controls.appendChild(skip);
+  card.appendChild(controls);
+
+  // explanation area (hidden until answer)
+  const explanation = document.createElement('div'); explanation.className='explain'; explanation.style.display='none';
+  card.appendChild(explanation);
+
+  quizArea.appendChild(card);
+
+  submit.addEventListener('click', ()=> {
+    const sel = card.querySelector('input[name="opt"]:checked');
+    if(!sel){ alert('Please select an answer (or press Skip).'); return; }
+    const chosen = sel.value;
+    const correct = q.a;
+    const isCorrect = chosen === correct;
+    if(isCorrect) score++;
+
+    // show explanation
+    explanation.style.display = 'block';
+    explanation.className = 'explain ' + (isCorrect ? 'good' : 'bad');
+    explanation.innerHTML = `<strong>${isCorrect ? 'Correct ✅' : 'Incorrect ❌'}</strong><br><br>`
+      + `<div style="font-weight:600;margin-bottom:6px">Explanation</div>`
+      + `<div>${q.exp}</div>`;
+
+    // store for answer sheet
+    answers.push({question:q.q, chosen, correct, exp:q.exp, correctBool:isCorrect});
+
+    // disable choices after answer
+    card.querySelectorAll('input').forEach(i => i.disabled = true);
+    submit.disabled = true;
+
+    // show Next button
+    const nextBtn = document.createElement('button'); nextBtn.textContent = 'Next Question';
+    nextBtn.className = 'primary';
+    controls.appendChild(nextBtn);
+    nextBtn.addEventListener('click', ()=> {
+      idx++; renderQuestion();
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  });
+
+  skip.addEventListener('click', ()=> {
+    // record as skipped (chosen = '')
+    answers.push({question:q.q, chosen:'(skipped)', correct:q.a, exp:q.exp, correctBool:false});
+    idx++; renderQuestion();
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+}
+
+function renderResult(){
+  quizArea.innerHTML = '';
+  const card = document.createElement('div'); card.className='card';
+  const h = document.createElement('div'); h.className='question'; h.textContent = 'Quiz Completed 🎉';
+  card.appendChild(h);
+
+  const scoreDiv = document.createElement('div'); scoreDiv.style.marginBottom='10px';
+  scoreDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${selected.length}`;
+  card.appendChild(scoreDiv);
+
+  // summary counts
+  const correctCount = answers.filter(x=>x.correctBool).length;
+  const wrongCount = answers.length - correctCount;
+  const summary = document.createElement('div'); summary.className='small';
+  summary.innerHTML = `Answered: ${answers.length} • Correct: ${correctCount} • Wrong/Skipped: ${wrongCount}`;
+  card.appendChild(summary);
+
+  // Answer sheet toggle
+  const asWrap = document.createElement('div'); asWrap.className='answer-sheet';
+  asWrap.style.marginTop='12px';
+  const asTitle = document.createElement('h3'); asTitle.textContent = 'Answer Sheet';
+  asWrap.appendChild(asTitle);
+
+  answers.forEach((it, i) => {
+    const item = document.createElement('div'); item.className='as-item ' + (it.correctBool ? 'as-correct' : 'as-wrong');
+    item.innerHTML = `<strong>${i+1}. ${it.question}</strong>
+      <div style="margin-top:6px"><strong>Your answer:</strong> ${escapeHtml(it.chosen)}</div>
+      <div style="margin-top:4px"><strong>Correct answer:</strong> ${escapeHtml(it.correct)}</div>
+      <div style="margin-top:8px; color:#0b2540"><em>${it.exp}</em></div>`;
+    asWrap.appendChild(item);
+  });
+
+  card.appendChild(asWrap);
+
+  // restart button
+  const restart = document.createElement('button'); restart.textContent='Restart / Choose another topic'; restart.style.marginTop='12px';
+  restart.addEventListener('click', ()=> { quizArea.innerHTML=''; window.scrollTo({top:0}); });
+  card.appendChild(restart);
+
+  quizArea.appendChild(card);
+}
+
+/* small helper for escaping HTML in answers */
+function escapeHtml(str){
+  if(!str && str !== '') return '';
+  return String(str).replace(/[&<>"]/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]));
+}
+
+/* optional shuffle function (not used by default) */
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+</script>
+</body>
+</html>
