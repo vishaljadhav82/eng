@@ -74,6 +74,9 @@
             <th>Processor</th>
             <th>Checklist Summary</th>
             <th>Remarks</th>
+            <th>Date</th>
+            <th>Modified</th>
+            <th>Checklist</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -245,6 +248,9 @@
           <td>${escapeHtml(it.processor || '')}</td>
           <td>${escapeHtml(summaryFromChecklist(it.checklist))}</td>
           <td>${escapeHtml(it.remarks || '')}</td>
+          <td>${it.date || ''}</td>
+          <td>${it.modified || ''}</td>
+          <td><button class="btn small" onclick="alert(JSON.stringify(it.checklist,null,2))">View</button></td> || '')}</td>
           <td>
             <button data-id="${it._id}" class="btn small" onclick="editDevice('${it._id}')">Edit</button>
             <button data-id="${it._id}" class="btn small" onclick="deleteDevice('${it._id}')">Delete</button>
