@@ -204,7 +204,7 @@
     function summaryFromChecklist(checklist){
       if(!checklist) return '';
       const done = Object.entries(checklist).filter(([k,v])=>v).map(([k])=>k);
-      return done.slice(0,4).join(', ') + (done.length>4 ? '...' : '');
+      return done.slice(0,20).join(', ') + (done.length>4 ? '...' : '');
     }
 
     // Real-time listener
