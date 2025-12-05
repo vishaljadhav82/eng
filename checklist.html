@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Device Maintenance CRUD</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:16px;background:#f6f7fb}
+    h1{font-size:20px}
+    table{width:100%;border-collapse:collapse;background:white}
+    th,td{padding:8px;border:1px solid #e3e6ee;font-size:13px}
+    th{background:#eef2ff}
+    .controls{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+    .card{background:white;padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,20,.06)}
+    .form-row{display:flex;gap:8px;flex-wrap:wrap}
+    label{display:flex;gap:6px;align-items:center}
+    input[type=text],select,textarea{padding:6px;border:1px solid #ccc;border-radius:4px}
+    .btn{padding:8px 10px;border-radius:6px;border:0;cursor:pointer}
+    .btn-primary{background:#2563eb;color:white}
+    .btn-danger{background:#ef4444;color:white}
+    .small{font-size:12px;padding:6px 8px}
+    .checkbox-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+    @media(max-width:900px){.checkbox-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <h1>Device Maintenance — CRUD (with Firebase Firestore)</h1>
+  <div class="card">
+    <div class="controls">
+      <input id="search" placeholder="Search by Manufacturer/Model/Serial" style="flex:1;padding:8px;border-radius:6px;border:1px solid #d0d5ea" />
+      <button class="btn btn-primary" id="btnNew">+ New Device</button>
+      <button class="btn small" id="btnRefresh">Refresh</button>
+    </div>
+
+    <div id="formWrap" style="display:none;margin-bottom:12px" class="card">
+      <form id="deviceForm">
+        <input type="hidden" id="docId">
+        <div class="form-row">
+          <input id="srNo" placeholder="Sr. No" style="width:80px" />
+          <input id="manufacturer" placeholder="Manufacturer" />
+          <input id="model" placeholder="Model" />
+          <input id="serial" placeholder="Serial Number" />
+          <input id="ram" placeholder="RAM" />
+          <input id="storage" placeholder="Storage" />
+          <input id="processor" placeholder="Processor" />
+        </div>
+
+        <h4 style="margin-top:10px">Checklist</h4>
+        <div class="checkbox-grid" id="checkboxes">
+          <!-- checkboxes inserted by JS -->
+        </div>
+
+        <div style="margin-top:8px">
+          <label>Remarks: <textarea id="remarks" rows="2" style="width:100%;"></textarea></label>
+        </div>
+
+        <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
+          <button type="button" class="btn" id="btnCancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <div style="overflow:auto;max-height:60vh">
+      <table id="devicesTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Serial</th>
+            <th>RAM</th>
+            <th>Storage</th>
+            <th>Processor</th>
+            <th>Checklist Summary</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script>
+    // === Firebase config (from user) ===
+    const firebaseConfig = {
+      apiKey: "AIzaSyA5ezNWECVn4vkdEHWhap-mv1B-D8LCN70",
+      authDomain: "quiz-43b3e.firebaseapp.com",
+      projectId: "quiz-43b3e",
+      storageBucket: "quiz-43b3e.appspot.com",
+      messagingSenderId: "477037762591",
+      appId: "1:477037762591:web:ea30670a704b0063819d2a",
+      measurementId: "G-7RWKDV2SLP"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const collectionRef = db.collection('devices');
+
+    // Checklist items (as requested)
+    const CHECKLIST = [
+      'Install Windows (latest)', 'Install all drivers & BIOS update', 'Run Windows Update', 'Install Office 2016',
+      'Install Acrobat Reader', 'Install WinRAR', 'Install Chrome', 'Install Firefox', 'Install Kaspersky', 'Install VLC',
+      'Keyboard', 'Touchpad', 'USB ports', 'VGA', 'HDMI', 'Display Port', 'LAN', 'WiFi', 'Speaker', 'Audio', 'Microphone',
+      'Display Screen', 'Hinges'
+    ];
+
+    // build checkboxes in form
+    const checkboxWrap = document.getElementById('checkboxes');
+    CHECKLIST.forEach(key => {
+      const id = 'chk_' + key.replace(/[^a-z0-9]+/gi,'_');
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.id = id;
+      input.dataset.name = key;
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(' ' + key));
+      checkboxWrap.appendChild(label);
+    });
+
+    // UI elements
+    const btnNew = document.getElementById('btnNew');
+    const formWrap = document.getElementById('formWrap');
+    const deviceForm = document.getElementById('deviceForm');
+    const tbody = document.querySelector('#devicesTable tbody');
+    const btnCancel = document.getElementById('btnCancel');
+    const search = document.getElementById('search');
+    const btnRefresh = document.getElementById('btnRefresh');
+
+    btnNew.addEventListener('click',()=>{
+      openForm();
+    });
+    btnCancel.addEventListener('click',()=>{ closeForm(); });
+    btnRefresh.addEventListener('click',()=>{ loadDevicesOnce(); });
+
+    function openForm(data){
+      formWrap.style.display = 'block';
+      if(data){
+        document.getElementById('docId').value = data._id || '';
+        document.getElementById('srNo').value = data.srNo || '';
+        document.getElementById('manufacturer').value = data.manufacturer || '';
+        document.getElementById('model').value = data.model || '';
+        document.getElementById('serial').value = data.serial || '';
+        document.getElementById('ram').value = data.ram || '';
+        document.getElementById('storage').value = data.storage || '';
+        document.getElementById('processor').value = data.processor || '';
+        document.getElementById('remarks').value = data.remarks || '';
+        // set checkboxes
+        CHECKLIST.forEach(k => {
+          const id = 'chk_' + k.replace(/[^a-z0-9]+/gi,'_');
+          document.getElementById(id).checked = !!(data.checklist && data.checklist[k]);
+        });
+      } else {
+        deviceForm.reset();
+        document.getElementById('docId').value = '';
+      }
+    }
+    function closeForm(){
+      formWrap.style.display = 'none';
+      deviceForm.reset();
+      document.getElementById('docId').value = '';
+    }
+
+    // Save / Create
+    deviceForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const id = document.getElementById('docId').value;
+      const payload = {
+        srNo: document.getElementById('srNo').value || null,
+        manufacturer: document.getElementById('manufacturer').value || '',
+        model: document.getElementById('model').value || '',
+        serial: document.getElementById('serial').value || '',
+        ram: document.getElementById('ram').value || '',
+        storage: document.getElementById('storage').value || '',
+        processor: document.getElementById('processor').value || '',
+        remarks: document.getElementById('remarks').value || '',
+        checklist: {}
+      };
+      CHECKLIST.forEach(k=>{
+        const id = 'chk_' + k.replace(/[^a-z0-9]+/gi,'_');
+        payload.checklist[k] = !!document.getElementById(id).checked;
+      });
+
+      try{
+        if(id){
+          await collectionRef.doc(id).set(payload, { merge: true });
+        } else {
+          const docRef = await collectionRef.add(payload);
+          // store srNo in doc if empty
+          // nothing else
+        }
+        closeForm();
+      } catch(err){
+        alert('Save failed: ' + err.message);
+      }
+    });
+
+    // Render helpers
+    function summaryFromChecklist(checklist){
+      if(!checklist) return '';
+      const done = Object.entries(checklist).filter(([k,v])=>v).map(([k])=>k);
+      return done.slice(0,4).join(', ') + (done.length>4 ? '...' : '');
+    }
+
+    // Real-time listener
+    let unsubscribe = null;
+    function listenDevices(){
+      if(unsubscribe) unsubscribe();
+      unsubscribe = collectionRef.orderBy('srNo').onSnapshot(snapshot=>{
+        renderSnapshot(snapshot.docs.map(d=>({ _id:d.id, ...d.data() })))
+      },err=>{
+        console.error('Listen error',err); loadDevicesOnce();
+      });
+    }
+
+    // One-time load (used as fallback)
+    async function loadDevicesOnce(){
+      try{
+        const snap = await collectionRef.orderBy('srNo').get();
+        renderSnapshot(snap.docs.map(d=>({ _id:d.id, ...d.data() })));
+      } catch(err){ console.error(err); }
+    }
+
+    function renderSnapshot(items){
+      const q = search.value.trim().toLowerCase();
+      const filtered = items.filter(it=>{
+        if(!q) return true;
+        return (it.manufacturer||'').toLowerCase().includes(q) || (it.model||'').toLowerCase().includes(q) || (it.serial||'').toLowerCase().includes(q);
+      });
+      tbody.innerHTML = '';
+      filtered.forEach(it=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${it.srNo || ''}</td>
+          <td>${escapeHtml(it.manufacturer || '')}</td>
+          <td>${escapeHtml(it.model || '')}</td>
+          <td>${escapeHtml(it.serial || '')}</td>
+          <td>${escapeHtml(it.ram || '')}</td>
+          <td>${escapeHtml(it.storage || '')}</td>
+          <td>${escapeHtml(it.processor || '')}</td>
+          <td>${escapeHtml(summaryFromChecklist(it.checklist))}</td>
+          <td>${escapeHtml(it.remarks || '')}</td>
+          <td>
+            <button data-id="${it._id}" class="btn small" onclick="editDevice('${it._id}')">Edit</button>
+            <button data-id="${it._id}" class="btn small" onclick="deleteDevice('${it._id}')">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // escaping helper
+    function escapeHtml(s){ return (s+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // attach to window for inline onclick to work
+    window.editDevice = async function(id){
+      try{
+        const doc = await collectionRef.doc(id).get();
+        if(!doc.exists){ alert('Document not found'); return; }
+        openForm({ _id: id, ...doc.data() });
+      } catch(err){ alert('Load failed: '+err.message); }
+    }
+
+    window.deleteDevice = async function(id){
+      if(!confirm('Delete this device?')) return;
+      try{
+        await collectionRef.doc(id).delete();
+      } catch(err){ alert('Delete failed: '+err.message); }
+    }
+
+    search.addEventListener('input', ()=>{ loadDevicesOnce(); });
+
+    // initialize
+    listenDevices();</script>
+</body>
+</html>
