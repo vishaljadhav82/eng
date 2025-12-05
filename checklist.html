@@ -5,26 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Device Maintenance CRUD</title>
   <style>
-    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:16px;background:#f6f7fb}
+    :root{--bg:#f6f7fb;--card:#fff;--primary:#2563eb;--text:#0b1220}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:16px;background:var(--bg);color:var(--text)}
     h1{font-size:20px}
-    table{width:100%;border-collapse:collapse;background:white}
-    th,td{padding:8px;border:1px solid #e3e6ee;font-size:13px}
-    th{background:#eef2ff}
+    table{width:100%;border-collapse:collapse;background:var(--card)}
+    th,td{padding:8px;border:1px solid rgba(0,0,0,.06);font-size:13px}
+    th{background:rgba(238,242,255,.9)}
     .controls{display:flex;gap:8px;align-items:center;margin-bottom:10px}
-    .card{background:white;padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,20,.06)}
+    .card{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,20,.06)}
     .form-row{display:flex;gap:8px;flex-wrap:wrap}
     label{display:flex;gap:6px;align-items:center}
     input[type=text],select,textarea{padding:6px;border:1px solid #ccc;border-radius:4px}
-    .btn{padding:8px 10px;border-radius:6px;border:0;cursor:pointer}
-    .btn-primary{background:#2563eb;color:white}
-    .btn-danger{background:#ef4444;color:white}
+    .btn{padding:6px 8px;border-radius:6px;border:0;cursor:pointer}
+    .btn-primary{background:var(--primary);color:white}
     .small{font-size:12px;padding:6px 8px}
     .checkbox-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
     @media(max-width:900px){.checkbox-grid{grid-template-columns:repeat(2,1fr)}}
+
+    /* Offcanvas panel (right-side) */
+    .offcanvas { position:fixed; top:0; right:-420px; width:400px; max-width:100%; height:100%; background:var(--card); box-shadow:-8px 0 24px rgba(0,0,0,.12); transition:right .28s ease; z-index:9999; display:flex; flex-direction:column; }
+    .offcanvas.open { right:0; }
+    .offcanvas .header{padding:12px;border-bottom:1px solid rgba(0,0,0,.06); display:flex;align-items:center;justify-content:space-between}
+    .offcanvas .content{padding:12px;overflow:auto;flex:1}
+    .check-item{margin:6px 0;display:flex;gap:8px;align-items:flex-start}
+    .check-mark{font-size:16px;line-height:1}
+    .muted{color:#6b7280;font-size:13px}
   </style>
 </head>
 <body>
   <h1>Device Maintenance — CRUD (with Firebase Firestore)</h1>
+
   <div class="card">
     <div class="controls">
       <input id="search" placeholder="Search by Manufacturer/Model/Serial" style="flex:1;padding:8px;border-radius:6px;border:1px solid #d0d5ea" />
@@ -46,9 +56,7 @@
         </div>
 
         <h4 style="margin-top:10px">Checklist</h4>
-        <div class="checkbox-grid" id="checkboxes">
-          <!-- checkboxes inserted by JS -->
-        </div>
+        <div class="checkbox-grid" id="checkboxes"></div>
 
         <div style="margin-top:8px">
           <label>Remarks: <textarea id="remarks" rows="2" style="width:100%;"></textarea></label>
@@ -72,7 +80,6 @@
             <th>RAM</th>
             <th>Storage</th>
             <th>Processor</th>
-            <th>Checklist Summary</th>
             <th>Remarks</th>
             <th>Actions</th>
           </tr>
@@ -82,10 +89,23 @@
     </div>
   </div>
 
+  <!-- Offcanvas checklist panel -->
+  <div id="offcanvas" class="offcanvas" aria-hidden="true">
+    <div class="header">
+      <strong>Checklist</strong>
+      <div>
+        <button class="btn" id="closeOff">Close</button>
+      </div>
+    </div>
+    <div class="content" id="offContent">
+      <!-- checklist items inserted here -->
+    </div>
+  </div>
+
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script>
-    // === Firebase config (from user) ===
+    // Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyA5ezNWECVn4vkdEHWhap-mv1B-D8LCN70",
       authDomain: "quiz-43b3e.firebaseapp.com",
@@ -95,13 +115,10 @@
       appId: "1:477037762591:web:ea30670a704b0063819d2a",
       measurementId: "G-7RWKDV2SLP"
     };
-
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
     const collectionRef = db.collection('devices');
 
-    // Checklist items (as requested)
     const CHECKLIST = [
       'Install Windows (latest)', 'Install all drivers & BIOS update', 'Run Windows Update', 'Install Office 2016',
       'Install Acrobat Reader', 'Install WinRAR', 'Install Chrome', 'Install Firefox', 'Install Kaspersky', 'Install VLC',
@@ -109,21 +126,19 @@
       'Display Screen', 'Hinges'
     ];
 
-    // build checkboxes in form
+    // build checkboxes
     const checkboxWrap = document.getElementById('checkboxes');
     CHECKLIST.forEach(key => {
       const id = 'chk_' + key.replace(/[^a-z0-9]+/gi,'_');
       const label = document.createElement('label');
       const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.id = id;
-      input.dataset.name = key;
+      input.type = 'checkbox'; input.id = id;
       label.appendChild(input);
       label.appendChild(document.createTextNode(' ' + key));
       checkboxWrap.appendChild(label);
     });
 
-    // UI elements
+    // UI refs
     const btnNew = document.getElementById('btnNew');
     const formWrap = document.getElementById('formWrap');
     const deviceForm = document.getElementById('deviceForm');
@@ -131,12 +146,14 @@
     const btnCancel = document.getElementById('btnCancel');
     const search = document.getElementById('search');
     const btnRefresh = document.getElementById('btnRefresh');
+    const offcanvas = document.getElementById('offcanvas');
+    const offContent = document.getElementById('offContent');
+    const closeOff = document.getElementById('closeOff');
 
-    btnNew.addEventListener('click',()=>{
-      openForm();
-    });
-    btnCancel.addEventListener('click',()=>{ closeForm(); });
-    btnRefresh.addEventListener('click',()=>{ loadDevicesOnce(); });
+    btnNew.addEventListener('click', ()=> openForm());
+    btnCancel.addEventListener('click', closeForm);
+    btnRefresh.addEventListener('click', loadDevicesOnce);
+    closeOff.addEventListener('click', closeOffcanvas);
 
     function openForm(data){
       formWrap.style.display = 'block';
@@ -150,23 +167,17 @@
         document.getElementById('storage').value = data.storage || '';
         document.getElementById('processor').value = data.processor || '';
         document.getElementById('remarks').value = data.remarks || '';
-        // set checkboxes
-        CHECKLIST.forEach(k => {
-          const id = 'chk_' + k.replace(/[^a-z0-9]+/gi,'_');
-          document.getElementById(id).checked = !!(data.checklist && data.checklist[k]);
+        CHECKLIST.forEach(k=>{
+          const id = 'chk_'+k.replace(/[^a-z0-9]+/gi,'_');
+          const el = document.getElementById(id); if(el) el.checked = !!(data.checklist && data.checklist[k]);
         });
       } else {
-        deviceForm.reset();
-        document.getElementById('docId').value = '';
+        deviceForm.reset(); document.getElementById('docId').value = '';
+        CHECKLIST.forEach(k=>{ const id='chk_'+k.replace(/[^a-z0-9]+/gi,'_'); const el=document.getElementById(id); if(el) el.checked=false; });
       }
     }
-    function closeForm(){
-      formWrap.style.display = 'none';
-      deviceForm.reset();
-      document.getElementById('docId').value = '';
-    }
+    function closeForm(){ formWrap.style.display='none'; deviceForm.reset(); document.getElementById('docId').value=''; }
 
-    // Save / Create
     deviceForm.addEventListener('submit', async (e)=>{
       e.preventDefault();
       const id = document.getElementById('docId').value;
@@ -181,65 +192,51 @@
         remarks: document.getElementById('remarks').value || '',
         checklist: {}
       };
-      CHECKLIST.forEach(k=>{
-        const id = 'chk_' + k.replace(/[^a-z0-9]+/gi,'_');
-        payload.checklist[k] = !!document.getElementById(id).checked;
-      });
+      CHECKLIST.forEach(k=>{ const id='chk_'+k.replace(/[^a-z0-9]+/gi,'_'); const el=document.getElementById(id); payload.checklist[k]=!!(el && el.checked); });
 
       try{
-        if(id){
-          await collectionRef.doc(id).set(payload, { merge: true });
-        } else {
-          const docRef = await collectionRef.add(payload);
-          // store srNo in doc if empty
-          // nothing else
-        }
+        const now = new Date().toLocaleString();
+        if(!payload.date) payload.date = now;
+        payload.modified = now;
+        if(id) await collectionRef.doc(id).set(payload,{merge:true}); else await collectionRef.add(payload);
         closeForm();
-      } catch(err){
-        alert('Save failed: ' + err.message);
-      }
+      } catch(err){ alert('Save failed: '+err.message); }
     });
 
-    // Render helpers
-   function summaryFromChecklist(checklist){
-  if (!checklist) return '';
-  const done = Object.entries(checklist)
-    .filter(([k, v]) => v)
-    .map(([k]) => k);
-
-  return done.join(', '); // Show ALL checked items without limit
-}
-
-    function formatChecklist(checklist) {
-  if (!checklist) return '';
-
-  const done = Object.entries(checklist)
-    .filter(([key, value]) => value)
-    .map(([key]) => `✔️ ${key}`);
-
-  return done.join('<br>');
-}
-
-
-    // Real-time listener
-    let unsubscribe = null;
-    function listenDevices(){
-      if(unsubscribe) unsubscribe();
-      unsubscribe = collectionRef.orderBy('srNo').onSnapshot(snapshot=>{
-        renderSnapshot(snapshot.docs.map(d=>({ _id:d.id, ...d.data() })))
-      },err=>{
-        console.error('Listen error',err); loadDevicesOnce();
-      });
+    // format checklist for offcanvas (checked items only)
+    function formatChecklistForPanel(checklist){
+      if(!checklist) return '<div class="muted">No items checked.</div>';
+      const done = Object.entries(checklist).filter(([k,v])=>v).map(([k])=>k);
+      if(done.length===0) return '<div class="muted">No items checked.</div>';
+      return done.map(d=>`<div class="check-item"><div class="check-mark">✔️</div><div>${escapeHtml(d)}</div></div>`).join('');
     }
 
-    // One-time load (used as fallback)
-    async function loadDevicesOnce(){
+    // open offcanvas by doc id
+    async function openOffcanvasById(id){
       try{
-        const snap = await collectionRef.orderBy('srNo').get();
-        renderSnapshot(snap.docs.map(d=>({ _id:d.id, ...d.data() })));
-      } catch(err){ console.error(err); }
+        const doc = await collectionRef.doc(id).get();
+        if(!doc.exists){ offContent.innerHTML = '<div class="muted">Record not found.</div>'; openOffcanvas(); return; }
+        const data = doc.data();
+        offContent.innerHTML = '';
+        // header area: show basic info
+        const header = document.createElement('div');
+        header.innerHTML = `<div style="margin-bottom:8px"><strong>${escapeHtml(data.manufacturer||'')} ${escapeHtml(data.model||'')}</strong><div class="muted">SN: ${escapeHtml(data.serial||'')}</div></div>`;
+        offContent.appendChild(header);
+        // checklist
+        const checklistHtml = formatChecklistForPanel(data.checklist || {});
+        const checklistWrap = document.createElement('div');
+        checklistWrap.innerHTML = checklistHtml;
+        offContent.appendChild(checklistWrap);
+        // remarks
+        if(data.remarks) { const r = document.createElement('div'); r.style.marginTop='12px'; r.innerHTML = `<strong>Remarks</strong><div>${escapeHtml(data.remarks)}</div>`; offContent.appendChild(r); }
+        openOffcanvas();
+      } catch(e){ offContent.innerHTML = '<div class="muted">Failed to load checklist.</div>'; openOffcanvas(); }
     }
 
+    function openOffcanvas(){ offcanvas.classList.add('open'); offcanvas.setAttribute('aria-hidden','false'); }
+    function closeOffcanvas(){ offcanvas.classList.remove('open'); offcanvas.setAttribute('aria-hidden','true'); }
+
+    // render table
     function renderSnapshot(items){
       const q = search.value.trim().toLowerCase();
       const filtered = items.filter(it=>{
@@ -250,64 +247,40 @@
       filtered.forEach(it=>{
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${it.srNo || ''}</td>
-          <td>${escapeHtml(it.manufacturer || '')}</td>
-          <td>${escapeHtml(it.model || '')}</td>
-          <td>${escapeHtml(it.serial || '')}</td>
-          <td>${escapeHtml(it.ram || '')}</td>
-          <td>${escapeHtml(it.storage || '')}</td>
-          <td>${escapeHtml(it.processor || '')}</td>
-<td>${formatChecklist(it.checklist)}</td>
-          <td>${escapeHtml(it.remarks || '')}</td>
+          <td>${escapeHtml(it.srNo||'')}</td>
+          <td>${escapeHtml(it.manufacturer||'')}</td>
+          <td>${escapeHtml(it.model||'')}</td>
+          <td>${escapeHtml(it.serial||'')}</td>
+          <td>${escapeHtml(it.ram||'')}</td>
+          <td>${escapeHtml(it.storage||'')}</td>
+          <td>${escapeHtml(it.processor||'')}</td>
+          <td>${escapeHtml(it.remarks||'')}</td>
           <td>
-            <button data-id="${it._id}" class="btn small" onclick="editDevice('${it._id}')">Edit</button>
-            <button data-id="${it._id}" class="btn small" onclick="deleteDevice('${it._id}')">Delete</button>
+            <button class="btn small" onclick="openOffcanvasById('${it._id}')">👁️ View</button>
+            <button class="btn small" onclick="editDevice('${it._id}')">Edit</button>
+            <button class="btn small" onclick="deleteDevice('${it._id}')">Delete</button>
           </td>
         `;
         tbody.appendChild(tr);
       });
     }
 
-    // escaping helper
-    function escapeHtml(s){ return (s+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    // escape
+    function escapeHtml(s){ if(s===null||s===undefined) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-    // attach to window for inline onclick to work
-    window.editDevice = async function(id){
-      try{
-        const doc = await collectionRef.doc(id).get();
-        if(!doc.exists){ alert('Document not found'); return; }
-        openForm({ _id: id, ...doc.data() });
-      } catch(err){ alert('Load failed: '+err.message); }
-    }
+    // firestore listeners
+    let unsubscribe = null;
+    function listenDevices(){ if(unsubscribe) unsubscribe(); unsubscribe = collectionRef.orderBy('srNo').onSnapshot(snapshot=>{ renderSnapshot(snapshot.docs.map(d=>({ _id:d.id, ...d.data() }))); }, err=>{ console.error(err); loadDevicesOnce(); }); }
+    async function loadDevicesOnce(){ try{ const snap = await collectionRef.orderBy('srNo').get(); renderSnapshot(snap.docs.map(d=>({ _id:d.id, ...d.data() }))); } catch(e){ console.error(e); } }
 
-    window.deleteDevice = async function(id){
-      if(!confirm('Delete this device?')) return;
-      try{
-        await collectionRef.doc(id).delete();
-      } catch(err){ alert('Delete failed: '+err.message); }
-    }
+    // edit/delete
+    window.editDevice = async function(id){ const doc = await collectionRef.doc(id).get(); if(!doc.exists){ alert('Document not found'); return; } openForm({ _id:id, ...doc.data() }); }
+    window.deleteDevice = async function(id){ if(!confirm('Delete this device?')) return; try{ await collectionRef.doc(id).delete(); } catch(e){ alert('Delete failed: '+e.message); } }
 
-    search.addEventListener('input', ()=>{ loadDevicesOnce(); });
+    search.addEventListener('input', ()=> loadDevicesOnce());
 
-    // initialize
+    // init
     listenDevices();
-
-    // OPTIONAL: Seed initial data from the user's pasted table if collection empty
-    (async function seedIfEmpty(){
-      try{
-        const snap = await collectionRef.limit(1).get();
-        if(!snap.empty) return; // already has data
-
-        // Minimal seed using the pasted inventory (you can replace or expand) 
-        const seed = [
-          { srNo:1, manufacturer:'Dell', model:'Latitude 7490', serial:'BY3Z5Q2', ram:'8 GB', storage:'256 GB', processor:'I5-8 gen' },
-          { srNo:2, manufacturer:'Dell', model:'Latitude 3490', serial:'5VLCCQ2', ram:'8 GB', storage:'256 GB SSD', processor:'I3-7' },
-          { srNo:3, manufacturer:'HP', model:'EliteBook 840 G4', serial:'5CG8115851', ram:'16 GB', storage:'256 GB SSD', processor:'I5-7' }
-          // <--- Add more seed rows here or keep this small to avoid accidental duplicates
-        ];
-        for(const r of seed){ await collectionRef.add(r); }
-      } catch(e){ console.warn('Seed failed',e); }
-    })();
 
   </script>
 </body>
