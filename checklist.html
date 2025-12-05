@@ -5,22 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Device Maintenance CRUD</title>
   <style>
-    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:16px;background:#f6f7fb}
+    :root{--bg:#f6f7fb;--card:#fff;--primary:#2563eb;--text:#0b1220}
+    [data-theme="dark"]{--bg:#0b1220;--card:#0f1724;--primary:#60a5fa;--text:#e6eef8}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:16px;background:var(--bg);color:var(--text)}
     h1{font-size:20px}
-    table{width:100%;border-collapse:collapse;background:white}
-    th,td{padding:8px;border:1px solid #e3e6ee;font-size:13px}
-    th{background:#eef2ff}
+    table{width:100%;border-collapse:collapse;background:var(--card);color:var(--text)}
+    th,td{padding:8px;border:1px solid rgba(16,24,40,.06);font-size:13px}
+    th{background:rgba(99,102,241,.06)}
     .controls{display:flex;gap:8px;align-items:center;margin-bottom:10px}
-    .card{background:white;padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,20,.06)}
+    .card{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,20,.06)}
     .form-row{display:flex;gap:8px;flex-wrap:wrap}
     label{display:flex;gap:6px;align-items:center}
     input[type=text],select,textarea{padding:6px;border:1px solid #ccc;border-radius:4px}
     .btn{padding:8px 10px;border-radius:6px;border:0;cursor:pointer}
-    .btn-primary{background:#2563eb;color:white}
+    .btn-primary{background:var(--primary);color:white}
     .btn-danger{background:#ef4444;color:white}
     .small{font-size:12px;padding:6px 8px}
     .checkbox-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
     @media(max-width:900px){.checkbox-grid{grid-template-columns:repeat(2,1fr)}}
+
+    /* Checklist modal */
+    .modal { display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.4); }
+    .modal-content { background:var(--card); margin:6% auto; padding:16px; border-radius:8px; width:90%; max-width:600px; box-shadow:0 6px 24px rgba(10,10,20,.2) }
+    pre{white-space:pre-wrap;word-break:break-word}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    .pagination{display:flex;gap:6px;align-items:center;margin-top:8px}
+    .muted{opacity:.7;font-size:13px}
   </style>
 </head>
 <body>
@@ -30,6 +41,16 @@
       <input id="search" placeholder="Search by Manufacturer/Model/Serial" style="flex:1;padding:8px;border-radius:6px;border:1px solid #d0d5ea" />
       <button class="btn btn-primary" id="btnNew">+ New Device</button>
       <button class="btn small" id="btnRefresh">Refresh</button>
+      <select id="pageSize" class="small" style="margin-left:auto">
+        <option value="10">10 / page</option>
+        <option value="20">20 / page</option>
+        <option value="50">50 / page</option>
+      </select>
+      <button class="btn small" id="btnExportCSV">Export CSV</button>
+      <button class="btn small" id="btnExportXLS">Export XLS</button>
+      <button class="btn small" id="btnExportPDF">Export PDF</button>
+      <button class="btn small" id="btnSeed">Seed 33 Items</button>
+      <button class="btn small" id="btnToggleTheme">Dark</button>
     </div>
 
     <div id="formWrap" style="display:none;margin-bottom:12px" class="card">
@@ -45,7 +66,13 @@
           <input id="processor" placeholder="Processor" />
         </div>
 
-        <h4 style="margin-top:10px">Checklist</h4>
+        <h4 style="margin-top:10px">Checklist <span class="muted">(quick actions)</span></h4>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <button type="button" class="btn small" id="checkAll">Check All</button>
+          <button type="button" class="btn small" id="uncheckAll">Uncheck All</button>
+          <button type="button" class="btn small" id="invertChecks">Invert</button>
+        </div>
+
         <div class="checkbox-grid" id="checkboxes">
           <!-- checkboxes inserted by JS -->
         </div>
@@ -83,10 +110,44 @@
         <tbody></tbody>
       </table>
     </div>
+
+    <div class="pagination" style="justify-content:space-between">
+      <div class="muted" id="pageInfo"></div>
+      <div>
+        <button class="btn small" id="prevPage">Prev</button>
+        <button class="btn small" id="nextPage">Next</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Checklist modal -->
+  <div id="checkModal" class="modal">
+    <div class="modal-content">
+      <h3>Checklist</h3>
+      <pre id="checkContent"></pre>
+      <div style="text-align:right;margin-top:8px"><button class="btn" onclick="closeChecklist()">Close</button></div>
+    </div>
+  </div>
+
+  <!-- Simple Auth modal -->
+  <div id="authWrap" style="position:fixed;right:16px;top:16px;z-index:999"> 
+    <div id="authBox" class="card" style="padding:8px;min-width:220px">
+      <div id="authSignedOut">
+        <input id="authEmail" placeholder="email" style="width:100%;padding:6px;margin-bottom:6px" />
+        <input id="authPwd" type="password" placeholder="password" style="width:100%;padding:6px;margin-bottom:6px" />
+        <div style="display:flex;gap:6px"><button id="btnSignUp" class="btn small">Sign Up</button><button id="btnSignIn" class="btn small btn-primary">Sign In</button></div>
+      </div>
+      <div id="authSignedIn" style="display:none">
+        <div id="authUser" class="muted"></div>
+        <div style="display:flex;gap:6px;margin-top:6px"><button id="btnSignOut" class="btn small">Sign Out</button></div>
+      </div>
+    </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script>
     // === Firebase config (from user) ===
     const firebaseConfig = {
@@ -102,6 +163,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
+    const auth = firebase.auth();
     const collectionRef = db.collection('devices');
 
     // Checklist items (as requested)
@@ -134,15 +196,61 @@
     const btnCancel = document.getElementById('btnCancel');
     const search = document.getElementById('search');
     const btnRefresh = document.getElementById('btnRefresh');
+    const btnExportCSV = document.getElementById('btnExportCSV');
+    const btnExportXLS = document.getElementById('btnExportXLS');
+    const btnExportPDF = document.getElementById('btnExportPDF');
+    const btnSeed = document.getElementById('btnSeed');
+    const btnToggleTheme = document.getElementById('btnToggleTheme');
+    const pageSizeEl = document.getElementById('pageSize');
+    const prevPage = document.getElementById('prevPage');
+    const nextPage = document.getElementById('nextPage');
+    const pageInfo = document.getElementById('pageInfo');
 
-    btnNew.addEventListener('click',()=>{
-      openForm();
-    });
+    // Auth elements
+    const authEmail = document.getElementById('authEmail');
+    const authPwd = document.getElementById('authPwd');
+    const btnSignUp = document.getElementById('btnSignUp');
+    const btnSignIn = document.getElementById('btnSignIn');
+    const btnSignOut = document.getElementById('btnSignOut');
+    const authSignedIn = document.getElementById('authSignedIn');
+    const authSignedOut = document.getElementById('authSignedOut');
+    const authUser = document.getElementById('authUser');
+
+    // state
+    let ALL_ITEMS = []; // cached
+    let currentPage = 1;
+
+    btnNew.addEventListener('click',()=>{ openForm(); });
     btnCancel.addEventListener('click',()=>{ closeForm(); });
     btnRefresh.addEventListener('click',()=>{ loadDevicesOnce(); });
 
+    document.getElementById('checkAll').addEventListener('click', ()=>{ toggleChecks(true); });
+    document.getElementById('uncheckAll').addEventListener('click', ()=>{ toggleChecks(false); });
+    document.getElementById('invertChecks').addEventListener('click', ()=>{ invertChecks(); });
+
+    pageSizeEl.addEventListener('change', ()=>{ currentPage=1; renderSnapshot(ALL_ITEMS); });
+    prevPage.addEventListener('click', ()=>{ if(currentPage>1) { currentPage--; renderSnapshot(ALL_ITEMS);} });
+    nextPage.addEventListener('click', ()=>{ const ps=+pageSizeEl.value; if(currentPage*ps < ALL_ITEMS.length){ currentPage++; renderSnapshot(ALL_ITEMS);} });
+
+    btnExportCSV.addEventListener('click', ()=>{ exportCSV(ALL_ITEMS); });
+    btnExportXLS.addEventListener('click', ()=>{ exportXLS(ALL_ITEMS); });
+    btnExportPDF.addEventListener('click', ()=>{ exportPDF(ALL_ITEMS); });
+    btnSeed.addEventListener('click', ()=>{ if(confirm('Seed 33 items into Firestore? This will add documents.')) seedData(); });
+    btnToggleTheme.addEventListener('click', toggleTheme);
+
+    // Auth handlers
+    btnSignUp.addEventListener('click', ()=>{ const e=authEmail.value, p=authPwd.value; auth.createUserWithEmailAndPassword(e,p).catch(err=>alert(err.message)); });
+    btnSignIn.addEventListener('click', ()=>{ const e=authEmail.value, p=authPwd.value; auth.signInWithEmailAndPassword(e,p).catch(err=>alert(err.message)); });
+    btnSignOut.addEventListener('click', ()=>{ auth.signOut(); });
+
+    auth.onAuthStateChanged(user=>{
+      if(user){ authSignedIn.style.display='block'; authSignedOut.style.display='none'; authUser.textContent = user.email; }
+      else { authSignedIn.style.display='none'; authSignedOut.style.display='block'; authUser.textContent=''; }
+    });
+
     function openForm(data){
       formWrap.style.display = 'block';
+
       if(data){
         document.getElementById('docId').value = data._id || '';
         document.getElementById('srNo').value = data.srNo || '';
@@ -153,26 +261,29 @@
         document.getElementById('storage').value = data.storage || '';
         document.getElementById('processor').value = data.processor || '';
         document.getElementById('remarks').value = data.remarks || '';
+
         // set checkboxes
         CHECKLIST.forEach(k => {
           const id = 'chk_' + k.replace(/[^a-z0-9]+/gi,'_');
-          document.getElementById(id).checked = !!(data.checklist && data.checklist[k]);
+          const el = document.getElementById(id);
+          if(el) el.checked = !!(data.checklist && data.checklist[k]);
         });
+
       } else {
         deviceForm.reset();
         document.getElementById('docId').value = '';
+        // ensure all checkboxes are unchecked for new
+        CHECKLIST.forEach(k=>{ const id='chk_'+k.replace(/[^a-z0-9]+/gi,'_'); const el=document.getElementById(id); if(el) el.checked=false; });
       }
     }
-    function closeForm(){
-      formWrap.style.display = 'none';
-      deviceForm.reset();
-      document.getElementById('docId').value = '';
-    }
 
-    // Save / Create
-    deviceForm.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const id = document.getElementById('docId').value;
+    function closeForm(){ formWrap.style.display = 'none'; deviceForm.reset(); document.getElementById('docId').value = ''; }
+
+    function toggleChecks(v=true){ CHECKLIST.forEach(k=>{ const id='chk_'+k.replace(/[^a-z0-9]+/gi,'_'); const el=document.getElementById(id); if(el) el.checked = !!v; }); }
+    function invertChecks(){ CHECKLIST.forEach(k=>{ const id='chk_'+k.replace(/[^a-z0-9]+/gi,'_'); const el=document.getElementById(id); if(el) el.checked = !el.checked; }); }
+
+    // collect form data helper
+    function collectFormData(){
       const payload = {
         srNo: document.getElementById('srNo').value || null,
         manufacturer: document.getElementById('manufacturer').value || '',
@@ -186,16 +297,27 @@
       };
       CHECKLIST.forEach(k=>{
         const id = 'chk_' + k.replace(/[^a-z0-9]+/gi,'_');
-        payload.checklist[k] = !!document.getElementById(id).checked;
+        const el = document.getElementById(id);
+        payload.checklist[k] = !!(el && el.checked);
       });
+      return payload;
+    }
+
+    // Save / Create with date & modified handling
+    deviceForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const id = document.getElementById('docId').value;
+      const payload = collectFormData();
+
+      const now = new Date().toLocaleString();
+      if(!payload.date) payload.date = now; // set creation date if missing
+      payload.modified = now; // always set modified
 
       try{
         if(id){
           await collectionRef.doc(id).set(payload, { merge: true });
         } else {
-          const docRef = await collectionRef.add(payload);
-          // store srNo in doc if empty
-          // nothing else
+          await collectionRef.add(payload);
         }
         closeForm();
       } catch(err){
@@ -210,22 +332,33 @@
       return done.slice(0,4).join(', ') + (done.length>4 ? '...' : '');
     }
 
+    // Checklist modal functions
+    function openChecklist(checklist){
+      const out = CHECKLIST.map(k => (checklist && checklist[k]) ? ('[x] ' + k) : ('[ ] ' + k)).join('
+');
+      document.getElementById('checkContent').textContent = out;
+      document.getElementById('checkModal').style.display = 'block';
+    }
+    function closeChecklist(){ document.getElementById('checkModal').style.display = 'none'; }
+
     // Real-time listener
     let unsubscribe = null;
     function listenDevices(){
       if(unsubscribe) unsubscribe();
       unsubscribe = collectionRef.orderBy('srNo').onSnapshot(snapshot=>{
-        renderSnapshot(snapshot.docs.map(d=>({ _id:d.id, ...d.data() })))
-      },err=>{
-        console.error('Listen error',err); loadDevicesOnce();
-      });
+        const items = snapshot.docs.map(d=>({ _id:d.id, ...d.data() }));
+        ALL_ITEMS = items;
+        renderSnapshot(items);
+      },err=>{ console.error('Listen error',err); loadDevicesOnce(); });
     }
 
     // One-time load (used as fallback)
     async function loadDevicesOnce(){
       try{
         const snap = await collectionRef.orderBy('srNo').get();
-        renderSnapshot(snap.docs.map(d=>({ _id:d.id, ...d.data() })));
+        const items = snap.docs.map(d=>({ _id:d.id, ...d.data() }));
+        ALL_ITEMS = items;
+        renderSnapshot(items);
       } catch(err){ console.error(err); }
     }
 
@@ -235,11 +368,20 @@
         if(!q) return true;
         return (it.manufacturer||'').toLowerCase().includes(q) || (it.model||'').toLowerCase().includes(q) || (it.serial||'').toLowerCase().includes(q);
       });
+
+      // pagination
+      const pageSize = +pageSizeEl.value;
+      const total = filtered.length;
+      const pages = Math.max(1, Math.ceil(total / pageSize));
+      currentPage = Math.min(currentPage, pages);
+      const start = (currentPage-1)*pageSize;
+      const paged = filtered.slice(start, start+pageSize);
+
       tbody.innerHTML = '';
-      filtered.forEach(it=>{
+      paged.forEach(it=>{
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${it.srNo || ''}</td>
+          <td>${escapeHtml(it.srNo || '')}</td>
           <td>${escapeHtml(it.manufacturer || '')}</td>
           <td>${escapeHtml(it.model || '')}</td>
           <td>${escapeHtml(it.serial || '')}</td>
@@ -248,9 +390,9 @@
           <td>${escapeHtml(it.processor || '')}</td>
           <td>${escapeHtml(summaryFromChecklist(it.checklist))}</td>
           <td>${escapeHtml(it.remarks || '')}</td>
-          <td>${it.date || ''}</td>
-          <td>${it.modified || ''}</td>
-          <td><button class="btn small" onclick="alert(JSON.stringify(it.checklist,null,2))">View</button></td> || '')}</td>
+          <td>${escapeHtml(it.date || '')}</td>
+          <td>${escapeHtml(it.modified || '')}</td>
+          <td><button class="btn small" onclick='openChecklist(${JSON.stringify(it.checklist || {})})'>View</button></td>
           <td>
             <button data-id="${it._id}" class="btn small" onclick="editDevice('${it._id}')">Edit</button>
             <button data-id="${it._id}" class="btn small" onclick="deleteDevice('${it._id}')">Delete</button>
@@ -258,10 +400,12 @@
         `;
         tbody.appendChild(tr);
       });
+
+      pageInfo.textContent = `Page ${currentPage} of ${pages} — ${total} item(s)`;
     }
 
     // escaping helper
-    function escapeHtml(s){ return (s+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function escapeHtml(s){ return (s===null || s===undefined) ? '' : (String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')) }
 
     // attach to window for inline onclick to work
     window.editDevice = async function(id){
@@ -274,14 +418,104 @@
 
     window.deleteDevice = async function(id){
       if(!confirm('Delete this device?')) return;
-      try{
-        await collectionRef.doc(id).delete();
-      } catch(err){ alert('Delete failed: '+err.message); }
+      try{ await collectionRef.doc(id).delete(); } catch(err){ alert('Delete failed: '+err.message); }
     }
 
-    search.addEventListener('input', ()=>{ loadDevicesOnce(); });
+    search.addEventListener('input', ()=>{ currentPage=1; renderSnapshot(ALL_ITEMS); });
+
+    // seed data (33 items) - only on user action
+    async function seedData(){
+      const rows = [
+{srNo:1,manufacturer:'Dell',model:'Latitude 7490',serial:'BY3Z5Q2',ram:'8 GB',storage:'256 GB',processor:'I5-8 gen'},
+{srNo:2,manufacturer:'Dell',model:'Latitude 3490',serial:'5VLCCQ2',ram:'8 GB',storage:'256 GB SSD',processor:'I3-7'},
+{srNo:3,manufacturer:'HP',model:'EliteBook 840 G4',serial:'5CG8115851',ram:'16 GB',storage:'256 GB SSD',processor:'I5-7'},
+{srNo:4,manufacturer:'Dell',model:'Latitude 5490',serial:'696N4Q2',ram:'16 GB',storage:'512 GB SSD',processor:'i5-8'},
+{srNo:5,manufacturer:'Dell',model:'Latiitude 7480',serial:'89HXMH2',ram:'8 GB',storage:'256 GB SSD',processor:'I5-6'},
+{srNo:6,manufacturer:'Dell',model:'Latitude 3490',serial:'6VLCCQ2',ram:'8 GB',storage:'',processor:'i3-7'},
+{srNo:7,manufacturer:'Dell',model:'Latitude E5570',serial:'3RSYK72',ram:'8 GB',storage:'',processor:'I7-6'},
+{srNo:8,manufacturer:'HP',model:'ProBook 440 G5',serial:'5CD8229HSD',ram:'8 GB',storage:'',processor:'I5-8'},
+{srNo:9,manufacturer:'Dell',model:'Precision 5520',serial:'',ram:'',storage:'',processor:''},
+{srNo:10,manufacturer:'Dell',model:'Latitude 3490',serial:'DVLCCQ2',ram:'8 GB',storage:'',processor:'I3-7'},
+{srNo:11,manufacturer:'Dell',model:'Latitude E5270',serial:'9G6FJC2',ram:'8 GB',storage:'256 GB SSD',processor:'I5-6'},
+{srNo:12,manufacturer:'HP',model:'EliteBook 840 G3',serial:'5CG637359H',ram:'16 GB',storage:'512 GB SSD',processor:'i5-6'},
+{srNo:13,manufacturer:'Dell',model:'Lattitude 5480',serial:'9LBDHM2',ram:'16 GB',storage:'512 GB SSD',processor:'i5-7300U'},
+{srNo:14,manufacturer:'HP',model:'EliteBook 850 G5',serial:'5CG9105CVX',ram:'16 GB',storage:'256 GB NVMe',processor:'i7-8650U'},
+{srNo:15,manufacturer:'Dell',model:'Precision 7520',serial:'DT3YQQ2',ram:'32 GB',storage:'512 GB NVMe',processor:'i7-7820HQ'},
+{srNo:16,manufacturer:'Dell',model:'Latiitude 3490',serial:'JVLCCQ2',ram:'16 GB',storage:'256 GB NVMe',processor:'i3-7'},
+{srNo:17,manufacturer:'Dell',model:'Latitude 3490',serial:'9TMCCQ2',ram:'16 GB',storage:'512 GB',processor:'i3-7130U'},
+{srNo:18,manufacturer:'Dell',model:'Latitude 3490',serial:'JSMCCQ2',ram:'16 GB',storage:'256 GB',processor:'i3-7130U'},
+{srNo:19,manufacturer:'Dell',model:'Latitude E5470',serial:'529MWF2',ram:'16 GB',storage:'512 GB',processor:'I5-6'},
+{srNo:20,manufacturer:'Dell',model:'Latitude 7490',serial:'81T5KR2',ram:'8 GB',storage:'256 GB',processor:'i5-8'},
+{srNo:21,manufacturer:'Dell',model:'Vostro 15 3510',serial:'5110NM3',ram:'8 GB',storage:'256 GB',processor:'I5-11'},
+{srNo:22,manufacturer:'Dell',model:'Latitude E5430',serial:'GFQGYX1',ram:'4 GB',storage:'1 TB HDD',processor:'I5-3'},
+{srNo:23,manufacturer:'Dell',model:'Latitude 5490',serial:'NA',ram:'',storage:'',processor:''},
+{srNo:24,manufacturer:'Dell',model:'Latitude 3490',serial:'3LF0YQ2',ram:'16 GB',storage:'256 GB',processor:'I3-7'},
+{srNo:25,manufacturer:'Dell',model:'Latitude E5570',serial:'DXWXK72',ram:'16 GB',storage:'256 GB',processor:'I7-6'},
+{srNo:26,manufacturer:'Dell',model:'Latitude 5490',serial:'76TYQN2',ram:'16 GB',storage:'512 GB',processor:'I5-8'},
+{srNo:27,manufacturer:'Lenovo',model:'ThinkPad E470',serial:'PF0TD02E',ram:'16 GB',storage:'240 GB',processor:'I7-7'},
+{srNo:28,manufacturer:'Dell',model:'Latitude E5570',serial:'5BJZK72',ram:'16 GB',storage:'240 GB',processor:'I7-6'},
+{srNo:29,manufacturer:'Dell',model:'Latitude 7480',serial:'4JXWHM2',ram:'16 GB',storage:'512 GB',processor:'I5-6'},
+{srNo:30,manufacturer:'Dell',model:'Latitude E5570',serial:'M1MWK72',ram:'16 GB',storage:'512 GB',processor:'I7-6'},
+{srNo:31,manufacturer:'Lenovo',model:'20MAS1JS0T',serial:'PF1HRNWW',ram:'32 GB',storage:'1 TB',processor:'I7-8'},
+{srNo:32,manufacturer:'Dell',model:'Latitude 5490',serial:'4R7PSQ2',ram:'16 GB',storage:'512 GB',processor:'I5-8'},
+{srNo:33,manufacturer:'Dell',model:'Latitude 7490',serial:'HD1MMV2',ram:'16 GB',storage:'512 GB',processor:'i5-8'}
+      ];
+      try{
+        for(const r of rows){
+          const now = new Date().toLocaleString();
+          r.date = now; r.modified = now; r.checklist = {};
+          await collectionRef.add(r);
+        }
+        alert('Seed completed');
+      } catch(e){ alert('Seed failed: '+e.message); }
+    }
+
+    // Export helpers
+    function exportCSV(items){
+      const rows = items.map(it=>({
+        srNo: it.srNo, manufacturer: it.manufacturer, model: it.model, serial: it.serial,
+        ram: it.ram, storage: it.storage, processor: it.processor, remarks: it.remarks,
+        date: it.date, modified: it.modified, checklist: Object.entries(it.checklist||{}).filter(([k,v])=>v).map(([k])=>k).join(';')
+      }));
+      const header = Object.keys(rows[0]||{});
+      const csv = [header.join(',')].concat(rows.map(r=>header.map(h=>'"'+((r[h]||'')+'').replace(/"/g,'""')+'"').join(','))).join('
+');
+      const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='devices.csv'; a.click(); URL.revokeObjectURL(url);
+    }
+
+    function exportXLS(items){
+      // very simple XLS (XML) wrapper for Excel
+      const rows = items.map(it=>[it.srNo,it.manufacturer,it.model,it.serial,it.ram,it.storage,it.processor,it.remarks,it.date,it.modified,Object.entries(it.checklist||{}).filter(([k,v])=>v).map(([k])=>k).join(';')]);
+      const header = ['Sr No','Manufacturer','Model','Serial','RAM','Storage','Processor','Remarks','Date','Modified','Checklist'];
+      let xml = '<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"><Worksheet ss:Name="Devices"><Table>';
+      xml += '<Row>' + header.map(h=>`<Cell><Data ss:Type="String">${escapeXml(h)}</Data></Cell>`).join('') + '</Row>';
+      rows.forEach(r=>{ xml += '<Row>' + r.map(c=>`<Cell><Data ss:Type="String">${escapeXml(c||'')}</Data></Cell>`).join('') + '</Row>'; });
+      xml += '</Table></Worksheet></Workbook>';
+      const blob = new Blob([xml],{type:'application/vnd.ms-excel'});
+      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download='devices.xls'; a.click(); URL.revokeObjectURL(url);
+    }
+
+    function escapeXml(s){ return (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function exportPDF(items){
+      // build printable HTML
+      const rowsHtml = items.map(it=>`<tr><td>${escapeHtml(it.srNo||'')}</td><td>${escapeHtml(it.manufacturer||'')}</td><td>${escapeHtml(it.model||'')}</td><td>${escapeHtml(it.serial||'')}</td><td>${escapeHtml(it.ram||'')}</td><td>${escapeHtml(it.storage||'')}</td><td>${escapeHtml(it.processor||'')}</td><td>${escapeHtml(it.date||'')}</td><td>${escapeHtml(it.modified||'')}</td></tr>`).join('');
+      const win = window.open('','_blank');
+      win.document.write(`<html><head><title>Devices</title></head><body><table border="1" style="border-collapse:collapse">`);
+      win.document.write('<tr><th>Sr</th><th>Manufacturer</th><th>Model</th><th>Serial</th><th>RAM</th><th>Storage</th><th>Processor</th><th>Date</th><th>Modified</th></tr>');
+      win.document.write(rowsHtml);
+      win.document.write('</table></body></html>');
+      win.document.close();
+      win.print();
+    }
+
+    function toggleTheme(){ const t = document.documentElement.getAttribute('data-theme'); if(t==='dark'){ document.documentElement.removeAttribute('data-theme'); btnToggleTheme.textContent='Dark'; } else { document.documentElement.setAttribute('data-theme','dark'); btnToggleTheme.textContent='Light'; } }
 
     // initialize
-    listenDevices();</script>
+    listenDevices();
+
+  </script>
 </body>
 </html>
