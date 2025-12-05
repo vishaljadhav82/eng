@@ -201,11 +201,25 @@
     });
 
     // Render helpers
-    function summaryFromChecklist(checklist){
-      if(!checklist) return '';
-      const done = Object.entries(checklist).filter(([k,v])=>v).map(([k])=>k);
-      return done.slice(0,20).join(', ') + (done.length>4 ? '...' : '');
-    }
+   function summaryFromChecklist(checklist){
+  if (!checklist) return '';
+  const done = Object.entries(checklist)
+    .filter(([k, v]) => v)
+    .map(([k]) => k);
+
+  return done.join(', '); // Show ALL checked items without limit
+}
+
+    function formatChecklist(checklist) {
+  if (!checklist) return '';
+
+  const done = Object.entries(checklist)
+    .filter(([key, value]) => value)
+    .map(([key]) => `✔️ ${key}`);
+
+  return done.join('<br>');
+}
+
 
     // Real-time listener
     let unsubscribe = null;
@@ -243,7 +257,7 @@
           <td>${escapeHtml(it.ram || '')}</td>
           <td>${escapeHtml(it.storage || '')}</td>
           <td>${escapeHtml(it.processor || '')}</td>
-          <td>${escapeHtml(summaryFromChecklist(it.checklist))}</td>
+<td>${formatChecklist(it.checklist)}</td>
           <td>${escapeHtml(it.remarks || '')}</td>
           <td>
             <button data-id="${it._id}" class="btn small" onclick="editDevice('${it._id}')">Edit</button>
